@@ -19,42 +19,48 @@ const navLinks = [
   { href: '/support-us', label: 'Support Us', i18nKey: 'nav.supportUs' },
 ];
 
-const variantStyles: Record<string, { nav: string; link: string; logo: string; cta: string }> = {
+const variantStyles: Record<string, { nav: string; link: string; logo: string; cta: string; mobileMenu: string }> = {
   '1': {
-    nav: 'bg-stone-950/90 backdrop-blur-xl border-b border-amber-500/20',
+    nav: 'bg-stone-950/40 backdrop-blur-2xl border-b border-amber-500/15 shadow-lg shadow-stone-950/20',
     link: 'text-stone-300 hover:text-amber-400 transition-colors duration-300',
     logo: 'text-amber-400',
     cta: 'bg-amber-500 text-stone-950 hover:bg-amber-400 font-bold',
+    mobileMenu: 'bg-stone-950/60 backdrop-blur-2xl border-t border-amber-500/10',
   },
   '2': {
-    nav: 'bg-[#f0ebe3] border-b-4 border-stone-950',
+    nav: 'bg-[#f0ebe3]/40 backdrop-blur-2xl border-b border-stone-950/20 shadow-lg shadow-stone-950/10',
     link: 'text-stone-950 hover:text-ember-500 font-bold uppercase tracking-widest text-xs transition-colors',
     logo: 'text-stone-950',
     cta: 'bg-stone-950 text-[#f0ebe3] hover:bg-ember-500 font-bold uppercase tracking-widest text-xs',
+    mobileMenu: 'bg-[#f0ebe3]/60 backdrop-blur-2xl border-t border-stone-950/10',
   },
   '3': {
-    nav: 'bg-[#faf7f2]/95 backdrop-blur-md shadow-sm',
+    nav: 'bg-[#faf7f2]/40 backdrop-blur-2xl border-b border-pine-600/10 shadow-lg shadow-stone-950/5',
     link: 'text-stone-600 hover:text-pine-600 transition-colors duration-300',
     logo: 'text-pine-600',
     cta: 'bg-pine-600 text-white hover:bg-pine-500',
+    mobileMenu: 'bg-[#faf7f2]/60 backdrop-blur-2xl border-t border-pine-600/5',
   },
   '4': {
-    nav: 'bg-[#030304]/95 backdrop-blur-xl border-b border-[#39FF14]/15',
+    nav: 'bg-[#030304]/40 backdrop-blur-2xl border-b border-[#39FF14]/10 shadow-lg shadow-[#39FF14]/5',
     link: 'text-[#8a8a8a] hover:text-[#39FF14] transition-colors duration-200 font-mono text-xs uppercase tracking-widest',
     logo: 'text-[#39FF14]',
     cta: 'bg-[#39FF14] text-[#030304] hover:bg-[#50ff3e] font-mono font-bold uppercase tracking-widest text-xs',
+    mobileMenu: 'bg-[#030304]/60 backdrop-blur-2xl border-t border-[#39FF14]/5',
   },
   '5': {
-    nav: 'bg-[#1a1210]/95 backdrop-blur-xl border-b border-[#C9A84C]/20',
+    nav: 'bg-[#1a1210]/40 backdrop-blur-2xl border-b border-[#C9A84C]/15 shadow-lg shadow-stone-950/20',
     link: 'text-[#a09080] hover:text-[#C9A84C] transition-colors duration-300',
     logo: 'text-[#C9A84C]',
     cta: 'bg-[#C9A84C] text-[#1a1210] hover:bg-[#d4b65c] font-bold',
+    mobileMenu: 'bg-[#1a1210]/60 backdrop-blur-2xl border-t border-[#C9A84C]/10',
   },
   '6': {
-    nav: 'bg-[#0B0D17]/90 backdrop-blur-2xl border-b border-white/5',
+    nav: 'bg-[#0B0D17]/35 backdrop-blur-2xl border-b border-white/10 shadow-lg shadow-[#0B0D17]/30',
     link: 'text-white/50 hover:text-[#00FFD1] transition-colors duration-300',
     logo: 'text-[#00FFD1]',
     cta: 'bg-gradient-to-r from-[#00FFD1] to-[#00FF88] text-[#0B0D17] hover:opacity-90 font-bold',
+    mobileMenu: 'bg-[#0B0D17]/55 backdrop-blur-2xl border-t border-white/5',
   },
 };
 
@@ -109,7 +115,7 @@ const styles = variantStyles[variant];
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="lg:hidden hidden">
-    <div class={`px-6 pb-6 pt-2 space-y-1 ${variant === '2' ? 'bg-[#f0ebe3]' : variant === '3' ? 'bg-[#faf7f2]' : variant === '4' ? 'bg-[#030304]' : variant === '5' ? 'bg-[#1a1210]' : variant === '6' ? 'bg-[#0B0D17]' : 'bg-stone-950'}`}>
+    <div class={`px-6 pb-6 pt-2 space-y-1 ${styles.mobileMenu}`}>
       {navLinks.map(link => (
         <a
           href={link.href}
