@@ -62,6 +62,8 @@ const i18nTranslations = getAllTranslations();
     <slot />
     <script>
       import '../i18n/client.ts';
+      import { inject } from '@vercel/analytics';
+      inject();
     </script>
   </body>
 </html>
