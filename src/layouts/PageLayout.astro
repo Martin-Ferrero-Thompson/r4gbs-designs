@@ -1,0 +1,90 @@
+---
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import { getAllTranslations } from '../i18n/index';
+
+interface Props {
+  title: string;
+  description?: string;
+  heroTitle: string;
+  heroSubtitle?: string;
+  /** i18n key for heroTitle, used for client-side language switching */
+  heroTitleKey?: string;
+  /** i18n key for heroSubtitle */
+  heroSubtitleKey?: string;
+}
+
+const {
+  title,
+  description = "Riding4GBS — A Pyrenean cycling challenge for GBS awareness.",
+  heroTitle,
+  heroSubtitle,
+  heroTitleKey,
+  heroSubtitleKey,
+} = Astro.props;
+
+const i18nTranslations = getAllTranslations();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | Riding4GBS</title>
+    <script define:vars={{ i18nTranslations }}>
+      window.__i18n_translations = i18nTranslations;
+      // Detect language early to prevent flash of wrong language
+      (function() {
+        var lang = localStorage.getItem('riding4gbs-lang') || 'en';
+        document.documentElement.lang = lang;
+        if (lang !== 'en') {
+          document.documentElement.classList.add('i18n-loading');
+        }
+      })();
+    </script>
+    <style>
+      /* Hide translatable content until i18n is applied to prevent flash */
+      .i18n-loading [data-i18n],
+      .i18n-loading [data-i18n-html],
+      .i18n-loading [data-i18n-placeholder] {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen overflow-x-hidden bg-stone-950 text-stone-100">
+    <Navigation variant="1" />
+
+    <!-- Page Hero -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 bg-stone-950">
+      <div class="absolute inset-0">
+        <div class="absolute top-0 left-1/3 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl"></div>
+      </div>
+      <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10">
+        <span class="text-amber-500/80 font-body text-xs tracking-[0.35em] uppercase mb-4 block animate-fade-up" data-i18n="pageLayout.brandTag">
+          Riding4GBS
+        </span>
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-stone-100 animate-fade-up stagger-1" data-i18n={heroTitleKey}>
+          {heroTitle}
+        </h1>
+        {heroSubtitle && (
+          <p class="text-stone-400 text-lg lg:text-xl mt-6 max-w-2xl font-body animate-fade-up stagger-2" data-i18n={heroSubtitleKey}>
+            {heroSubtitle}
+          </p>
+        )}
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <main id="main" class="bg-stone-950">
+      <slot />
+    </main>
+
+    <Footer variant="1" />
+    <script>
+      import '../i18n/client.ts';
+    </script>
+  </body>
+</html>

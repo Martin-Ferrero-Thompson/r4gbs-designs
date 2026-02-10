@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+import { getAllTranslations } from '../i18n/index';
+
+interface Props {
+  title?: string;
+  description?: string;
+  variant?: '1' | '2' | '3' | '4' | '5' | '6';
+}
+
+const {
+  title = "The Slow Road Back | Riding4GBS",
+  description = "A Pyrenean cycling challenge to raise awareness and funds for Guillain-Barré Syndrome. Follow Martin's journey across the mountains.",
+  variant = '1'
+} = Astro.props;
+
+const variantClasses: Record<string, string> = {
+  '1': 'variant-cinematic',
+  '2': 'variant-brutalist',
+  '3': 'variant-organic',
+  '4': 'variant-signal',
+  '5': 'variant-tectonic',
+  '6': 'variant-aurora',
+};
+
+const i18nTranslations = getAllTranslations();
+---
+<!doctype html>
+<html lang="en" class={variantClasses[variant]}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://riding4gbs.com" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <title>{title}</title>
+    <script define:vars={{ i18nTranslations }}>
+      window.__i18n_translations = i18nTranslations;
+      // Detect language early to prevent flash of wrong language
+      (function() {
+        var lang = localStorage.getItem('riding4gbs-lang') || 'en';
+        document.documentElement.lang = lang;
+        if (lang !== 'en') {
+          document.documentElement.classList.add('i18n-loading');
+        }
+      })();
+    </script>
+    <style>
+      /* Hide translatable content until i18n is applied to prevent flash */
+      .i18n-loading [data-i18n],
+      .i18n-loading [data-i18n-html],
+      .i18n-loading [data-i18n-placeholder] {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen overflow-x-hidden">
+    <slot />
+    <script>
+      import '../i18n/client.ts';
+    </script>
+  </body>
+</html>

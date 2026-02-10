@@ -1,0 +1,504 @@
+---
+/**
+ * VERSION 4: SIGNAL / NOISE
+ * ─────────────────────────
+ * Deconstructed mission-control aesthetic. Near-black canvas (#030304)
+ * with phosphor green (#39FF14) signal accents and amber data streams.
+ * Content organized as telemetry panels and readout cards.
+ * Think: deep space exploration HQ meets cycling data visualization.
+ * Typography: Space Grotesk headers, JetBrains Mono data, crisp DM Sans body.
+ * Motion: Pulsing signals, scanning horizontal lines, data cascade reveals.
+ * NOT a terminal — this is mission control for a human challenge.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import Countdown from '../components/Countdown.tsx';
+import DesignSelector from '../components/DesignSelector.astro';
+---
+
+<BaseLayout title="The Slow Road Back | Riding4GBS" variant="4">
+  <Navigation variant="4" />
+  <DesignSelector current="4" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+    .font-signal { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono-data { font-family: 'JetBrains Mono', monospace; }
+    .bg-void { background-color: #030304; }
+    .bg-void-light { background-color: #0a0b0c; }
+    .text-signal { color: #39FF14; }
+    .text-signal-dim { color: rgba(57, 255, 20, 0.4); }
+    .border-signal { border-color: rgba(57, 255, 20, 0.15); }
+    .bg-signal { background-color: #39FF14; }
+    .text-data { color: #FFB800; }
+
+    /* Scan line effect */
+    .scan-line::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #39FF14, transparent);
+      animation: scan 4s ease-in-out infinite;
+      opacity: 0.4;
+    }
+    @keyframes scan {
+      0%, 100% { top: 0; opacity: 0; }
+      10% { opacity: 0.4; }
+      90% { opacity: 0.4; }
+      100% { top: 100%; opacity: 0; }
+    }
+
+    /* Data pulse */
+    @keyframes dataPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+    .data-pulse { animation: dataPulse 2s ease-in-out infinite; }
+
+    /* Grid overlay */
+    .grid-overlay {
+      background-image:
+        linear-gradient(rgba(57,255,20,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57,255,20,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* Signal dot */
+    @keyframes signalBlink {
+      0%, 70%, 100% { opacity: 1; }
+      35% { opacity: 0.2; }
+    }
+    .signal-dot {
+      width: 6px; height: 6px;
+      background: #39FF14;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #39FF14, 0 0 20px rgba(57,255,20,0.3);
+      animation: signalBlink 2s ease-in-out infinite;
+    }
+
+    /* Horizontal data stream */
+    @keyframes dataStream {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(100vw); }
+    }
+    .data-stream {
+      position: absolute;
+      height: 1px;
+      width: 200px;
+      background: linear-gradient(90deg, transparent, #39FF14, transparent);
+      animation: dataStream 8s linear infinite;
+    }
+
+    /* Panel glow on hover */
+    .panel-glow {
+      transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .panel-glow:hover {
+      box-shadow: 0 0 30px rgba(57,255,20,0.08), inset 0 0 30px rgba(57,255,20,0.03);
+      border-color: rgba(57,255,20,0.3);
+    }
+
+    /* Stagger animations for this page */
+    .v4-reveal {
+      animation: v4FadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes v4FadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .v4-d1 { animation-delay: 0.1s; }
+    .v4-d2 { animation-delay: 0.2s; }
+    .v4-d3 { animation-delay: 0.35s; }
+    .v4-d4 { animation-delay: 0.5s; }
+    .v4-d5 { animation-delay: 0.65s; }
+    .v4-d6 { animation-delay: 0.8s; }
+
+    /* Horizontal rule with data */
+    .data-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(57,255,20,0.2), rgba(57,255,20,0.4), rgba(57,255,20,0.2), transparent);
+    }
+  </style>
+
+  <!-- ═══ HERO: MISSION CONTROL ═══ -->
+  <section class="bg-void min-h-screen flex flex-col justify-center relative overflow-hidden">
+    <!-- Grid overlay -->
+    <div class="absolute inset-0 grid-overlay"></div>
+
+    <!-- Floating data streams -->
+    <div class="data-stream" style="top: 20%; animation-delay: 0s;"></div>
+    <div class="data-stream" style="top: 55%; animation-delay: 3s;"></div>
+    <div class="data-stream" style="top: 80%; animation-delay: 6s;"></div>
+
+    <!-- Corner coordinates -->
+    <div class="absolute top-24 left-6 lg:left-10 font-mono-data text-[10px] text-signal-dim tracking-widest v4-reveal v4-d1">
+      <span>42.8125°N</span><br/>
+      <span>1.6458°W</span><br/>
+      <span class="text-data">PAMPLONA</span>
+    </div>
+    <div class="absolute top-24 right-6 lg:right-10 font-mono-data text-[10px] text-signal-dim tracking-widest text-right v4-reveal v4-d1">
+      <span>SYS.STATUS</span><br/>
+      <span class="text-signal data-pulse">● TRANSMITTING</span>
+    </div>
+
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-10 py-32 w-full">
+      <!-- Mission ID -->
+      <div class="v4-reveal v4-d1">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="signal-dot"></div>
+          <span class="font-mono-data text-xs tracking-[0.5em] uppercase text-signal-dim">MISSION: R4GBS — OCT.2026</span>
+        </div>
+      </div>
+
+      <!-- Main headline -->
+      <div class="v4-reveal v4-d2">
+        <h1 class="font-signal text-5xl sm:text-7xl lg:text-[8rem] xl:text-[10rem] font-bold leading-[0.85] tracking-tight text-white">
+          THE SLOW<br/>
+          <span class="text-signal">ROAD</span> BACK
+        </h1>
+      </div>
+
+      <!-- Data readout bar -->
+      <div class="mt-10 v4-reveal v4-d3">
+        <div class="data-divider mb-6"></div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="group">
+            <p class="font-mono-data text-[10px] tracking-[0.3em] uppercase text-signal-dim mb-1">OBJECTIVE</p>
+            <p class="font-signal text-sm text-white/80" data-i18n="home4.objective">Pyrenees Coast-to-Coast</p>
+          </div>
+          <div class="group">
+            <p class="font-mono-data text-[10px] tracking-[0.3em] uppercase text-signal-dim mb-1">OPERATOR</p>
+            <p class="font-signal text-sm text-white/80" data-i18n="home4.operator">Martin & Edurne</p>
+          </div>
+          <div class="group">
+            <p class="font-mono-data text-[10px] tracking-[0.3em] uppercase text-signal-dim mb-1">LAUNCH</p>
+            <p class="font-signal text-sm text-data">October 2026</p>
+          </div>
+          <div class="group">
+            <p class="font-mono-data text-[10px] tracking-[0.3em] uppercase text-signal-dim mb-1">PURPOSE</p>
+            <p class="font-signal text-sm text-white/80" data-i18n="home4.purpose">GBS Research Funding</p>
+          </div>
+        </div>
+        <div class="data-divider mt-6"></div>
+      </div>
+
+      <!-- Subtitle -->
+      <div class="mt-10 max-w-3xl v4-reveal v4-d4">
+        <p class="text-[#888] text-lg lg:text-xl leading-relaxed font-body" data-i18n="home4.heroSubtitle">
+          A survivor of Guillain-Barré Syndrome takes on the Pyrenees —
+          raising vital funds for Inflammatory Neuropathies UK and GBS|CIDP España.
+          ~1,000km. ~22,000m of climbing. One purpose.
+        </p>
+      </div>
+
+      <!-- CTA cluster -->
+      <div class="mt-10 flex flex-wrap gap-4 v4-reveal v4-d5">
+        <a href="/the-challenge" class="group inline-flex items-center gap-3 bg-signal text-[#030304] px-8 py-4 rounded-sm font-signal font-bold text-sm tracking-wide hover:bg-[#50ff3e] transition-all duration-200">
+          <span data-i18n="home4.viewMission">View Mission Brief</span>
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/donate" class="inline-flex items-center gap-2 border border-[#39FF14]/30 text-signal px-8 py-4 rounded-sm font-signal text-sm tracking-wide hover:bg-[#39FF14]/10 transition-all duration-200" data-i18n="home4.fundResearch">
+          Fund Research
+        </a>
+      </div>
+
+      <!-- Countdown -->
+      <div class="mt-14 v4-reveal v4-d6">
+        <p class="font-mono-data text-[10px] tracking-[0.4em] uppercase text-signal-dim mb-4">T-MINUS LAUNCH</p>
+        <Countdown client:load targetDate="2026-10-01T07:00:00" variant="4" />
+      </div>
+    </div>
+
+    <!-- Bottom scan line -->
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#39FF14]/30 to-transparent"></div>
+  </section>
+
+  <!-- ═══ TELEMETRY: STATS DASHBOARD ═══ -->
+  <section class="bg-void relative overflow-hidden scan-line">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-32">
+      <!-- Section header -->
+      <div class="flex items-center gap-4 mb-12">
+        <div class="signal-dot"></div>
+        <span class="font-mono-data text-xs tracking-[0.4em] uppercase text-signal-dim" data-i18n="home4.telemetryTag">TELEMETRY</span>
+        <div class="flex-1 data-divider"></div>
+      </div>
+
+      <!-- Stats grid — dashboard panels -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="panel-glow bg-void-light border border-signal rounded-sm p-6 lg:p-8">
+          <p class="font-mono-data text-[10px] tracking-[0.3em] uppercase text-signal-dim mb-3" data-i18n="stats.totalDays">TOTAL DAYS</p>
+          <p class="font-signal text-4xl lg:text-5xl font-bold text-white">~12</p>
+          <div class="mt-4 h-px bg-[#39FF14]/10"></div>
+          <p class="font-mono-data text-[9px] text-data mt-2 data-pulse">ESTIMATED</p>
+        </div>
+        <div class="panel-glow bg-void-light border border-signal rounded-sm p-6 lg:p-8">
+          <p class="font-mono-data text-[10px] tracking-[0.3em] uppercase text-signal-dim mb-3" data-i18n="stats.kilometres">KILOMETRES</p>
+          <p class="font-signal text-4xl lg:text-5xl font-bold text-signal">~1,000</p>
+          <div class="mt-4 h-px bg-[#39FF14]/10"></div>
+          <p class="font-mono-data text-[9px] text-data mt-2 data-pulse">PROJECTED</p>
+        </div>
+        <div class="panel-glow bg-void-light border border-signal rounded-sm p-6 lg:p-8">
+          <p class="font-mono-data text-[10px] tracking-[0.3em] uppercase text-signal-dim mb-3" data-i18n="stats.metresClimbed">METRES CLIMBED</p>
+          <p class="font-signal text-4xl lg:text-5xl font-bold text-white">22,000</p>
+          <div class="mt-4 h-px bg-[#39FF14]/10"></div>
+          <p class="font-mono-data text-[9px] text-data mt-2 data-pulse">CUMULATIVE</p>
+        </div>
+        <div class="panel-glow bg-void-light border border-signal rounded-sm p-6 lg:p-8">
+          <p class="font-mono-data text-[10px] tracking-[0.3em] uppercase text-signal-dim mb-3" data-i18n="stats.everest">EVEREST</p>
+          <p class="font-signal text-4xl lg:text-5xl font-bold text-data">2.5×</p>
+          <div class="mt-4 h-px bg-[#39FF14]/10"></div>
+          <p class="font-mono-data text-[9px] text-signal-dim mt-2">EQ. ALTITUDE</p>
+        </div>
+      </div>
+
+      <!-- Charity trust strip -->
+      <div class="mt-12 flex flex-col sm:flex-row gap-6 sm:gap-12 border-t border-signal pt-8">
+        <a href="https://www.inflammatoryneuropathies.uk/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3">
+          <span class="text-lg">🇬🇧</span>
+          <div>
+            <p class="font-signal text-sm text-white/70 group-hover:text-signal transition-colors" data-i18n="home4.trustUk">Inflammatory Neuropathies UK</p>
+            <p class="font-mono-data text-[10px] text-signal-dim" data-i18n="home4.trustUkReg">REG. CHARITY 1154843</p>
+          </div>
+        </a>
+        <a href="https://gbs-cidp.org.es/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3">
+          <span class="text-lg">🇪🇸</span>
+          <div>
+            <p class="font-signal text-sm text-white/70 group-hover:text-signal transition-colors" data-i18n="home4.trustEs">GBS|CIDP España</p>
+            <p class="font-mono-data text-[10px] text-signal-dim" data-i18n="home4.trustEsReg">REG. NACIONAL Nº 619.666</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ OPERATOR PROFILE ═══ -->
+  <section class="bg-void-light relative overflow-hidden">
+    <div class="absolute inset-0 grid-overlay"></div>
+
+    <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-40">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+        <!-- Left: Header -->
+        <div class="lg:col-span-5">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="signal-dot"></div>
+            <span class="font-mono-data text-xs tracking-[0.4em] uppercase text-signal-dim" data-i18n="home4.operatorProfile">OPERATOR PROFILE</span>
+          </div>
+          <h2 class="font-signal text-4xl lg:text-6xl font-bold text-white leading-tight">
+            More than<br/>a bike ride
+          </h2>
+          <div class="mt-6 h-px w-24 bg-signal/40"></div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="lg:col-span-7 lg:pt-8">
+          <p class="text-[#999] text-lg leading-relaxed font-body" data-i18n="home4.missionDesc">
+            My name is Martin, and I am a survivor of Guillain-Barré Syndrome. In 2021, GBS changed my life — but it didn't define it. In October 2026, starting from my home in Pamplona, my incredible wife Edurne and I will take on the Pyrenees: a complete coast-to-coast traverse of one of the world's most challenging mountain ranges.
+          </p>
+          <p class="text-[#666] text-lg leading-relaxed mt-6 font-body" data-i18n="home4.missionDesc2">
+            Our ride is a shared mission to raise vital awareness and funds for the GBS community. We don't know exactly how many days it will take, or how many mountains will have to be climbed. But we invite you to follow along, day by day, on our journey of hope and resilience.
+          </p>
+          <a href="/our-story" class="inline-flex items-center gap-2 text-signal font-mono-data text-xs tracking-[0.2em] uppercase mt-8 hover:text-[#50ff3e] transition-colors group">
+            <span data-i18n="home4.readDossier">READ FULL DOSSIER</span>
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ROUTE INTELLIGENCE ═══ -->
+  <section class="bg-void relative overflow-hidden">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-40">
+      <!-- Section header -->
+      <div class="flex items-center gap-4 mb-4">
+        <div class="signal-dot"></div>
+        <span class="font-mono-data text-xs tracking-[0.4em] uppercase text-signal-dim" data-i18n="home4.routeIntel">ROUTE INTELLIGENCE</span>
+        <div class="flex-1 data-divider"></div>
+      </div>
+      <h2 class="font-signal text-4xl lg:text-6xl font-bold text-white mb-16" data-i18n="home4.conquerPyrenees">
+        To Conquer the Pyrenees
+      </h2>
+
+      <!-- Route panels -->
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Leg 01 -->
+        <div class="panel-glow bg-void-light border border-signal rounded-sm p-8 lg:p-10 relative">
+          <div class="absolute top-6 right-6 font-mono-data text-6xl font-bold text-signal/10">01</div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-2 h-2 bg-signal rounded-full"></div>
+            <span class="font-mono-data text-[10px] tracking-[0.3em] uppercase text-signal-dim" data-i18n="home4.phaseOne">PHASE ONE</span>
+          </div>
+          <h3 class="font-signal text-2xl lg:text-3xl font-bold text-white" data-i18n="home4.frenchTitle">The French Ascent</h3>
+          <p class="text-[#888] mt-4 leading-relaxed font-body" data-i18n="home4.frenchDesc">
+            East from the Basque coast, battling the legendary cols of the French Pyrenees.
+            Aubisque, Tourmalet, Aspin — names that echo through cycling history. Each summit a victory
+            over both mountain and the limitations GBS tried to impose.
+          </p>
+          <div class="mt-6 flex gap-3">
+            <span class="font-mono-data text-[10px] bg-[#39FF14]/10 text-signal px-3 py-1.5 rounded-sm" data-i18n="home4.frenchDir">ATL → MED</span>
+            <span class="font-mono-data text-[10px] bg-[#FFB800]/10 text-data px-3 py-1.5 rounded-sm">~500KM</span>
+          </div>
+        </div>
+
+        <!-- Leg 02 -->
+        <div class="panel-glow bg-void-light border border-signal rounded-sm p-8 lg:p-10 relative">
+          <div class="absolute top-6 right-6 font-mono-data text-6xl font-bold text-data/10">02</div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-2 h-2 bg-data rounded-full"></div>
+            <span class="font-mono-data text-[10px] tracking-[0.3em] uppercase text-signal-dim" data-i18n="home4.phaseTwo">PHASE TWO</span>
+          </div>
+          <h3 class="font-signal text-2xl lg:text-3xl font-bold text-white" data-i18n="home4.spanishTitle">The Spanish Homecoming</h3>
+          <p class="text-[#888] mt-4 leading-relaxed font-body" data-i18n="home4.spanishDesc">
+            After reaching the Mediterranean, the journey turns west for the long road home.
+            Through Catalunya, Aragón, and finally Navarra — the climbs are less steep but
+            just as relentless, demanding a different kind of strength for the journey back to the Atlantic.
+          </p>
+          <div class="mt-6 flex gap-3">
+            <span class="font-mono-data text-[10px] bg-[#FFB800]/10 text-data px-3 py-1.5 rounded-sm" data-i18n="home4.spanishDir">MED → ATL</span>
+            <span class="font-mono-data text-[10px] bg-[#39FF14]/10 text-signal px-3 py-1.5 rounded-sm">~500KM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/the-challenge" class="inline-flex items-center gap-2 text-signal font-mono-data text-xs tracking-[0.2em] uppercase hover:text-[#50ff3e] transition-colors group">
+          <span data-i18n="home4.fullRouteData">FULL ROUTE DATA & MAPPING</span>
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GBS INTELLIGENCE BRIEF ═══ -->
+  <section class="bg-void-light relative overflow-hidden">
+    <div class="absolute inset-0 grid-overlay"></div>
+
+    <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-40">
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        <!-- Left -->
+        <div class="lg:col-span-5">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-2 h-2 bg-data rounded-full data-pulse"></div>
+            <span class="font-mono-data text-xs tracking-[0.4em] uppercase text-signal-dim" data-i18n="home4.threatAnalysis">THREAT ANALYSIS</span>
+          </div>
+          <h2 class="font-signal text-4xl lg:text-5xl font-bold text-white leading-tight">
+            <span class="text-data">GBS:</span><br/>
+            The condition<br/>behind the mission
+          </h2>
+          <p class="text-[#666] mt-6 font-body leading-relaxed" data-i18n="home4.gbsSideDesc">
+            Guillain-Barré Syndrome can strike anyone, at any age. Understanding it is the first step toward better treatment and support for those affected.
+          </p>
+        </div>
+
+        <!-- Right: Data card -->
+        <div class="lg:col-span-7">
+          <div class="panel-glow bg-void border border-signal rounded-sm p-8 lg:p-12">
+            <h3 class="font-signal text-2xl font-bold text-white" data-i18n="home4.gbsCardTitle">What is Guillain-Barré Syndrome?</h3>
+            <p class="text-[#888] mt-6 leading-relaxed font-body" data-i18n="home4.gbsCardDesc">
+              GBS is a rare condition where your body's immune system gets confused and starts attacking your nerves. After a normal infection like the flu, the immune system doesn't stand down — it mistakenly identifies your own nerves as the enemy.
+            </p>
+
+            <div class="mt-8 grid sm:grid-cols-3 gap-4">
+              <div class="bg-void-light border border-signal rounded-sm p-4 text-center">
+                <p class="font-signal text-2xl font-bold text-signal" data-i18n="home4.gbsStat1">1-2</p>
+                <p class="text-[#555] text-xs mt-1 font-mono-data" data-i18n="home4.gbsStat1Label">per 100K affected</p>
+              </div>
+              <div class="bg-void-light border border-signal rounded-sm p-4 text-center">
+                <p class="font-signal text-2xl font-bold text-data" data-i18n="home4.gbsStat2">Weeks</p>
+                <p class="text-[#555] text-xs mt-1 font-mono-data" data-i18n="home4.gbsStat2Label">to full paralysis</p>
+              </div>
+              <div class="bg-void-light border border-signal rounded-sm p-4 text-center">
+                <p class="font-signal text-2xl font-bold text-white" data-i18n="home4.gbsStat3">Months</p>
+                <p class="text-[#555] text-xs mt-1 font-mono-data" data-i18n="home4.gbsStat3Label">to years recovery</p>
+              </div>
+            </div>
+
+            <a href="/about-gbs" class="inline-flex items-center gap-2 text-signal font-mono-data text-xs tracking-[0.2em] uppercase mt-8 hover:text-[#50ff3e] transition-colors group">
+              <span data-i18n="home4.viewFullAnalysis">VIEW FULL ANALYSIS</span>
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SIGNAL INTERCEPT (QUOTE) ═══ -->
+  <section class="bg-void border-y border-signal">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-28">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="signal-dot"></div>
+          <span class="font-mono-data text-[10px] tracking-[0.4em] uppercase text-signal-dim" data-i18n="home4.interceptTag">SIGNAL INTERCEPT</span>
+        </div>
+        <blockquote>
+          <p class="font-signal text-2xl lg:text-4xl text-white leading-relaxed" data-i18n="home4.quoteText">
+            "We are absolutely thrilled to see Martin and Edurne embark on 'The Slow Road Back.' Their courage and determination embody the very spirit we champion."
+          </p>
+        </blockquote>
+        <div class="mt-8 flex items-center gap-4">
+          <div class="w-12 h-px bg-signal/40"></div>
+          <p class="font-mono-data text-xs tracking-[0.2em] uppercase text-signal-dim" data-i18n="home4.quoteSource">Inflammatory Neuropathies UK</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FUND THE MISSION ═══ -->
+  <section class="bg-void relative overflow-hidden">
+    <div class="absolute inset-0 grid-overlay"></div>
+    <!-- Ambient glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#39FF14]/3 rounded-full blur-3xl"></div>
+
+    <div class="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-40 text-center">
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <div class="signal-dot"></div>
+        <span class="font-mono-data text-[10px] tracking-[0.4em] uppercase text-signal-dim" data-i18n="home4.criticalAction">CRITICAL ACTION REQUIRED</span>
+        <div class="signal-dot"></div>
+      </div>
+
+      <h2 class="font-signal text-4xl lg:text-7xl font-bold text-white leading-tight">
+        Fund the research.<br/>
+        <span class="text-signal">Fuel the mission.</span>
+      </h2>
+      <p class="text-[#888] text-lg mt-6 max-w-xl mx-auto font-body" data-i18n="home4.donateDesc">
+        100% of every donation goes directly to our partner charities supporting
+        GBS research and patient care in the UK and Spain.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/donate" class="inline-flex items-center justify-center gap-2 bg-signal text-[#030304] px-10 py-4 rounded-sm font-signal font-bold text-lg hover:bg-[#50ff3e] transition-all duration-200" data-i18n="home4.donateNow">
+          Donate Now
+        </a>
+        <a href="/support-us" class="inline-flex items-center justify-center gap-2 border border-signal/30 text-signal px-10 py-4 rounded-sm font-signal hover:bg-signal/10 transition-all duration-200" data-i18n="home4.supportMission">
+          Support the Mission
+        </a>
+      </div>
+
+      <!-- Targets -->
+      <div class="mt-16 grid sm:grid-cols-2 gap-8 max-w-lg mx-auto">
+        <div class="text-left panel-glow border border-signal rounded-sm p-6">
+          <p class="font-mono-data text-[10px] tracking-[0.3em] uppercase text-signal-dim" data-i18n="home4.ukTarget">UK TARGET</p>
+          <p class="font-signal text-3xl font-bold text-white mt-2">£10,000</p>
+          <div class="mt-3 h-1 bg-[#111]">
+            <div class="h-full bg-signal" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div class="text-left panel-glow border border-signal rounded-sm p-6">
+          <p class="font-mono-data text-[10px] tracking-[0.3em] uppercase text-signal-dim" data-i18n="home4.spainTarget">SPAIN TARGET</p>
+          <p class="font-signal text-3xl font-bold text-white mt-2">€10,000</p>
+          <div class="mt-3 h-1 bg-[#111]">
+            <div class="h-full bg-data" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer variant="4" />
+</BaseLayout>

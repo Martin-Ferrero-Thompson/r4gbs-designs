@@ -1,0 +1,145 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+interface Props {
+  variant?: '1' | '2' | '3' | '4' | '5' | '6';
+}
+
+const { variant = '1' } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/the-challenge', label: 'The Challenge', i18nKey: 'nav.challenge' },
+  { href: '/our-story', label: 'Our Story', i18nKey: 'nav.story' },
+  { href: '/about-gbs', label: 'About GBS', i18nKey: 'nav.aboutGbs' },
+  { href: '/our-progress', label: 'Progress', i18nKey: 'nav.progress' },
+  { href: '/journal', label: 'Journal', i18nKey: 'nav.journal' },
+  { href: '/news', label: 'News', i18nKey: 'nav.news' },
+  { href: '/partners', label: 'Partners', i18nKey: 'nav.partners' },
+  { href: '/support-us', label: 'Support Us', i18nKey: 'nav.supportUs' },
+];
+
+const variantStyles: Record<string, { nav: string; link: string; logo: string; cta: string }> = {
+  '1': {
+    nav: 'bg-stone-950/90 backdrop-blur-xl border-b border-amber-500/20',
+    link: 'text-stone-300 hover:text-amber-400 transition-colors duration-300',
+    logo: 'text-amber-400',
+    cta: 'bg-amber-500 text-stone-950 hover:bg-amber-400 font-bold',
+  },
+  '2': {
+    nav: 'bg-[#f0ebe3] border-b-4 border-stone-950',
+    link: 'text-stone-950 hover:text-ember-500 font-bold uppercase tracking-widest text-xs transition-colors',
+    logo: 'text-stone-950',
+    cta: 'bg-stone-950 text-[#f0ebe3] hover:bg-ember-500 font-bold uppercase tracking-widest text-xs',
+  },
+  '3': {
+    nav: 'bg-[#faf7f2]/95 backdrop-blur-md shadow-sm',
+    link: 'text-stone-600 hover:text-pine-600 transition-colors duration-300',
+    logo: 'text-pine-600',
+    cta: 'bg-pine-600 text-white hover:bg-pine-500',
+  },
+  '4': {
+    nav: 'bg-[#030304]/95 backdrop-blur-xl border-b border-[#39FF14]/15',
+    link: 'text-[#8a8a8a] hover:text-[#39FF14] transition-colors duration-200 font-mono text-xs uppercase tracking-widest',
+    logo: 'text-[#39FF14]',
+    cta: 'bg-[#39FF14] text-[#030304] hover:bg-[#50ff3e] font-mono font-bold uppercase tracking-widest text-xs',
+  },
+  '5': {
+    nav: 'bg-[#1a1210]/95 backdrop-blur-xl border-b border-[#C9A84C]/20',
+    link: 'text-[#a09080] hover:text-[#C9A84C] transition-colors duration-300',
+    logo: 'text-[#C9A84C]',
+    cta: 'bg-[#C9A84C] text-[#1a1210] hover:bg-[#d4b65c] font-bold',
+  },
+  '6': {
+    nav: 'bg-[#0B0D17]/90 backdrop-blur-2xl border-b border-white/5',
+    link: 'text-white/50 hover:text-[#00FFD1] transition-colors duration-300',
+    logo: 'text-[#00FFD1]',
+    cta: 'bg-gradient-to-r from-[#00FFD1] to-[#00FF88] text-[#0B0D17] hover:opacity-90 font-bold',
+  },
+};
+
+const styles = variantStyles[variant];
+---
+<nav class={`fixed top-0 left-0 right-0 z-50 ${styles.nav}`} id="main-nav">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+      <!-- Logo -->
+      <a href={`/${variant}`} class={`font-display text-lg lg:text-xl font-bold tracking-tight ${styles.logo} flex items-center gap-3`}>
+        <span class="hidden sm:inline">Riding4GBS</span>
+        <span class="sm:hidden">R4GBS</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center gap-1">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            data-i18n={link.i18nKey}
+            class={`px-3 py-2 text-sm rounded-md ${styles.link} ${currentPath === link.href ? 'opacity-100' : 'opacity-75 hover:opacity-100'}`}
+          >
+            {link.label}
+          </a>
+        ))}
+        <a
+          href="/donate"
+          data-i18n="nav.donate"
+          class={`ml-4 px-5 py-2.5 rounded-full text-sm ${styles.cta} transition-all duration-300`}
+        >
+          Donate
+        </a>
+        <div class="ml-3">
+          <LanguageSwitcher variant={variant} />
+        </div>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button
+        id="menu-toggle"
+        class={`lg:hidden p-2 ${styles.link}`}
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6" class="origin-center transition-transform duration-300" id="line1"/>
+          <line x1="3" y1="12" x2="21" y2="12" class="transition-opacity duration-300" id="line2"/>
+          <line x1="3" y1="18" x2="21" y2="18" class="origin-center transition-transform duration-300" id="line3"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden">
+    <div class={`px-6 pb-6 pt-2 space-y-1 ${variant === '2' ? 'bg-[#f0ebe3]' : variant === '3' ? 'bg-[#faf7f2]' : variant === '4' ? 'bg-[#030304]' : variant === '5' ? 'bg-[#1a1210]' : variant === '6' ? 'bg-[#0B0D17]' : 'bg-stone-950'}`}>
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          data-i18n={link.i18nKey}
+          class={`block px-3 py-3 text-sm rounded-md ${styles.link}`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="flex items-center justify-between mt-4 gap-4">
+        <a
+          href="/donate"
+          data-i18n="nav.donateNow"
+          class={`flex-1 block text-center px-5 py-3 rounded-full text-sm ${styles.cta} transition-all duration-300`}
+        >
+          Donate Now
+        </a>
+        <LanguageSwitcher variant={variant} />
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    const isOpen = !menu?.classList.contains('hidden');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+</script>

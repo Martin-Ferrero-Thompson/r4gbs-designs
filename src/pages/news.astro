@@ -1,0 +1,52 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Latest News"
+  heroTitle="Latest News"
+  heroSubtitle="Key announcements and milestone updates from the Riding4GBS journey."
+  heroTitleKey="news.heroTitle"
+  heroSubtitleKey="news.heroSubtitle"
+>
+  <section>
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+      <div class="max-w-3xl mx-auto">
+
+        <!-- Placeholder news items -->
+        <div class="space-y-8">
+          <article class="bg-stone-900 rounded-2xl p-8 border border-stone-800 hover:border-stone-700 transition-colors">
+            <span class="text-amber-500/60 font-body text-xs uppercase tracking-wider" data-i18n="news.announcementTag">Announcement</span>
+            <h2 class="font-display text-2xl font-bold text-stone-100 mt-2" data-i18n="news.article1Title">Challenge Launch: The Slow Road Back</h2>
+            <p class="text-stone-400 font-body mt-4 leading-relaxed" data-i18n="news.article1Desc">
+              We're thrilled to officially announce our Pyrenean cycling challenge. Starting October 2026, Martin and Edurne will take on a complete coast-to-coast traverse of the Pyrenees to raise awareness and funds for Guillain-Barré Syndrome.
+            </p>
+            <div class="mt-6 flex flex-wrap items-center gap-4">
+              <span class="text-stone-600 text-sm font-body" data-i18n="news.article1Date">February 2026</span>
+              <a href="/the-challenge" class="text-amber-400 text-sm font-body hover:text-amber-300 transition-colors" data-i18n="news.readMore">Read more →</a>
+            </div>
+          </article>
+
+          <article class="bg-stone-900 rounded-2xl p-8 border border-stone-800 hover:border-stone-700 transition-colors">
+            <span class="text-amber-500/60 font-body text-xs uppercase tracking-wider" data-i18n="news.partnershipTag">Partnership</span>
+            <h2 class="font-display text-2xl font-bold text-stone-100 mt-2" data-i18n="news.article2Title">Inflammatory Neuropathies UK Endorses the Challenge</h2>
+            <p class="text-stone-400 font-body mt-4 leading-relaxed" data-i18n="news.article2Desc">
+              We are proud to announce the official support of Inflammatory Neuropathies UK, the national organisation supporting people affected by GBS, CIDP, and related conditions.
+            </p>
+            <div class="mt-6 flex flex-wrap items-center gap-4">
+              <span class="text-stone-600 text-sm font-body" data-i18n="news.article2Date">January 2026</span>
+              <a href="/partners" class="text-amber-400 text-sm font-body hover:text-amber-300 transition-colors" data-i18n="news.readMore">Read more →</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Coming soon notice -->
+        <div class="mt-12 text-center">
+          <p class="text-stone-600 font-body text-sm" data-i18n="news.moreNews">
+            More news coming soon. Stay tuned for ride milestones, fundraising achievements, and press coverage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

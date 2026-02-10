@@ -1,0 +1,162 @@
+---
+interface Props {
+  variant?: '1' | '2' | '3' | '4' | '5' | '6';
+}
+
+const { variant = '1' } = Astro.props;
+
+const footerLinks = [
+  { href: '/the-challenge', label: 'The Challenge', i18nKey: 'nav.challenge' },
+  { href: '/our-story', label: 'Our Story', i18nKey: 'nav.story' },
+  { href: '/about-gbs', label: 'About GBS', i18nKey: 'nav.aboutGbs' },
+  { href: '/our-progress', label: 'Progress', i18nKey: 'nav.progress' },
+  { href: '/journal', label: 'Journal', i18nKey: 'nav.journal' },
+  { href: '/partners', label: 'Partners', i18nKey: 'nav.partners' },
+  { href: '/support-us', label: 'Support Us', i18nKey: 'nav.supportUs' },
+  { href: '/donate', label: 'Donate', i18nKey: 'nav.donate' },
+];
+
+const charityLinks = [
+  { href: 'https://www.inflammatoryneuropathies.uk/', label: 'Inflammatory Neuropathies UK' },
+  { href: 'https://gbs-cidp.org.es/', label: 'GBS|CIDP España' },
+  { href: 'https://ko-fi.com/riding4gbs', label: 'Support on Ko-fi' },
+];
+
+const variantStyles: Record<string, { bg: string; text: string; accent: string; border: string }> = {
+  '1': {
+    bg: 'bg-stone-950',
+    text: 'text-stone-400',
+    accent: 'text-amber-400 hover:text-amber-300',
+    border: 'border-stone-800',
+  },
+  '2': {
+    bg: 'bg-stone-950',
+    text: 'text-stone-400',
+    accent: 'text-[#f0ebe3] hover:text-ember-400',
+    border: 'border-stone-700',
+  },
+  '3': {
+    bg: 'bg-stone-900',
+    text: 'text-stone-400',
+    accent: 'text-pine-400 hover:text-pine-300',
+    border: 'border-stone-700',
+  },
+  '4': {
+    bg: 'bg-[#030304]',
+    text: 'text-[#555]',
+    accent: 'text-[#39FF14] hover:text-[#50ff3e]',
+    border: 'border-[#39FF14]/10',
+  },
+  '5': {
+    bg: 'bg-[#0f0c0a]',
+    text: 'text-[#8a7a6a]',
+    accent: 'text-[#C9A84C] hover:text-[#d4b65c]',
+    border: 'border-[#C9A84C]/15',
+  },
+  '6': {
+    bg: 'bg-[#060811]',
+    text: 'text-white/30',
+    accent: 'text-[#00FFD1] hover:text-[#00FF88]',
+    border: 'border-white/5',
+  },
+};
+
+const s = variantStyles[variant];
+---
+<footer class={`${s.bg} ${s.text}`}>
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 lg:py-24">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <p class={`font-display text-2xl font-bold mb-4 ${variant === '1' ? 'text-amber-400' : variant === '3' ? 'text-pine-400' : variant === '4' ? 'text-[#39FF14]' : variant === '5' ? 'text-[#C9A84C]' : variant === '6' ? 'text-[#00FFD1]' : 'text-[#f0ebe3]'}`}>
+          Riding4GBS
+        </p>
+        <p class="text-sm leading-relaxed max-w-xs" data-i18n="footer.tagline">
+          A Pyrenean cycling challenge to raise awareness and vital funds for Guillain-Barré Syndrome.
+          Coast to coast. Mountain by mountain.
+        </p>
+        <p class="text-xs mt-6 opacity-60" data-i18n="footer.hashtags">
+          #RIDING4GBS · #TheSlowRoadBack
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h4 class={`font-display text-sm font-bold uppercase tracking-wider mb-4 ${variant === '4' ? 'text-[#39FF14]/80' : variant === '5' ? 'text-[#C9A84C]/80' : variant === '6' ? 'text-[#00FFD1]/80' : variant === '1' ? 'text-stone-200' : variant === '3' ? 'text-stone-200' : 'text-[#f0ebe3]'}`}>
+          <span data-i18n="footer.explore">Explore</span>
+        </h4>
+        <ul class="space-y-2.5">
+          {footerLinks.map(link => (
+            <li>
+              <a href={link.href} data-i18n={link.i18nKey} class={`text-sm transition-colors duration-200 ${s.accent}`}>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Charities -->
+      <div>
+        <h4 class={`font-display text-sm font-bold uppercase tracking-wider mb-4 ${variant === '4' ? 'text-[#39FF14]/80' : variant === '5' ? 'text-[#C9A84C]/80' : variant === '6' ? 'text-[#00FFD1]/80' : variant === '1' ? 'text-stone-200' : variant === '3' ? 'text-stone-200' : 'text-[#f0ebe3]'}`}>
+          <span data-i18n="footer.ourCharities">Our Charities</span>
+        </h4>
+        <ul class="space-y-2.5">
+          {charityLinks.map(link => (
+            <li>
+              <a href={link.href} target="_blank" rel="noopener noreferrer" class={`text-sm transition-colors duration-200 ${s.accent}`}>
+                {link.label} ↗
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div class="mt-8">
+          <h4 class={`font-display text-sm font-bold uppercase tracking-wider mb-4 ${variant === '4' ? 'text-[#39FF14]/80' : variant === '5' ? 'text-[#C9A84C]/80' : variant === '6' ? 'text-[#00FFD1]/80' : variant === '1' ? 'text-stone-200' : variant === '3' ? 'text-stone-200' : 'text-[#f0ebe3]'}`}>
+            <span data-i18n="footer.follow">Follow</span>
+          </h4>
+          <div class="flex gap-4">
+            <a href="#" class={`transition-colors ${s.accent}`} aria-label="Instagram">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class={`transition-colors ${s.accent}`} aria-label="Strava">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div>
+        <h4 class={`font-display text-sm font-bold uppercase tracking-wider mb-4 ${variant === '4' ? 'text-[#39FF14]/80' : variant === '5' ? 'text-[#C9A84C]/80' : variant === '6' ? 'text-[#00FFD1]/80' : variant === '1' ? 'text-stone-200' : variant === '3' ? 'text-stone-200' : 'text-[#f0ebe3]'}`}>
+          <span data-i18n="footer.makeADifference">Make a Difference</span>
+        </h4>
+        <p class="text-sm mb-6 leading-relaxed" data-i18n="footer.donateDesc">
+          100% of every donation goes directly to our partner charities supporting GBS research and patient care.
+        </p>
+        <a
+          href="/donate"
+          class={`inline-block px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
+            variant === '1' ? 'bg-amber-500 text-stone-950 hover:bg-amber-400' :
+            variant === '2' ? 'bg-[#f0ebe3] text-stone-950 hover:bg-ember-400 hover:text-white' :
+            variant === '4' ? 'bg-[#39FF14] text-[#030304] hover:bg-[#50ff3e]' :
+            variant === '5' ? 'bg-[#C9A84C] text-[#0f0c0a] hover:bg-[#d4b65c]' :
+            variant === '6' ? 'bg-gradient-to-r from-[#00FFD1] to-[#00FF88] text-[#0B0D17] hover:opacity-90' :
+            'bg-pine-500 text-white hover:bg-pine-400'
+          }`}
+        >
+          <span data-i18n="footer.donateNow">Donate Now →</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class={`mt-16 pt-8 border-t ${s.border} flex flex-col md:flex-row justify-between items-center gap-4`}>
+      <p class="text-xs opacity-60" data-i18n="footer.copyright">
+        © {new Date().getFullYear()} Riding4GBS. All rights reserved. Built with ♥ in Pamplona.
+      </p>
+      <p class="text-xs opacity-60" data-i18n="footer.bottomTagline">
+        The Slow Road Back — A Pyrenean Challenge for GBS Awareness
+      </p>
+    </div>
+  </div>
+</footer>

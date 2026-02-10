@@ -1,0 +1,137 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="About GBS"
+  heroTitle="About Guillain-Barré Syndrome"
+  heroSubtitle="Understanding the condition behind the challenge."
+  heroTitleKey="aboutGbs.heroTitle"
+  heroSubtitleKey="aboutGbs.heroSubtitle"
+>
+  <section>
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+      <div class="grid lg:grid-cols-12 gap-16">
+
+        <!-- Main content -->
+        <div class="lg:col-span-7">
+          <div class="space-y-16">
+            <!-- What is GBS -->
+            <div>
+              <h2 class="font-display text-3xl lg:text-4xl font-bold text-stone-100" data-i18n="aboutGbs.whatTitle">
+                What is Guillain-Barré Syndrome?
+              </h2>
+              <div class="mt-6 space-y-4">
+                <p class="text-stone-400 text-lg leading-relaxed font-body" data-i18n="aboutGbs.whatDesc1">
+                  In short, Guillain-Barré Syndrome (GBS) is a rare condition where your body's immune system, which is supposed to fight off germs, gets confused and starts attacking your nerves instead.
+                </p>
+                <p class="text-stone-400 text-lg leading-relaxed font-body" data-i18n="aboutGbs.whatDesc2">
+                  It's an autoimmune issue. Think of it this way:
+                </p>
+                <div class="bg-stone-900 rounded-xl p-6 border border-stone-800 space-y-4">
+                  <div class="flex gap-4 items-start">
+                    <span class="bg-amber-500 text-stone-950 w-8 h-8 rounded-full flex items-center justify-center font-body font-bold text-sm shrink-0">1</span>
+                    <p class="text-stone-300 font-body" data-i18n="aboutGbs.step1">You get a normal infection, like the flu or food poisoning.</p>
+                  </div>
+                  <div class="flex gap-4 items-start">
+                    <span class="bg-amber-500 text-stone-950 w-8 h-8 rounded-full flex items-center justify-center font-body font-bold text-sm shrink-0">2</span>
+                    <p class="text-stone-300 font-body" data-i18n="aboutGbs.step2">Your immune system gears up to fight it.</p>
+                  </div>
+                  <div class="flex gap-4 items-start">
+                    <span class="bg-amber-500 text-stone-950 w-8 h-8 rounded-full flex items-center justify-center font-body font-bold text-sm shrink-0">3</span>
+                    <p class="text-stone-300 font-body" data-i18n="aboutGbs.step3">After the infection is gone, the immune system doesn't stand down. It mistakenly identifies your own nerves as the enemy and attacks them.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- How it affects -->
+            <div>
+              <h2 class="font-display text-3xl lg:text-4xl font-bold text-stone-100" data-i18n="aboutGbs.howTitle">
+                How Does It Affect the Body?
+              </h2>
+              <div class="mt-6 space-y-4">
+                <p class="text-stone-400 text-lg leading-relaxed font-body" data-i18n="aboutGbs.howDesc1">
+                  The nerves are like electrical cables that carry signals between your brain and the rest of your body. GBS damages the protective coating around these cables (called the myelin sheath), disrupting the signals.
+                </p>
+                <p class="text-stone-400 text-lg leading-relaxed font-body" data-i18n="aboutGbs.howDesc2">
+                  This typically starts with tingling and weakness in the feet and hands, then spreads upward. In severe cases, it can lead to complete paralysis. The muscles simply stop receiving the messages they need to move.
+                </p>
+                <p class="text-stone-400 text-lg leading-relaxed font-body" data-i18n="aboutGbs.howDesc3">
+                  For some, like Martin, recovery is possible. But it takes months, sometimes years, of gruelling rehabilitation. And some effects may be permanent — lingering fatigue, nerve pain, and reduced sensation that serve as constant reminders of what the body endured.
+                </p>
+              </div>
+            </div>
+
+            <!-- Treatment -->
+            <div>
+              <h2 class="font-display text-3xl lg:text-4xl font-bold text-stone-100" data-i18n="aboutGbs.treatmentTitle">
+                Treatment & Recovery
+              </h2>
+              <div class="mt-6 space-y-4">
+                <p class="text-stone-400 text-lg leading-relaxed font-body" data-i18n="aboutGbs.treatmentDesc1">
+                  There is no cure for GBS. Treatment focuses on reducing the severity of the immune attack and supporting the body through recovery. The two main treatments are:
+                </p>
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div class="bg-stone-900 rounded-xl p-6 border border-stone-800">
+                    <h4 class="font-display text-lg font-bold text-amber-400" data-i18n="aboutGbs.ivigTitle">IVIG</h4>
+                    <p class="text-stone-400 text-sm mt-2 font-body" data-i18n="aboutGbs.ivigDesc">Intravenous immunoglobulin — donated antibodies that help neutralise the damaging antibodies.</p>
+                  </div>
+                  <div class="bg-stone-900 rounded-xl p-6 border border-stone-800">
+                    <h4 class="font-display text-lg font-bold text-amber-400" data-i18n="aboutGbs.plasmaTitle">Plasmapheresis</h4>
+                    <p class="text-stone-400 text-sm mt-2 font-body" data-i18n="aboutGbs.plasmaDesc">A blood filtering process to remove the harmful antibodies from the bloodstream.</p>
+                  </div>
+                </div>
+                <p class="text-stone-400 text-lg leading-relaxed font-body" data-i18n="aboutGbs.treatmentDesc2">
+                  Recovery then depends on intensive physiotherapy and sheer determination. This is why the research our partner charities fund is so vital — better understanding of GBS means better outcomes for future patients.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-5">
+          <div class="lg:sticky lg:top-28 space-y-6">
+            <!-- Key facts -->
+            <div class="bg-stone-900 rounded-2xl p-8 border border-stone-800">
+              <h3 class="font-display text-xl font-bold text-stone-100 mb-6" data-i18n="aboutGbs.keyFacts">Key Facts</h3>
+              <div class="space-y-6">
+                <div>
+                  <p class="font-display text-3xl font-bold text-amber-400" data-i18n="aboutGbs.fact1Value">1-2</p>
+                  <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="aboutGbs.fact1Label">per 100,000 people affected each year</p>
+                </div>
+                <div class="h-px bg-stone-800"></div>
+                <div>
+                  <p class="font-display text-3xl font-bold text-amber-400" data-i18n="aboutGbs.fact2Value">Any age</p>
+                  <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="aboutGbs.fact2Label">GBS can strike anyone at any time</p>
+                </div>
+                <div class="h-px bg-stone-800"></div>
+                <div>
+                  <p class="font-display text-3xl font-bold text-amber-400" data-i18n="aboutGbs.fact3Value">No cure</p>
+                  <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="aboutGbs.fact3Label">Only treatment to manage the immune attack</p>
+                </div>
+                <div class="h-px bg-stone-800"></div>
+                <div>
+                  <p class="font-display text-3xl font-bold text-amber-400" data-i18n="aboutGbs.fact4Value">20%</p>
+                  <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="aboutGbs.fact4Label">of patients left with significant disability</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Our charities -->
+            <div class="bg-amber-500/10 rounded-2xl p-8 border border-amber-500/20">
+              <h3 class="font-display text-xl font-bold text-amber-400 mb-4" data-i18n="aboutGbs.supportingResearch">Supporting Research</h3>
+              <p class="text-stone-400 text-sm font-body leading-relaxed" data-i18n="aboutGbs.supportingDesc">
+                Our ride raises funds for Inflammatory Neuropathies UK and GBS|CIDP España — organisations dedicated to supporting patients and funding research.
+              </p>
+              <a href="/donate" class="inline-flex items-center gap-2 bg-amber-500 text-stone-950 px-6 py-3 rounded-full font-body font-bold text-sm mt-6 hover:bg-amber-400 transition-colors" data-i18n="aboutGbs.donateToResearch">
+                Donate to GBS Research
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

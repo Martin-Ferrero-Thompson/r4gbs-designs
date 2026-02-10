@@ -1,0 +1,138 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="The Challenge"
+  heroTitle="To Conquer the Pyrenees"
+  heroSubtitle="A complete coast-to-coast traverse of one of the world's most challenging mountain ranges. Self-supported. Side by side."
+  heroTitleKey="theChallenge.heroTitle"
+  heroSubtitleKey="theChallenge.heroSubtitle"
+>
+  <!-- Stats -->
+  <section class="border-b border-stone-800">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-16">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="border-l-2 border-amber-500/40 pl-4">
+          <p class="font-display text-4xl lg:text-5xl font-bold text-stone-100">~12</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.totalDays">Total Days</p>
+        </div>
+        <div class="border-l-2 border-amber-500/40 pl-4">
+          <p class="font-display text-4xl lg:text-5xl font-bold text-stone-100">~1,000</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.kilometres">Kilometres</p>
+        </div>
+        <div class="border-l-2 border-amber-500/40 pl-4">
+          <p class="font-display text-4xl lg:text-5xl font-bold text-stone-100">~22,000</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.metresOfClimbing">Metres of Climbing</p>
+        </div>
+        <div class="border-l-2 border-amber-500/40 pl-4">
+          <p class="font-display text-4xl lg:text-5xl font-bold text-amber-400">~2.5×</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.heightOfEverest">The Height of Everest</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenge Description -->
+  <section>
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-40">
+      <div class="max-w-3xl">
+        <p class="text-stone-300 text-xl leading-relaxed font-body" data-i18n="theChallenge.introDesc">
+          This is more than a bike ride; it's the next chapter in our shared story. A testament to Edurne's unwavering support through every step of my GBS journey, this is our challenge — a complete coast-to-coast traverse of one of the world's most challenging mountain ranges.
+        </p>
+      </div>
+
+      <!-- Route sections -->
+      <div class="mt-20 space-y-16">
+        <!-- Shared Journey -->
+        <div class="grid lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-4">
+            <span class="text-amber-500 font-body text-xs tracking-[0.3em] uppercase" data-i18n="theChallenge.styleTag">The Style</span>
+            <h2 class="font-display text-3xl lg:text-4xl font-bold text-stone-100 mt-3" data-i18n="theChallenge.styleTitle">A Shared Journey</h2>
+          </div>
+          <div class="lg:col-span-8">
+            <p class="text-stone-400 text-lg leading-relaxed font-body" data-i18n="theChallenge.styleDesc1">
+              This challenge is a journey we will undertake as a team, side-by-side. We'll be riding in a self-supported bikepacking style, carrying all our own equipment and relying on the kindness of the community we meet along the way.
+            </p>
+            <p class="text-stone-500 text-lg leading-relaxed font-body mt-4" data-i18n="theChallenge.styleDesc2">
+              We would be honored and motivated to have local riders join us for a few kilometers or to share the effort on a classic mountain pass. This journey is about community, and we welcome anyone who wants to be a part of it.
+            </p>
+          </div>
+        </div>
+
+        <div class="h-px bg-stone-800"></div>
+
+        <!-- French Ascent -->
+        <div class="grid lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-4">
+            <div class="bg-stone-900 rounded-2xl p-6 border border-stone-800">
+              <span class="text-amber-500/50 font-display text-4xl font-bold" data-i18n="theChallenge.frenchNum">01</span>
+              <h3 class="font-display text-2xl font-bold text-stone-100 mt-2" data-i18n="theChallenge.frenchTitle">The French Ascent</h3>
+              <div class="mt-4 space-y-2">
+                <div class="flex justify-between text-sm font-body">
+                  <span class="text-stone-500" data-i18n="theChallenge.direction">Direction</span>
+                  <span class="text-stone-300" data-i18n="theChallenge.frenchDirection">Atlantic → Mediterranean</span>
+                </div>
+                <div class="flex justify-between text-sm font-body">
+                  <span class="text-stone-500" data-i18n="theChallenge.distance">Distance</span>
+                  <span class="text-stone-300" data-i18n="theChallenge.frenchDistance">~500km</span>
+                </div>
+                <div class="flex justify-between text-sm font-body">
+                  <span class="text-stone-500" data-i18n="theChallenge.terrain">Terrain</span>
+                  <span class="text-stone-300" data-i18n="theChallenge.frenchTerrain">High cols, steep gradients</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-8 flex items-center">
+            <div>
+              <p class="text-stone-400 text-lg leading-relaxed font-body" data-i18n="theChallenge.frenchDesc">
+                East from the Basque coast, battling the legendary cols of the French Pyrenees. Aubisque, Tourmalet, Aspin — names that echo through cycling history. Each summit is a victory over both mountain and the limitations GBS tried to impose. The French side is characterised by steep, dramatic climbs and deep, verdant valleys that funnel you toward the next great challenge.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="h-px bg-stone-800"></div>
+
+        <!-- Spanish Homecoming -->
+        <div class="grid lg:grid-cols-12 gap-12">
+          <div class="lg:col-span-4">
+            <div class="bg-stone-900 rounded-2xl p-6 border border-stone-800">
+              <span class="text-amber-500/50 font-display text-4xl font-bold" data-i18n="theChallenge.spanishNum">02</span>
+              <h3 class="font-display text-2xl font-bold text-stone-100 mt-2" data-i18n="theChallenge.spanishTitle">The Spanish Homecoming</h3>
+              <div class="mt-4 space-y-2">
+                <div class="flex justify-between text-sm font-body">
+                  <span class="text-stone-500" data-i18n="theChallenge.direction">Direction</span>
+                  <span class="text-stone-300" data-i18n="theChallenge.spanishDirection">Mediterranean → Atlantic</span>
+                </div>
+                <div class="flex justify-between text-sm font-body">
+                  <span class="text-stone-500" data-i18n="theChallenge.distance">Distance</span>
+                  <span class="text-stone-300" data-i18n="theChallenge.spanishDistance">~500km</span>
+                </div>
+                <div class="flex justify-between text-sm font-body">
+                  <span class="text-stone-500" data-i18n="theChallenge.terrain">Terrain</span>
+                  <span class="text-stone-300" data-i18n="theChallenge.spanishTerrain">Long, remote climbs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-8 flex items-center">
+            <div>
+              <p class="text-stone-400 text-lg leading-relaxed font-body" data-i18n="theChallenge.spanishDesc">
+                After reaching the Mediterranean, the journey turns west for the long road home. This is a test of endurance and heart, a deep dive into the Spanish side of the mountains. Our route will focus on the long, remote, and beautiful roads of Catalunya, Aragón, and finally, Navarra. The climbs are less steep but just as relentless, demanding a different kind of strength for the journey back to the Atlantic.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-24 text-center">
+        <a href="/donate" class="inline-flex items-center gap-2 bg-amber-500 text-stone-950 px-10 py-4 rounded-full font-body font-bold hover:bg-amber-400 transition-colors">
+          <span data-i18n="theChallenge.supportChallenge">Support This Challenge</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

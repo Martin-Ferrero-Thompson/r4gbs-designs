@@ -1,0 +1,100 @@
+---
+/**
+ * LanguageSwitcher
+ * ────────────────
+ * A compact pill-style toggle for EN / ES / EU.
+ * Persists choice to localStorage; triggers client-side text swap.
+ */
+interface Props {
+  variant?: '1' | '2' | '3' | '4' | '5' | '6';
+}
+
+const { variant = '1' } = Astro.props;
+
+const languages = [
+  { code: 'en', label: 'EN' },
+  { code: 'es', label: 'ES' },
+  { code: 'eu', label: 'EU' },
+];
+
+const variantStyles: Record<string, { pill: string; active: string; inactive: string }> = {
+  '1': {
+    pill: 'bg-stone-900/80 border-stone-700',
+    active: 'bg-amber-500 text-stone-950',
+    inactive: 'text-stone-400 hover:text-stone-200',
+  },
+  '2': {
+    pill: 'bg-stone-950 border-stone-700',
+    active: 'bg-stone-100 text-stone-950',
+    inactive: 'text-stone-400 hover:text-stone-200',
+  },
+  '3': {
+    pill: 'bg-white/90 border-stone-200',
+    active: 'bg-pine-600 text-white',
+    inactive: 'text-stone-500 hover:text-stone-700',
+  },
+  '4': {
+    pill: 'bg-[#0a0b0a] border-[#39FF14]/20',
+    active: 'bg-[#39FF14] text-[#030304]',
+    inactive: 'text-[#555] hover:text-[#39FF14]',
+  },
+  '5': {
+    pill: 'bg-[#1a1210] border-[#C9A84C]/20',
+    active: 'bg-[#C9A84C] text-[#1a1210]',
+    inactive: 'text-[#8a7a6a] hover:text-[#C9A84C]',
+  },
+  '6': {
+    pill: 'bg-white/5 border-white/10',
+    active: 'bg-[#00FFD1] text-[#0B0D17]',
+    inactive: 'text-white/40 hover:text-[#00FFD1]',
+  },
+};
+
+const styles = variantStyles[variant];
+---
+
+<div
+  class={`inline-flex items-center gap-0.5 rounded-full border px-1 py-1 ${styles.pill}`}
+  id="lang-switcher"
+  data-active-classes={styles.active}
+  data-inactive-classes={styles.inactive}
+>
+  {languages.map((lang) => (
+    <button
+      data-lang-btn={lang.code}
+      class={`px-2.5 py-1 rounded-full text-xs font-body font-medium transition-all duration-200 cursor-pointer ${styles.inactive}`}
+      onclick={`window.__setLang && window.__setLang('${lang.code}')`}
+      aria-label={`Switch to ${lang.label}`}
+      translate="no"
+    >
+      {lang.label}
+    </button>
+  ))}
+</div>
+
+<script>
+  function applyLangStyles() {
+    const currentLang = localStorage.getItem('riding4gbs-lang') || 'en';
+
+    document.querySelectorAll<HTMLElement>('#lang-switcher').forEach((switcher) => {
+      const activeClasses = (switcher.dataset.activeClasses || '').split(/\s+/).filter(Boolean);
+      const inactiveClasses = (switcher.dataset.inactiveClasses || '').split(/\s+/).filter(Boolean);
+
+      switcher.querySelectorAll<HTMLElement>('[data-lang-btn]').forEach((btn) => {
+        const btnLang = btn.getAttribute('data-lang-btn');
+        if (btnLang === currentLang) {
+          btn.classList.remove(...inactiveClasses);
+          btn.classList.add(...activeClasses);
+        } else {
+          btn.classList.remove(...activeClasses);
+          btn.classList.add(...inactiveClasses);
+        }
+      });
+    });
+  }
+
+  applyLangStyles();
+
+  // Re-apply when language changes
+  document.addEventListener('lang:changed', () => applyLangStyles());
+</script>

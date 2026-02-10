@@ -1,0 +1,39 @@
+---
+/**
+ * Design Version Selector
+ * A floating pill that lets users switch between the three homepage designs.
+ */
+interface Props {
+  current: '1' | '2' | '3' | '4' | '5' | '6';
+}
+
+const { current } = Astro.props;
+
+const designs = [
+  { id: '1', label: 'Cinematic', color: 'bg-amber-500', i18nKey: 'designSelector.cinematic' },
+  { id: '2', label: 'Brutalist', color: 'bg-ember-500', i18nKey: 'designSelector.brutalist' },
+  { id: '3', label: 'Organic', color: 'bg-pine-500', i18nKey: 'designSelector.organic' },
+  { id: '4', label: 'Signal', color: 'bg-[#39FF14]', i18nKey: 'designSelector.signal' },
+  { id: '5', label: 'Tectonic', color: 'bg-[#C9A84C]', i18nKey: 'designSelector.tectonic' },
+  { id: '6', label: 'Aurora', color: 'bg-[#00FFD1]', i18nKey: 'designSelector.aurora' },
+];
+---
+
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 animate-fade-up" style="animation-delay: 1.5s;">
+  <div class="bg-stone-950/95 backdrop-blur-xl border border-stone-700 rounded-full px-2 py-2 flex items-center gap-1 shadow-2xl">
+    <span class="text-stone-500 text-xs font-body px-3 hidden sm:inline" data-i18n="designSelector.label">Design:</span>
+    {designs.map(d => (
+      <a
+        href={`/${d.id}`}
+        class={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-body font-medium transition-all duration-200 ${
+          current === d.id
+            ? `${d.color} text-white shadow-lg`
+            : 'text-stone-400 hover:text-stone-200 hover:bg-stone-800'
+        }`}
+      >
+        <span class={`w-2 h-2 rounded-full ${d.color} ${current === d.id ? 'opacity-0' : 'opacity-60'}`}></span>
+        <span data-i18n={d.i18nKey}>{d.label}</span>
+      </a>
+    ))}
+  </div>
+</div>

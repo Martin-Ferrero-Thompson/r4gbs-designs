@@ -1,0 +1,63 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Journal Hub"
+  heroTitle="Journal Hub"
+  heroSubtitle="Follow the daily progress from the road, with updates, photos, and stories from the journey."
+  heroTitleKey="journal.heroTitle"
+  heroSubtitleKey="journal.heroSubtitle"
+>
+  <section>
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
+
+      <!-- Pre-launch state -->
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="bg-stone-900 rounded-3xl p-12 lg:p-16 border border-stone-800">
+          <div class="w-20 h-20 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-8">
+            <svg class="w-10 h-10 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+            </svg>
+          </div>
+          <h2 class="font-display text-3xl lg:text-4xl font-bold text-stone-100" data-i18n="journal.activates">
+            Journal activates October 2026
+          </h2>
+          <p class="text-stone-400 text-lg mt-6 font-body max-w-lg mx-auto" data-i18n="journal.activatesDesc">
+            During the challenge, this page will fill with daily updates, photos from the road, and stories from each stage of the Pyrenean traverse. Every mountain pass, every meal, every moment of triumph and struggle.
+          </p>
+          <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/the-challenge" class="inline-flex items-center gap-2 bg-amber-500 text-stone-950 px-8 py-3 rounded-full font-body font-bold text-sm hover:bg-amber-400 transition-colors" data-i18n="journal.learnRoute">
+              Learn About the Route
+            </a>
+            <a href="/our-progress" class="inline-flex items-center gap-2 border border-stone-600 text-stone-300 px-8 py-3 rounded-full font-body text-sm hover:border-amber-500 hover:text-amber-400 transition-colors" data-i18n="journal.trackProgress">
+              Track Our Progress
+            </a>
+          </div>
+        </div>
+
+        <!-- Future journal entry preview -->
+        <div class="mt-16">
+          <h3 class="font-display text-xl font-bold text-stone-100 mb-6 text-left" data-i18n="journal.whatToExpect">What to expect</h3>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-stone-900 rounded-xl p-6 border border-stone-800 text-left">
+              <span class="text-amber-500/50 font-body text-xs uppercase tracking-wider" data-i18n="journal.dailyTag">Daily</span>
+              <h4 class="font-display text-lg font-bold text-stone-200 mt-2" data-i18n="journal.dailyTitle">Stage Reports</h4>
+              <p class="text-stone-500 text-sm mt-2 font-body" data-i18n="journal.dailyDesc">Detailed accounts of each day's riding — the climbs, the descents, the moments that matter.</p>
+            </div>
+            <div class="bg-stone-900 rounded-xl p-6 border border-stone-800 text-left">
+              <span class="text-amber-500/50 font-body text-xs uppercase tracking-wider" data-i18n="journal.visualTag">Visual</span>
+              <h4 class="font-display text-lg font-bold text-stone-200 mt-2" data-i18n="journal.visualTitle">Photo Journals</h4>
+              <p class="text-stone-500 text-sm mt-2 font-body" data-i18n="journal.visualDesc">Images from the road capturing the beauty of the Pyrenees and the reality of the challenge.</p>
+            </div>
+            <div class="bg-stone-900 rounded-xl p-6 border border-stone-800 text-left sm:col-span-2 lg:col-span-1">
+              <span class="text-amber-500/50 font-body text-xs uppercase tracking-wider" data-i18n="journal.personalTag">Personal</span>
+              <h4 class="font-display text-lg font-bold text-stone-200 mt-2" data-i18n="journal.personalTitle">Reflections</h4>
+              <p class="text-stone-500 text-sm mt-2 font-body" data-i18n="journal.personalDesc">Honest thoughts on GBS, recovery, and what it means to push your body after it's been broken.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
