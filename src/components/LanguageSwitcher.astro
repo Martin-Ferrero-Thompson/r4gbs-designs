@@ -4,10 +4,16 @@ interface Props {
 }
 
 const { variant = '1' } = Astro.props;
+const flags: Record<string, string> = {
+  en: '<svg class="h-3.5 w-5 shrink-0 rounded-sm overflow-hidden" viewBox="0 0 60 40"><rect width="60" height="40" fill="#012169" rx="2"/><path d="M0 0L60 40M60 0L0 40" stroke="#fff" stroke-width="8"/><path d="M0 0L60 40M60 0L0 40" stroke="#C8102E" stroke-width="4"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="12"/><path d="M30 0v40M0 20h60" stroke="#C8102E" stroke-width="6"/></svg>',
+  es: '<svg class="h-3.5 w-5 shrink-0 rounded-sm overflow-hidden" viewBox="0 0 60 40"><rect width="60" height="40" fill="#AA151B" rx="2"/><rect y="10" width="60" height="20" fill="#F1BF00"/></svg>',
+  eu: '<svg class="h-3.5 w-5 shrink-0 rounded-sm overflow-hidden" viewBox="0 0 60 40"><rect width="60" height="40" fill="#D52B1E" rx="2"/><path d="M0 0L60 40M60 0L0 40" stroke="#39884C" stroke-width="8"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="6"/></svg>',
+};
+
 const languages = [
-  { code: 'en', label: 'English' },
-  { code: 'es', label: 'Español' },
-  { code: 'eu', label: 'Euskara' },
+  { code: 'en', label: 'English', flag: flags.en },
+  { code: 'es', label: 'Español', flag: flags.es },
+  { code: 'eu', label: 'Euskara', flag: flags.eu },
 ];
 
 const variantStyles: Record<string, { trigger: string; menu: string; option: string; selected: string }> = {
@@ -30,11 +36,12 @@ const styles = variantStyles[variant] ?? variantStyles['1'];
 <div class="relative inline-block" data-lang-root data-selected-class={styles.selected}>
   <button
     type="button"
-    class={`inline-flex items-center gap-1 text-sm font-medium transition-colors duration-150 ${styles.trigger}`}
+    class={`inline-flex items-center gap-1.5 text-sm font-medium transition-colors duration-150 ${styles.trigger}`}
     data-lang-trigger
     aria-haspopup="listbox"
     aria-expanded="false"
   >
+    <span data-lang-flag aria-hidden="true" set:html={flags.en}></span>
     <span data-lang-current translate="no">EN</span>
     <svg aria-hidden="true" class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
       <path d="M3 6l5 5 5-5" stroke-linecap="round" stroke-linejoin="round" />
@@ -52,10 +59,11 @@ const styles = variantStyles[variant] ?? variantStyles['1'];
         type="button"
         role="option"
         data-lang-option={lang.code}
-        class={`flex w-full items-center justify-between rounded-md px-3 py-2 text-sm transition-colors duration-150 ${styles.option}`}
+        class={`flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors duration-150 ${styles.option}`}
       >
-        <span translate="no">{lang.label}</span>
-        <svg aria-hidden="true" class="h-4 w-4 opacity-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+        <span aria-hidden="true" class="flex-shrink-0" set:html={lang.flag}></span>
+        <span class="flex-1" translate="no">{lang.label}</span>
+        <svg aria-hidden="true" data-checkmark class="h-4 w-4 flex-shrink-0 opacity-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M5 10.5l3.5 3.5L15 6" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </button>
@@ -74,15 +82,24 @@ const styles = variantStyles[variant] ?? variantStyles['1'];
     if (window.__setLang) window.__setLang(value);
   }
 
+  const flagSVGs = {
+    en: '<svg class="h-3.5 w-5 shrink-0 rounded-sm overflow-hidden" viewBox="0 0 60 40"><rect width="60" height="40" fill="#012169" rx="2"/><path d="M0 0L60 40M60 0L0 40" stroke="#fff" stroke-width="8"/><path d="M0 0L60 40M60 0L0 40" stroke="#C8102E" stroke-width="4"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="12"/><path d="M30 0v40M0 20h60" stroke="#C8102E" stroke-width="6"/></svg>',
+    es: '<svg class="h-3.5 w-5 shrink-0 rounded-sm overflow-hidden" viewBox="0 0 60 40"><rect width="60" height="40" fill="#AA151B" rx="2"/><rect y="10" width="60" height="20" fill="#F1BF00"/></svg>',
+    eu: '<svg class="h-3.5 w-5 shrink-0 rounded-sm overflow-hidden" viewBox="0 0 60 40"><rect width="60" height="40" fill="#D52B1E" rx="2"/><path d="M0 0L60 40M60 0L0 40" stroke="#39884C" stroke-width="8"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="6"/></svg>',
+  };
+
   function updateLangUI(root) {
     const current = getCurrentLang();
     const currentEl = root.querySelector('[data-lang-current]');
     if (currentEl) currentEl.textContent = current.toUpperCase();
 
+    const flagEl = root.querySelector('[data-lang-flag]');
+    if (flagEl && current in flagSVGs) flagEl.innerHTML = flagSVGs[current as keyof typeof flagSVGs];
+
     root.querySelectorAll('[data-lang-option]').forEach((btn) => {
       const code = btn.getAttribute('data-lang-option');
       const isActive = code === current;
-      const icon = btn.querySelector('svg');
+      const icon = btn.querySelector('[data-checkmark]');
 
       const selectedClasses = (root.dataset.selectedClass || '').split(/\s+/).filter(Boolean);
 

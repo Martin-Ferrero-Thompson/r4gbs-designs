@@ -31,7 +31,7 @@ const styles = variantStyles[variant] ?? variantStyles['1'];
 <div class="relative inline-block" data-theme-root data-selected-class={styles.selected}>
   <button
     type="button"
-    class={`flex h-9 w-9 items-center justify-center rounded-full text-sm transition-colors duration-150 ${styles.trigger}`}
+    class={`inline-flex h-9 items-center gap-1 rounded-full px-2 text-sm transition-colors duration-150 ${styles.trigger}`}
     data-theme-trigger
     aria-haspopup="listbox"
     aria-expanded="false"
@@ -44,6 +44,9 @@ const styles = variantStyles[variant] ?? variantStyles['1'];
         <line x1="12" y1="17" x2="12" y2="21" />
       </svg>
     </span>
+    <svg aria-hidden="true" class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M3 6l5 5 5-5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
   </button>
 
   <div
