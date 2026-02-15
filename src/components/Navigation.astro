@@ -59,16 +59,18 @@ const styles = variantStyles[variant] ?? variantStyles['1'];
             {link.label}
           </a>
         ))}
-        <a
-          href="/donate"
-          data-i18n="nav.donate"
-          class={`ml-4 px-5 py-2.5 rounded-full text-sm ${styles.cta} transition-all duration-300`}
-        >
-          Donate
-        </a>
-        <div class="ml-3 flex items-center gap-3">
-          <ThemeToggle variant={variant} />
-          <LanguageSwitcher variant={variant} />
+        <div class="nav-actions ml-4 flex items-center">
+          <a
+            href="/donate"
+            data-i18n="nav.donate"
+            class={`px-5 py-2.5 rounded-full text-sm ${styles.cta} transition-all duration-300`}
+          >
+            Donate
+          </a>
+          <div class="nav-utilities flex items-center gap-4">
+            <ThemeToggle variant={variant} />
+            <LanguageSwitcher variant={variant} />
+          </div>
         </div>
       </div>
 
@@ -126,3 +128,12 @@ const styles = variantStyles[variant] ?? variantStyles['1'];
     toggle.setAttribute('aria-expanded', String(isOpen));
   });
 </script>
+
+<style>
+  .nav-utilities {
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    margin-left: 24px;
+    padding-left: 24px;
+    gap: 16px;
+  }
+</style>
