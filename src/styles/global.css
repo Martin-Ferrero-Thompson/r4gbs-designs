@@ -95,6 +95,70 @@
   --color-stone-950: #fafaf9;
 }
 
+/* ─── Signal Theme (Variant 4) Design Tokens ─── */
+.variant-signal {
+  --sig-void: #030304;
+  --sig-void-alt: #0a0b0c;
+  --sig-green: #39FF14;
+  --sig-green-hover: #50ff3e;
+  --sig-green-dim: rgba(57, 255, 20, 0.4);
+  --sig-green-border: rgba(57, 255, 20, 0.15);
+  --sig-green-border-md: rgba(57, 255, 20, 0.3);
+  --sig-green-bg: rgba(57, 255, 20, 0.1);
+  --sig-green-bg-subtle: rgba(57, 255, 20, 0.03);
+  --sig-amber: #FFB800;
+  --sig-amber-bg: rgba(255, 184, 0, 0.1);
+  --sig-rule-bg: #111;
+}
+
+.variant-signal[data-theme="light"] {
+  --sig-void: #f7f8f9;
+  --sig-void-alt: #ebedf0;
+  --sig-green: #16a34a;
+  --sig-green-hover: #15803d;
+  --sig-green-dim: rgba(22, 163, 74, 0.5);
+  --sig-green-border: rgba(22, 163, 74, 0.25);
+  --sig-green-border-md: rgba(22, 163, 74, 0.4);
+  --sig-green-bg: rgba(22, 163, 74, 0.1);
+  --sig-green-bg-subtle: rgba(22, 163, 74, 0.05);
+  --sig-amber: #b45309;
+  --sig-amber-bg: rgba(180, 83, 9, 0.1);
+  --sig-rule-bg: #d1d5db;
+}
+
+/* ─── Signal Variant: Light Mode Component Overrides ─── */
+
+/* Navigation bar */
+html.variant-signal[data-theme="light"] #main-nav {
+  background-color: rgba(247, 248, 249, 0.85) !important;
+  border-bottom-color: var(--sig-green-border) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.variant-signal[data-theme="light"] #mobile-menu > div {
+  background-color: rgba(247, 248, 249, 0.9) !important;
+  border-top-color: var(--sig-green-border) !important;
+}
+
+html.variant-signal[data-theme="light"] .nav-utilities {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  border-color: var(--sig-green-border) !important;
+}
+
+/* Footer */
+html.variant-signal[data-theme="light"] footer {
+  background-color: var(--sig-void) !important;
+}
+
+/* Theme Toggle & Language Switcher dropdowns */
+html.variant-signal[data-theme="light"] [data-theme-menu],
+html.variant-signal[data-theme="light"] [data-lang-menu] {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: var(--sig-green-border) !important;
+  color: #374151 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
 /* ─── Base Resets ─── */
 @layer base {
   html {

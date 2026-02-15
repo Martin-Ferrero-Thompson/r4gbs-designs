@@ -26,13 +26,13 @@ import DesignSelector from '../components/DesignSelector.astro';
 
     .font-signal { font-family: 'Space Grotesk', sans-serif; }
     .font-mono-data { font-family: 'JetBrains Mono', monospace; }
-    .bg-void { background-color: #030304; }
-    .bg-void-light { background-color: #0a0b0c; }
-    .text-signal { color: #39FF14; }
-    .text-signal-dim { color: rgba(57, 255, 20, 0.4); }
-    .border-signal { border-color: rgba(57, 255, 20, 0.15); }
-    .bg-signal { background-color: #39FF14; }
-    .text-data { color: #FFB800; }
+    .bg-void { background-color: var(--sig-void); }
+    .bg-void-light { background-color: var(--sig-void-alt); }
+    .text-signal { color: var(--sig-green); }
+    .text-signal-dim { color: var(--sig-green-dim); }
+    .border-signal { border-color: var(--sig-green-border); }
+    .bg-signal { background-color: var(--sig-green); }
+    .text-data { color: var(--sig-amber); }
 
     /* Scan line effect */
     .scan-line::before {
@@ -42,7 +42,7 @@ import DesignSelector from '../components/DesignSelector.astro';
       left: 0;
       right: 0;
       height: 2px;
-      background: linear-gradient(90deg, transparent, #39FF14, transparent);
+      background: linear-gradient(90deg, transparent, var(--sig-green), transparent);
       animation: scan 4s ease-in-out infinite;
       opacity: 0.4;
     }
@@ -63,8 +63,8 @@ import DesignSelector from '../components/DesignSelector.astro';
     /* Grid overlay */
     .grid-overlay {
       background-image:
-        linear-gradient(rgba(57,255,20,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(57,255,20,0.03) 1px, transparent 1px);
+        linear-gradient(var(--sig-green-bg-subtle) 1px, transparent 1px),
+        linear-gradient(90deg, var(--sig-green-bg-subtle) 1px, transparent 1px);
       background-size: 60px 60px;
     }
 
@@ -75,9 +75,9 @@ import DesignSelector from '../components/DesignSelector.astro';
     }
     .signal-dot {
       width: 6px; height: 6px;
-      background: #39FF14;
+      background: var(--sig-green);
       border-radius: 50%;
-      box-shadow: 0 0 8px #39FF14, 0 0 20px rgba(57,255,20,0.3);
+      box-shadow: 0 0 8px var(--sig-green), 0 0 20px var(--sig-green-dim);
       animation: signalBlink 2s ease-in-out infinite;
     }
 
@@ -90,7 +90,7 @@ import DesignSelector from '../components/DesignSelector.astro';
       position: absolute;
       height: 1px;
       width: 200px;
-      background: linear-gradient(90deg, transparent, #39FF14, transparent);
+      background: linear-gradient(90deg, transparent, var(--sig-green), transparent);
       animation: dataStream 8s linear infinite;
     }
 
@@ -99,8 +99,8 @@ import DesignSelector from '../components/DesignSelector.astro';
       transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .panel-glow:hover {
-      box-shadow: 0 0 30px rgba(57,255,20,0.08), inset 0 0 30px rgba(57,255,20,0.03);
-      border-color: rgba(57,255,20,0.3);
+      box-shadow: 0 0 30px var(--sig-green-bg), inset 0 0 30px var(--sig-green-bg-subtle);
+      border-color: var(--sig-green-border-md);
     }
 
     /* Stagger animations for this page */
@@ -121,7 +121,154 @@ import DesignSelector from '../components/DesignSelector.astro';
     /* Horizontal rule with data */
     .data-divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(57,255,20,0.2), rgba(57,255,20,0.4), rgba(57,255,20,0.2), transparent);
+      background: linear-gradient(90deg, transparent, var(--sig-green-border), var(--sig-green-border-md), var(--sig-green-border), transparent);
+    }
+  </style>
+
+  <style is:global>
+    /* ─── Signal Variant Light Mode: Tailwind Utility Overrides ─── */
+
+    /* Primary text (headings, etc.) */
+    html.variant-signal[data-theme="light"] .text-white {
+      color: #111827 !important;
+    }
+    html.variant-signal[data-theme="light"] .text-white\/80 {
+      color: rgba(17, 24, 39, 0.85) !important;
+    }
+    html.variant-signal[data-theme="light"] .text-white\/70 {
+      color: rgba(17, 24, 39, 0.7) !important;
+    }
+
+    /* Secondary / muted text */
+    html.variant-signal[data-theme="light"] .text-\[\#999\] {
+      color: #374151 !important;
+    }
+    html.variant-signal[data-theme="light"] .text-\[\#888\] {
+      color: #4b5563 !important;
+    }
+    html.variant-signal[data-theme="light"] .text-\[\#666\] {
+      color: #6b7280 !important;
+    }
+    html.variant-signal[data-theme="light"] .text-\[\#555\] {
+      color: #9ca3af !important;
+    }
+
+    /* Button text on accent backgrounds */
+    html.variant-signal[data-theme="light"] .text-\[\#030304\] {
+      color: #ffffff !important;
+    }
+
+    /* Nav / component text colors */
+    html.variant-signal[data-theme="light"] .text-\[\#8a8a8a\] {
+      color: #4b5563 !important;
+    }
+    html.variant-signal[data-theme="light"] .text-\[\#7d7d7d\] {
+      color: #6b7280 !important;
+    }
+    html.variant-signal[data-theme="light"] .text-\[\#e5e5e5\] {
+      color: #374151 !important;
+    }
+    html.variant-signal[data-theme="light"] .text-\[\#b3b3b3\] {
+      color: #4b5563 !important;
+    }
+    html.variant-signal[data-theme="light"] .text-\[\#c5c5c5\] {
+      color: #374151 !important;
+    }
+
+    /* Signal green text/bg */
+    html.variant-signal[data-theme="light"] .text-\[\#39FF14\] {
+      color: var(--sig-green) !important;
+    }
+    html.variant-signal[data-theme="light"] .bg-\[\#39FF14\] {
+      background-color: var(--sig-green) !important;
+    }
+    html.variant-signal[data-theme="light"] .bg-\[\#39FF14\]\/10 {
+      background-color: var(--sig-green-bg) !important;
+    }
+    html.variant-signal[data-theme="light"] .bg-\[\#39FF14\]\/3 {
+      background-color: rgba(22, 163, 74, 0.03) !important;
+    }
+
+    /* Amber data color */
+    html.variant-signal[data-theme="light"] .bg-\[\#FFB800\]\/10 {
+      background-color: var(--sig-amber-bg) !important;
+    }
+
+    /* Dark backgrounds */
+    html.variant-signal[data-theme="light"] .bg-\[\#030304\]\/40 {
+      background-color: rgba(247, 248, 249, 0.85) !important;
+    }
+    html.variant-signal[data-theme="light"] .bg-\[\#030304\]\/60 {
+      background-color: rgba(247, 248, 249, 0.9) !important;
+    }
+    html.variant-signal[data-theme="light"] .bg-\[\#050505\]\/40,
+    html.variant-signal[data-theme="light"] .bg-\[\#050505\]\/95 {
+      background-color: rgba(255, 255, 255, 0.95) !important;
+    }
+    html.variant-signal[data-theme="light"] .bg-\[\#111\] {
+      background-color: var(--sig-rule-bg) !important;
+    }
+    html.variant-signal[data-theme="light"] .bg-\[\#0a0b0a\] {
+      background-color: var(--sig-void-alt) !important;
+    }
+
+    /* Borders */
+    html.variant-signal[data-theme="light"] .border-\[\#39FF14\]\/10 {
+      border-color: var(--sig-green-border) !important;
+    }
+    html.variant-signal[data-theme="light"] .border-\[\#39FF14\]\/15 {
+      border-color: var(--sig-green-border) !important;
+    }
+    html.variant-signal[data-theme="light"] .border-\[\#39FF14\]\/20 {
+      border-color: var(--sig-green-border) !important;
+    }
+    html.variant-signal[data-theme="light"] .border-\[\#39FF14\]\/30 {
+      border-color: var(--sig-green-border-md) !important;
+    }
+    html.variant-signal[data-theme="light"] .border-\[\#39FF14\]\/5 {
+      border-color: var(--sig-green-border) !important;
+    }
+
+    /* Shadows */
+    html.variant-signal[data-theme="light"] .shadow-\[\#39FF14\]\/5 {
+      --tw-shadow-color: rgba(22, 163, 74, 0.05);
+    }
+
+    /* Hover states */
+    html.variant-signal[data-theme="light"] .hover\:text-\[\#39FF14\]:hover {
+      color: var(--sig-green) !important;
+    }
+    html.variant-signal[data-theme="light"] .hover\:text-\[\#50ff3e\]:hover {
+      color: var(--sig-green-hover) !important;
+    }
+    html.variant-signal[data-theme="light"] .hover\:text-\[\#c5c5c5\]:hover {
+      color: #111827 !important;
+    }
+    html.variant-signal[data-theme="light"] .hover\:bg-\[\#39FF14\]\/10:hover {
+      background-color: var(--sig-green-bg) !important;
+    }
+    html.variant-signal[data-theme="light"] .hover\:text-white:hover {
+      color: #111827 !important;
+    }
+    html.variant-signal[data-theme="light"] .hover\:text-stone-200:hover,
+    html.variant-signal[data-theme="light"] .hover\:text-stone-100:hover {
+      color: #111827 !important;
+    }
+    html.variant-signal[data-theme="light"] .hover\:bg-stone-800:hover {
+      background-color: rgba(0, 0, 0, 0.06) !important;
+    }
+
+    /* Gradient line at bottom of hero */
+    html.variant-signal[data-theme="light"] .via-\[\#39FF14\]\/30 {
+      --tw-gradient-via: var(--sig-green-border-md);
+    }
+
+    /* Ring focus color */
+    html.variant-signal[data-theme="light"] .ring-\[\#39FF14\]\/50 {
+      --tw-ring-color: var(--sig-green-border-md);
+    }
+    html.variant-signal[data-theme="light"] .focus-visible\:ring-\[\#39FF14\]\/50:focus-visible {
+      --tw-ring-color: var(--sig-green-border-md);
     }
   </style>
 
