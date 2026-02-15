@@ -6,46 +6,67 @@ interface Props {
 const { variant = '1' } = Astro.props;
 
 const options = [
-  { mode: 'system', label: 'System', i18nKey: 'theme.system' },
-  { mode: 'dark', label: 'Dark', i18nKey: 'theme.dark' },
-  { mode: 'light', label: 'Light', i18nKey: 'theme.light' },
+  { mode: 'system', label: 'System', i18nKey: 'theme.system', icon: '<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>' },
+  { mode: 'dark', label: 'Dark', i18nKey: 'theme.dark', icon: '<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>' },
+  { mode: 'light', label: 'Light', i18nKey: 'theme.light', icon: '<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>' },
 ];
 
-const variantStyles: Record<string, { pill: string; active: string; inactive: string }> = {
+const variantStyles: Record<string, { trigger: string; menu: string; option: string; selected: string }> = {
   '1': {
-    pill: 'bg-stone-900/80 border-stone-700 text-stone-200',
-    active: 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/20',
-    inactive: 'text-stone-400 hover:text-stone-100',
+    trigger: 'text-stone-400 hover:text-stone-200 hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-stone-600',
+    menu: 'bg-stone-950/95 border border-stone-800 shadow-lg shadow-black/30 text-stone-200',
+    option: 'text-stone-300 hover:text-stone-100',
+    selected: 'text-amber-400',
   },
   '4': {
-    pill: 'bg-[#0a0b0a] border-[#39FF14]/20 text-[#9b9b9b]',
-    active: 'bg-[#39FF14] text-[#030304] shadow-lg shadow-[#39FF14]/25',
-    inactive: 'text-[#7d7d7d] hover:text-[#39FF14]',
+    trigger: 'text-[#7d7d7d] hover:text-[#c5c5c5] hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#39FF14]/50',
+    menu: 'bg-[#050505]/95 border border-[#39FF14]/15 shadow-lg shadow-black/40 text-[#e5e5e5]',
+    option: 'text-[#b3b3b3] hover:text-white',
+    selected: 'text-[#39FF14]',
   },
 };
 
 const styles = variantStyles[variant] ?? variantStyles['1'];
 ---
+<div class="relative inline-block" data-theme-root data-selected-class={styles.selected}>
+  <button
+    type="button"
+    class={`flex h-9 w-9 items-center justify-center rounded-full text-sm transition-colors duration-150 ${styles.trigger}`}
+    data-theme-trigger
+    aria-haspopup="listbox"
+    aria-expanded="false"
+  >
+    <span class="sr-only" data-i18n="theme.label">Theme</span>
+    <span aria-hidden="true" data-theme-icon>
+      <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <line x1="8" y1="21" x2="16" y2="21" />
+        <line x1="12" y1="17" x2="12" y2="21" />
+      </svg>
+    </span>
+  </button>
 
-<div
-  class={`inline-flex items-center gap-0.5 rounded-full border px-1 py-1 backdrop-blur ${styles.pill}`}
-  data-theme-switcher
-  data-active-classes={styles.active}
-  data-inactive-classes={styles.inactive}
->
-  <span class="sr-only" data-i18n="theme.label">Theme</span>
-  {options.map((opt) => (
-    <button
-      type="button"
-      data-theme-btn={opt.mode}
-      class={`group px-2.5 py-1 rounded-full text-xs font-body font-medium transition-all duration-200 flex items-center gap-1 ${styles.inactive}`}
-      onclick={`window.__setTheme && window.__setTheme('${opt.mode}')`}
-      aria-label={`${opt.label} theme`}
-    >
-      <span class="h-2 w-2 rounded-full bg-current opacity-60 group-hover:opacity-100"></span>
-      <span data-i18n={opt.i18nKey}>{opt.label}</span>
-    </button>
-  ))}
+  <div
+    class={`absolute right-0 mt-2 min-w-[160px] rounded-lg p-2 opacity-0 scale-95 pointer-events-none transition duration-150 ease-out ${styles.menu}`}
+    data-theme-menu
+    role="listbox"
+    aria-label="Select theme"
+  >
+    {options.map((opt) => (
+      <button
+        type="button"
+        role="option"
+        data-theme-option={opt.mode}
+        class={`flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors duration-150 ${styles.option}`}
+      >
+        <span class="flex-shrink-0 opacity-70" aria-hidden="true" set:html={opt.icon} />
+        <span class="flex-1" data-i18n={opt.i18nKey}>{opt.label}</span>
+        <svg aria-hidden="true" data-checkmark class="h-4 w-4 flex-shrink-0 opacity-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 10.5l3.5 3.5L15 6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    ))}
+  </div>
 </div>
 
 <script>
@@ -58,34 +79,130 @@ const styles = variantStyles[variant] ?? variantStyles['1'];
     return localStorage.getItem(STORAGE_KEY) || 'system';
   }
 
-  function updateThemeButtons() {
-    const activeMode = currentMode();
+  function setMode(mode) {
+    if (window.__setTheme) window.__setTheme(mode);
+  }
 
-    document.querySelectorAll<HTMLElement>('[data-theme-switcher]').forEach((switcher) => {
-      const activeClasses = (switcher.dataset.activeClasses || '').split(/\s+/).filter(Boolean);
-      const inactiveClasses = (switcher.dataset.inactiveClasses || '').split(/\s+/).filter(Boolean);
+  function iconFor(mode) {
+    if (mode === 'dark') {
+      return `<svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>`;
+    }
+    if (mode === 'light') {
+      return `<svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>`;
+    }
+    return `<svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>`;
+  }
 
-      switcher.querySelectorAll<HTMLElement>('[data-theme-btn]').forEach((btn) => {
-        const btnMode = btn.getAttribute('data-theme-btn');
-        if (btnMode === activeMode) {
-          btn.classList.remove(...inactiveClasses);
-          btn.classList.add(...activeClasses);
-        } else {
-          btn.classList.remove(...activeClasses);
-          btn.classList.add(...inactiveClasses);
-        }
-      });
+  function updateThemeUI(root) {
+    const mode = currentMode();
+    const iconSlot = root.querySelector('[data-theme-icon]');
+    if (iconSlot) iconSlot.innerHTML = iconFor(mode);
+
+    root.querySelectorAll('[data-theme-option]').forEach((btn) => {
+      const value = btn.getAttribute('data-theme-option');
+      const isActive = value === mode;
+      const checkmark = btn.querySelector('[data-checkmark]');
+      const selectedClasses = (root.dataset.selectedClass || '').split(/\s+/).filter(Boolean);
+
+      if (isActive) {
+        btn.classList.add(...selectedClasses);
+        btn.classList.remove('opacity-80');
+        btn.setAttribute('aria-selected', 'true');
+      } else {
+        btn.classList.remove(...selectedClasses);
+        btn.classList.add('opacity-80');
+        btn.setAttribute('aria-selected', 'false');
+      }
+
+      if (checkmark) checkmark.style.opacity = isActive ? '1' : '0';
     });
   }
 
-  updateThemeButtons();
+  function closeThemeMenu(root) {
+    const menu = root.querySelector('[data-theme-menu]');
+    const trigger = root.querySelector('[data-theme-trigger]');
+    if (!menu || !trigger) return;
+    menu.classList.add('pointer-events-none', 'opacity-0', 'scale-95');
+    trigger.setAttribute('aria-expanded', 'false');
+  }
 
-  document.addEventListener('theme:changed', () => updateThemeButtons());
+  function openThemeMenu(root) {
+    const menu = root.querySelector('[data-theme-menu]');
+    const trigger = root.querySelector('[data-theme-trigger]');
+    if (!menu || !trigger) return;
+    document.dispatchEvent(new CustomEvent('dropdown:opened', { detail: { source: 'theme' } }));
+    menu.classList.remove('pointer-events-none', 'opacity-0', 'scale-95');
+    trigger.setAttribute('aria-expanded', 'true');
+  }
+
+  function setupThemeDropdown(root) {
+    const trigger = root.querySelector('[data-theme-trigger]');
+    const menu = root.querySelector('[data-theme-menu]');
+    if (!trigger || !menu) return;
+
+    updateThemeUI(root);
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        closeThemeMenu(root);
+      } else {
+        openThemeMenu(root);
+      }
+    });
+
+    menu.querySelectorAll('[data-theme-option]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const mode = btn.getAttribute('data-theme-option');
+        if (mode) {
+          setMode(mode);
+          updateThemeUI(root);
+        }
+        closeThemeMenu(root);
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!root.contains(event.target)) closeThemeMenu(root);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeThemeMenu(root);
+    });
+
+    document.addEventListener('dropdown:opened', (event) => {
+      if (event.detail?.source !== 'theme') closeThemeMenu(root);
+    });
+  }
+
+  document.querySelectorAll('[data-theme-root]').forEach((root) => {
+    setupThemeDropdown(root);
+  });
+
+  document.addEventListener('theme:changed', () => {
+    document.querySelectorAll('[data-theme-root]').forEach((root) => updateThemeUI(root));
+  });
 
   const media = window.matchMedia('(prefers-color-scheme: dark)');
   media.addEventListener('change', () => {
     if ((localStorage.getItem(STORAGE_KEY) || 'system') === 'system') {
-      updateThemeButtons();
+      document.querySelectorAll('[data-theme-root]').forEach((root) => updateThemeUI(root));
     }
   });
 </script>
+
+<style>
+  [data-theme-menu] {
+    backdrop-filter: blur(8px);
+  }
+
+  [data-theme-menu].opacity-0 {
+    visibility: hidden;
+  }
+
+  [data-theme-menu] button svg {
+    color: inherit;
+  }
+</style>

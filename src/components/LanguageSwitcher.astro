@@ -1,80 +1,178 @@
 ---
-/**
- * LanguageSwitcher
- * ────────────────
- * A compact pill-style toggle for EN / ES / EU.
- * Persists choice to localStorage; triggers client-side text swap.
- */
 interface Props {
   variant?: '1' | '4';
 }
 
 const { variant = '1' } = Astro.props;
-
 const languages = [
-  { code: 'en', label: 'EN' },
-  { code: 'es', label: 'ES' },
-  { code: 'eu', label: 'EU' },
+  { code: 'en', label: 'English' },
+  { code: 'es', label: 'Español' },
+  { code: 'eu', label: 'Euskara' },
 ];
 
-const variantStyles: Record<string, { pill: string; active: string; inactive: string }> = {
+const variantStyles: Record<string, { trigger: string; menu: string; option: string; selected: string }> = {
   '1': {
-    pill: 'bg-stone-900/80 border-stone-700',
-    active: 'bg-amber-500 text-stone-950',
-    inactive: 'text-stone-400 hover:text-stone-200',
+    trigger: 'text-stone-400 hover:text-stone-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-stone-600',
+    menu: 'bg-stone-950/95 border border-stone-800 shadow-lg shadow-black/30 text-stone-200',
+    option: 'text-stone-300 hover:text-stone-100',
+    selected: 'text-amber-400',
   },
   '4': {
-    pill: 'bg-[#0a0b0a] border-[#39FF14]/20',
-    active: 'bg-[#39FF14] text-[#030304]',
-    inactive: 'text-[#555] hover:text-[#39FF14]',
+    trigger: 'text-[#7d7d7d] hover:text-[#c5c5c5] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#39FF14]/50',
+    menu: 'bg-[#050505]/95 border border-[#39FF14]/15 shadow-lg shadow-black/40 text-[#e5e5e5]',
+    option: 'text-[#b3b3b3] hover:text-white',
+    selected: 'text-[#39FF14]',
   },
 };
 
 const styles = variantStyles[variant] ?? variantStyles['1'];
 ---
+<div class="relative inline-block" data-lang-root data-selected-class={styles.selected}>
+  <button
+    type="button"
+    class={`inline-flex items-center gap-1 text-sm font-medium transition-colors duration-150 ${styles.trigger}`}
+    data-lang-trigger
+    aria-haspopup="listbox"
+    aria-expanded="false"
+  >
+    <span data-lang-current translate="no">EN</span>
+    <svg aria-hidden="true" class="h-3 w-3" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M3 6l5 5 5-5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </button>
 
-<div
-  class={`inline-flex items-center gap-0.5 rounded-full border px-1 py-1 ${styles.pill}`}
-  id="lang-switcher"
-  data-active-classes={styles.active}
-  data-inactive-classes={styles.inactive}
->
-  {languages.map((lang) => (
-    <button
-      data-lang-btn={lang.code}
-      class={`px-2.5 py-1 rounded-full text-xs font-body font-medium transition-all duration-200 cursor-pointer ${styles.inactive}`}
-      onclick={`window.__setLang && window.__setLang('${lang.code}')`}
-      aria-label={`Switch to ${lang.label}`}
-      translate="no"
-    >
-      {lang.label}
-    </button>
-  ))}
+  <div
+    class={`absolute right-0 mt-2 min-w-[140px] rounded-lg p-2 opacity-0 scale-95 pointer-events-none transition duration-150 ease-out ${styles.menu}`}
+    data-lang-menu
+    role="listbox"
+    aria-label="Select language"
+  >
+    {languages.map((lang) => (
+      <button
+        type="button"
+        role="option"
+        data-lang-option={lang.code}
+        class={`flex w-full items-center justify-between rounded-md px-3 py-2 text-sm transition-colors duration-150 ${styles.option}`}
+      >
+        <span translate="no">{lang.label}</span>
+        <svg aria-hidden="true" class="h-4 w-4 opacity-0" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 10.5l3.5 3.5L15 6" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    ))}
+  </div>
 </div>
 
 <script>
-  function applyLangStyles() {
-    const currentLang = localStorage.getItem('riding4gbs-lang') || 'en';
+  const LANG_STORAGE_KEY = 'riding4gbs-lang';
 
-    document.querySelectorAll<HTMLElement>('#lang-switcher').forEach((switcher) => {
-      const activeClasses = (switcher.dataset.activeClasses || '').split(/\s+/).filter(Boolean);
-      const inactiveClasses = (switcher.dataset.inactiveClasses || '').split(/\s+/).filter(Boolean);
+  function getCurrentLang() {
+    return localStorage.getItem(LANG_STORAGE_KEY) || 'en';
+  }
 
-      switcher.querySelectorAll<HTMLElement>('[data-lang-btn]').forEach((btn) => {
-        const btnLang = btn.getAttribute('data-lang-btn');
-        if (btnLang === currentLang) {
-          btn.classList.remove(...inactiveClasses);
-          btn.classList.add(...activeClasses);
-        } else {
-          btn.classList.remove(...activeClasses);
-          btn.classList.add(...inactiveClasses);
-        }
-      });
+  function setCurrentLang(value) {
+    if (window.__setLang) window.__setLang(value);
+  }
+
+  function updateLangUI(root) {
+    const current = getCurrentLang();
+    const currentEl = root.querySelector('[data-lang-current]');
+    if (currentEl) currentEl.textContent = current.toUpperCase();
+
+    root.querySelectorAll('[data-lang-option]').forEach((btn) => {
+      const code = btn.getAttribute('data-lang-option');
+      const isActive = code === current;
+      const icon = btn.querySelector('svg');
+
+      const selectedClasses = (root.dataset.selectedClass || '').split(/\s+/).filter(Boolean);
+
+      if (isActive) {
+        btn.classList.add(...selectedClasses);
+        btn.classList.remove('opacity-80');
+        btn.setAttribute('aria-selected', 'true');
+      } else {
+        btn.classList.remove(...selectedClasses);
+        btn.classList.add('opacity-80');
+        btn.setAttribute('aria-selected', 'false');
+      }
+      if (icon) icon.style.opacity = isActive ? '1' : '0';
     });
   }
 
-  applyLangStyles();
+  function closeMenu(root) {
+    const menu = root.querySelector('[data-lang-menu]');
+    const trigger = root.querySelector('[data-lang-trigger]');
+    if (!menu || !trigger) return;
+    menu.classList.add('pointer-events-none', 'opacity-0', 'scale-95');
+    trigger.setAttribute('aria-expanded', 'false');
+  }
 
-  // Re-apply when language changes
-  document.addEventListener('lang:changed', () => applyLangStyles());
+  function openMenu(root) {
+    const menu = root.querySelector('[data-lang-menu]');
+    const trigger = root.querySelector('[data-lang-trigger]');
+    if (!menu || !trigger) return;
+    document.dispatchEvent(new CustomEvent('dropdown:opened', { detail: { source: 'lang' } }));
+    menu.classList.remove('pointer-events-none', 'opacity-0', 'scale-95');
+    trigger.setAttribute('aria-expanded', 'true');
+  }
+
+  function setupLanguageDropdown(root) {
+    const trigger = root.querySelector('[data-lang-trigger]');
+    const menu = root.querySelector('[data-lang-menu]');
+    if (!trigger || !menu) return;
+
+    updateLangUI(root);
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        closeMenu(root);
+      } else {
+        openMenu(root);
+      }
+    });
+
+    menu.querySelectorAll('[data-lang-option]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const code = btn.getAttribute('data-lang-option');
+        if (code) {
+          setCurrentLang(code);
+          updateLangUI(root);
+        }
+        closeMenu(root);
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!root.contains(event.target)) closeMenu(root);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu(root);
+    });
+
+    document.addEventListener('dropdown:opened', (event) => {
+      if (event.detail?.source !== 'lang') closeMenu(root);
+    });
+  }
+
+  document.querySelectorAll('[data-lang-root]').forEach((root) => {
+    setupLanguageDropdown(root);
+  });
+
+  document.addEventListener('lang:changed', () => {
+    document.querySelectorAll('[data-lang-root]').forEach((root) => updateLangUI(root));
+  });
 </script>
+
+<style>
+  [data-lang-menu] {
+    backdrop-filter: blur(8px);
+  }
+
+  [data-lang-menu].opacity-0 {
+    visibility: hidden;
+  }
+</style>

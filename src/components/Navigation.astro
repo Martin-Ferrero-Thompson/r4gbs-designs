@@ -67,9 +67,14 @@ const styles = variantStyles[variant] ?? variantStyles['1'];
           >
             Donate
           </a>
-          <div class="nav-utilities flex items-center gap-4">
-            <ThemeToggle variant={variant} />
-            <LanguageSwitcher variant={variant} />
+          <div class={`nav-utilities flex items-center rounded-full border ${variant === '4' ? 'border-[#39FF14]/15 bg-[#050505]/40' : 'border-white/10 bg-white/[0.04]'}`}>
+            <div class="px-3 py-1">
+              <LanguageSwitcher variant={variant} />
+            </div>
+            <div class={`h-5 w-px ${variant === '4' ? 'bg-[#39FF14]/15' : 'bg-white/10'}`} aria-hidden="true"></div>
+            <div class="px-1.5 py-1">
+              <ThemeToggle variant={variant} />
+            </div>
           </div>
         </div>
       </div>
@@ -110,8 +115,8 @@ const styles = variantStyles[variant] ?? variantStyles['1'];
           Donate Now
         </a>
         <div class="flex items-center gap-2">
-          <ThemeToggle variant={variant} />
           <LanguageSwitcher variant={variant} />
+          <ThemeToggle variant={variant} />
         </div>
       </div>
     </div>
@@ -131,9 +136,6 @@ const styles = variantStyles[variant] ?? variantStyles['1'];
 
 <style>
   .nav-utilities {
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
-    margin-left: 24px;
-    padding-left: 24px;
-    gap: 16px;
+    margin-left: 16px;
   }
 </style>
