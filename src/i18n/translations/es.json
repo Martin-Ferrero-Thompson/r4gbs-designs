@@ -4,6 +4,12 @@
     "siteNameShort": "R4GBS",
     "langLabel": "Idioma"
   },
+  "theme": {
+    "label": "Tema",
+    "system": "Sistema",
+    "light": "Claro",
+    "dark": "Oscuro"
+  },
   "nav": {
     "challenge": "El Reto",
     "story": "Nuestra Historia",

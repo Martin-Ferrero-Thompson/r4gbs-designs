@@ -1,5 +1,6 @@
 ---
 import LanguageSwitcher from './LanguageSwitcher.astro';
+import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
   variant?: '1' | '2' | '3' | '4' | '5' | '6';
@@ -93,7 +94,8 @@ const styles = variantStyles[variant];
         >
           Donate
         </a>
-        <div class="ml-3">
+        <div class="ml-3 flex items-center gap-3">
+          <ThemeToggle variant={variant} />
           <LanguageSwitcher variant={variant} />
         </div>
       </div>
@@ -133,7 +135,10 @@ const styles = variantStyles[variant];
         >
           Donate Now
         </a>
-        <LanguageSwitcher variant={variant} />
+        <div class="flex items-center gap-2">
+          <ThemeToggle variant={variant} />
+          <LanguageSwitcher variant={variant} />
+        </div>
       </div>
     </div>
   </div>

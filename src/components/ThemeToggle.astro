@@ -1,0 +1,111 @@
+---
+interface Props {
+  variant?: '1' | '2' | '3' | '4' | '5' | '6';
+}
+
+const { variant = '1' } = Astro.props;
+
+const options = [
+  { mode: 'system', label: 'System', i18nKey: 'theme.system' },
+  { mode: 'dark', label: 'Dark', i18nKey: 'theme.dark' },
+  { mode: 'light', label: 'Light', i18nKey: 'theme.light' },
+];
+
+const variantStyles: Record<string, { pill: string; active: string; inactive: string }> = {
+  '1': {
+    pill: 'bg-stone-900/80 border-stone-700 text-stone-200',
+    active: 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/20',
+    inactive: 'text-stone-400 hover:text-stone-100',
+  },
+  '2': {
+    pill: 'bg-[#f0ebe3]/90 border-stone-900/20 text-stone-900',
+    active: 'bg-stone-950 text-[#f0ebe3]',
+    inactive: 'text-stone-700 hover:text-stone-950',
+  },
+  '3': {
+    pill: 'bg-white/90 border-stone-200 text-stone-700',
+    active: 'bg-pine-600 text-white shadow-lg shadow-pine-600/20',
+    inactive: 'text-stone-500 hover:text-stone-700',
+  },
+  '4': {
+    pill: 'bg-[#0a0b0a] border-[#39FF14]/20 text-[#9b9b9b]',
+    active: 'bg-[#39FF14] text-[#030304] shadow-lg shadow-[#39FF14]/25',
+    inactive: 'text-[#7d7d7d] hover:text-[#39FF14]',
+  },
+  '5': {
+    pill: 'bg-[#1a1210] border-[#C9A84C]/20 text-[#a09080]',
+    active: 'bg-[#C9A84C] text-[#1a1210] shadow-lg shadow-[#C9A84C]/20',
+    inactive: 'text-[#8a7a6a] hover:text-[#C9A84C]',
+  },
+  '6': {
+    pill: 'bg-white/5 border-white/10 text-white/70',
+    active: 'bg-[#00FFD1] text-[#0B0D17] shadow-lg shadow-[#00FFD1]/25',
+    inactive: 'text-white/50 hover:text-[#00FFD1]',
+  },
+};
+
+const styles = variantStyles[variant];
+---
+
+<div
+  class={`inline-flex items-center gap-0.5 rounded-full border px-1 py-1 backdrop-blur ${styles.pill}`}
+  data-theme-switcher
+  data-active-classes={styles.active}
+  data-inactive-classes={styles.inactive}
+>
+  <span class="sr-only" data-i18n="theme.label">Theme</span>
+  {options.map((opt) => (
+    <button
+      type="button"
+      data-theme-btn={opt.mode}
+      class={`group px-2.5 py-1 rounded-full text-xs font-body font-medium transition-all duration-200 flex items-center gap-1 ${styles.inactive}`}
+      onclick={`window.__setTheme && window.__setTheme('${opt.mode}')`}
+      aria-label={`${opt.label} theme`}
+    >
+      <span class="h-2 w-2 rounded-full bg-current opacity-60 group-hover:opacity-100"></span>
+      <span data-i18n={opt.i18nKey}>{opt.label}</span>
+    </button>
+  ))}
+</div>
+
+<script>
+  const STORAGE_KEY = 'riding4gbs-theme';
+
+  function currentMode() {
+    if (typeof window !== 'undefined' && window.__getThemeMode) {
+      return window.__getThemeMode();
+    }
+    return localStorage.getItem(STORAGE_KEY) || 'system';
+  }
+
+  function updateThemeButtons() {
+    const activeMode = currentMode();
+
+    document.querySelectorAll<HTMLElement>('[data-theme-switcher]').forEach((switcher) => {
+      const activeClasses = (switcher.dataset.activeClasses || '').split(/\s+/).filter(Boolean);
+      const inactiveClasses = (switcher.dataset.inactiveClasses || '').split(/\s+/).filter(Boolean);
+
+      switcher.querySelectorAll<HTMLElement>('[data-theme-btn]').forEach((btn) => {
+        const btnMode = btn.getAttribute('data-theme-btn');
+        if (btnMode === activeMode) {
+          btn.classList.remove(...inactiveClasses);
+          btn.classList.add(...activeClasses);
+        } else {
+          btn.classList.remove(...activeClasses);
+          btn.classList.add(...inactiveClasses);
+        }
+      });
+    });
+  }
+
+  updateThemeButtons();
+
+  document.addEventListener('theme:changed', () => updateThemeButtons());
+
+  const media = window.matchMedia('(prefers-color-scheme: dark)');
+  media.addEventListener('change', () => {
+    if ((localStorage.getItem(STORAGE_KEY) || 'system') === 'system') {
+      updateThemeButtons();
+    }
+  });
+</script>

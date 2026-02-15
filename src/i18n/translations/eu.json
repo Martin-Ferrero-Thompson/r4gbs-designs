@@ -4,6 +4,12 @@
     "siteNameShort": "R4GBS",
     "langLabel": "Hizkuntza"
   },
+  "theme": {
+    "label": "Gaia",
+    "system": "Sistema",
+    "light": "Argia",
+    "dark": "Iluna"
+  },
   "nav": {
     "challenge": "Erronka",
     "story": "Gure Istorioa",

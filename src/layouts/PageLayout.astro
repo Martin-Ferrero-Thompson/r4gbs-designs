@@ -33,6 +33,65 @@ const i18nTranslations = getAllTranslations();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      (function() {
+        var STORAGE_KEY = 'riding4gbs-theme';
+        var root = document.documentElement;
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function systemTheme() {
+          return media.matches ? 'dark' : 'light';
+        }
+
+        function normalize(mode) {
+          return mode === 'dark' || mode === 'light' ? mode : 'system';
+        }
+
+        function resolve(mode) {
+          return mode === 'system' ? systemTheme() : mode;
+        }
+
+        function apply(mode) {
+          var resolved = resolve(mode);
+          root.dataset.themeMode = mode;
+          root.dataset.theme = resolved;
+          root.classList.toggle('theme-dark', resolved === 'dark');
+          root.classList.toggle('theme-light', resolved === 'light');
+          root.classList.toggle('theme-system', mode === 'system');
+        }
+
+        var initialMode = normalize(localStorage.getItem(STORAGE_KEY) || 'system');
+        apply(initialMode);
+
+        function syncSystem() {
+          if ((localStorage.getItem(STORAGE_KEY) || 'system') === 'system') {
+            apply('system');
+            document.dispatchEvent(new CustomEvent('theme:changed', {
+              detail: { mode: 'system', theme: resolve('system') }
+            }));
+          }
+        }
+
+        media.addEventListener('change', syncSystem);
+
+        window.__setTheme = function(mode) {
+          var next = normalize(mode);
+          localStorage.setItem(STORAGE_KEY, next);
+          apply(next);
+          document.dispatchEvent(new CustomEvent('theme:changed', {
+            detail: { mode: next, theme: resolve(next) }
+          }));
+        };
+
+        window.__getThemeMode = function() {
+          return normalize(localStorage.getItem(STORAGE_KEY) || 'system');
+        };
+
+        window.__getResolvedTheme = function() {
+          return resolve(normalize(localStorage.getItem(STORAGE_KEY) || 'system'));
+        };
+      })();
+    </script>
     <title>{title} | Riding4GBS</title>
     <script define:vars={{ i18nTranslations }}>
       window.__i18n_translations = i18nTranslations;

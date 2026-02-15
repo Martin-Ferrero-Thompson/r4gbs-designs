@@ -4,6 +4,12 @@
     "siteNameShort": "R4GBS",
     "langLabel": "Language"
   },
+  "theme": {
+    "label": "Theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
   "nav": {
     "challenge": "The Challenge",
     "story": "Our Story",
