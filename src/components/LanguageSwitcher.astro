@@ -6,7 +6,7 @@
  * Persists choice to localStorage; triggers client-side text swap.
  */
 interface Props {
-  variant?: '1' | '2' | '3' | '4' | '5' | '6';
+  variant?: '1' | '4';
 }
 
 const { variant = '1' } = Astro.props;
@@ -23,34 +23,14 @@ const variantStyles: Record<string, { pill: string; active: string; inactive: st
     active: 'bg-amber-500 text-stone-950',
     inactive: 'text-stone-400 hover:text-stone-200',
   },
-  '2': {
-    pill: 'bg-stone-950 border-stone-700',
-    active: 'bg-stone-100 text-stone-950',
-    inactive: 'text-stone-400 hover:text-stone-200',
-  },
-  '3': {
-    pill: 'bg-white/90 border-stone-200',
-    active: 'bg-pine-600 text-white',
-    inactive: 'text-stone-500 hover:text-stone-700',
-  },
   '4': {
     pill: 'bg-[#0a0b0a] border-[#39FF14]/20',
     active: 'bg-[#39FF14] text-[#030304]',
     inactive: 'text-[#555] hover:text-[#39FF14]',
   },
-  '5': {
-    pill: 'bg-[#1a1210] border-[#C9A84C]/20',
-    active: 'bg-[#C9A84C] text-[#1a1210]',
-    inactive: 'text-[#8a7a6a] hover:text-[#C9A84C]',
-  },
-  '6': {
-    pill: 'bg-white/5 border-white/10',
-    active: 'bg-[#00FFD1] text-[#0B0D17]',
-    inactive: 'text-white/40 hover:text-[#00FFD1]',
-  },
 };
 
-const styles = variantStyles[variant];
+const styles = variantStyles[variant] ?? variantStyles['1'];
 ---
 
 <div

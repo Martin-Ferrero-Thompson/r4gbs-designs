@@ -5,7 +5,7 @@ import { getAllTranslations } from '../i18n/index';
 interface Props {
   title?: string;
   description?: string;
-  variant?: '1' | '2' | '3' | '4' | '5' | '6';
+  variant?: '1' | '4';
 }
 
 const {
@@ -16,11 +16,7 @@ const {
 
 const variantClasses: Record<string, string> = {
   '1': 'variant-cinematic',
-  '2': 'variant-brutalist',
-  '3': 'variant-organic',
   '4': 'variant-signal',
-  '5': 'variant-tectonic',
-  '6': 'variant-aurora',
 };
 
 const i18nTranslations = getAllTranslations();

@@ -2,7 +2,7 @@
 /**
  * DESIGN GALLERY — Landing Page
  * ─────────────────────────────
- * A showcase hub for reviewing all six design directions.
+ * A showcase hub for reviewing the remaining design directions.
  * Each card previews the design's personality and links through.
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -20,28 +20,6 @@ const designs = [
     hoverBorder: 'hover:border-amber-400',
   },
   {
-    id: '2',
-    name: 'Brutalist Grit',
-    description: 'Raw cream paper, massive black type, sharp red accents. Offset layouts, rotated elements, exposed grid lines. Think: protest poster meets cycling zine.',
-    tags: ['Raw aesthetic', 'Bold type', 'Red accents'],
-    gradient: 'from-[#1a0a0a] via-[#2d1212] to-[#3b1111]',
-    accent: 'ember-500',
-    accentBg: 'bg-ember-500',
-    border: 'border-ember-500/30',
-    hoverBorder: 'hover:border-ember-400',
-  },
-  {
-    id: '3',
-    name: 'Alpine Organic',
-    description: 'Warm parchment whites, deep forest greens, flowing organic shapes. Rounded corners, soft shadows, botanical illustration energy. Think: luxury outdoor journal.',
-    tags: ['Warm tones', 'Organic shapes', 'Green palette'],
-    gradient: 'from-[#0a1a10] via-[#122d1a] to-[#0d2414]',
-    accent: 'pine-500',
-    accentBg: 'bg-pine-500',
-    border: 'border-pine-500/30',
-    hoverBorder: 'hover:border-pine-400',
-  },
-  {
     id: '4',
     name: 'Signal / Noise',
     description: 'Deconstructed mission-control aesthetic. Near-black canvas with phosphor green signal accents and amber data streams. Think: deep space HQ meets cycling data.',
@@ -51,28 +29,6 @@ const designs = [
     accentBg: 'bg-[#39FF14]',
     border: 'border-[#39FF14]/30',
     hoverBorder: 'hover:border-[#39FF14]',
-  },
-  {
-    id: '5',
-    name: 'Tectonic',
-    description: 'Geological strata. Layered earth tones in horizontal bands. Deep rust, volcanic slate, bone white, gold mineral veining. Think: museum exhibition meets geological publication.',
-    tags: ['Earth tones', 'Layered strata', 'Gold veining'],
-    gradient: 'from-[#1a1410] via-[#2d1f14] to-[#1a1410]',
-    accent: '[#C9A84C]',
-    accentBg: 'bg-[#C9A84C]',
-    border: 'border-[#C9A84C]/30',
-    hoverBorder: 'hover:border-[#C9A84C]',
-  },
-  {
-    id: '6',
-    name: 'Aurora',
-    description: 'Ethereal, otherworldly. Deep cosmic navy with animated aurora borealis gradients — flowing teals, magentas, and greens. Think: northern lights over the Pyrenees meets fashion editorial.',
-    tags: ['Cosmic navy', 'Aurora gradients', 'Glass panels'],
-    gradient: 'from-[#080c20] via-[#111a40] to-[#0a1030]',
-    accent: '[#00FFD1]',
-    accentBg: 'bg-[#00FFD1]',
-    border: 'border-[#00FFD1]/30',
-    hoverBorder: 'hover:border-[#00FFD1]',
   },
 ];
 ---
@@ -93,12 +49,12 @@ const designs = [
       </h1>
       <div class="mt-6 max-w-2xl animate-fade-up stagger-2">
         <p class="text-stone-400 text-lg leading-relaxed font-body">
-          Six design directions for the Riding4GBS website. Each explores a different visual language while telling the same story — a GBS survivor's journey across the Pyrenees.
+          Two design directions for the Riding4GBS website. Cinematic Noir and Signal / Noise explore different visual languages while telling the same story — a GBS survivor's journey across the Pyrenees.
         </p>
       </div>
       <div class="mt-4 animate-fade-up stagger-3">
         <p class="text-stone-500 text-sm font-body">
-          Click any design to explore its full homepage. Use the design switcher at the bottom of each page to jump between designs without returning here.
+          Click any design to explore its full homepage. Use the design switcher at the bottom of each page to jump between the two options without returning here.
         </p>
       </div>
     </header>

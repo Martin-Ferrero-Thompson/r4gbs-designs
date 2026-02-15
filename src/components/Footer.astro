@@ -1,6 +1,6 @@
 ---
 interface Props {
-  variant?: '1' | '2' | '3' | '4' | '5' | '6';
+  variant?: '1' | '4';
 }
 
 const { variant = '1' } = Astro.props;
@@ -29,46 +29,27 @@ const variantStyles: Record<string, { bg: string; text: string; accent: string; 
     accent: 'text-amber-400 hover:text-amber-300',
     border: 'border-stone-800',
   },
-  '2': {
-    bg: 'bg-stone-950',
-    text: 'text-stone-400',
-    accent: 'text-[#f0ebe3] hover:text-ember-400',
-    border: 'border-stone-700',
-  },
-  '3': {
-    bg: 'bg-stone-900',
-    text: 'text-stone-400',
-    accent: 'text-pine-400 hover:text-pine-300',
-    border: 'border-stone-700',
-  },
   '4': {
     bg: 'bg-[#030304]',
     text: 'text-[#555]',
     accent: 'text-[#39FF14] hover:text-[#50ff3e]',
     border: 'border-[#39FF14]/10',
   },
-  '5': {
-    bg: 'bg-[#0f0c0a]',
-    text: 'text-[#8a7a6a]',
-    accent: 'text-[#C9A84C] hover:text-[#d4b65c]',
-    border: 'border-[#C9A84C]/15',
-  },
-  '6': {
-    bg: 'bg-[#060811]',
-    text: 'text-white/30',
-    accent: 'text-[#00FFD1] hover:text-[#00FF88]',
-    border: 'border-white/5',
-  },
 };
 
-const s = variantStyles[variant];
+const s = variantStyles[variant] ?? variantStyles['1'];
+const brandColor = variant === '4' ? 'text-[#39FF14]' : 'text-amber-400';
+const headingColor = variant === '4' ? 'text-[#39FF14]/80' : 'text-stone-200';
+const donateCta = variant === '4'
+  ? 'bg-[#39FF14] text-[#030304] hover:bg-[#50ff3e]'
+  : 'bg-amber-500 text-stone-950 hover:bg-amber-400';
 ---
 <footer class={`${s.bg} ${s.text}`}>
   <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-16 lg:py-24">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
       <!-- Brand -->
       <div class="lg:col-span-1">
-        <p class={`font-display text-2xl font-bold mb-4 ${variant === '1' ? 'text-amber-400' : variant === '3' ? 'text-pine-400' : variant === '4' ? 'text-[#39FF14]' : variant === '5' ? 'text-[#C9A84C]' : variant === '6' ? 'text-[#00FFD1]' : 'text-[#f0ebe3]'}`}>
+        <p class={`font-display text-2xl font-bold mb-4 ${brandColor}`}>
           Riding4GBS
         </p>
         <p class="text-sm leading-relaxed max-w-xs" data-i18n="footer.tagline">
@@ -82,7 +63,7 @@ const s = variantStyles[variant];
 
       <!-- Navigation -->
       <div>
-        <h4 class={`font-display text-sm font-bold uppercase tracking-wider mb-4 ${variant === '4' ? 'text-[#39FF14]/80' : variant === '5' ? 'text-[#C9A84C]/80' : variant === '6' ? 'text-[#00FFD1]/80' : variant === '1' ? 'text-stone-200' : variant === '3' ? 'text-stone-200' : 'text-[#f0ebe3]'}`}>
+        <h4 class={`font-display text-sm font-bold uppercase tracking-wider mb-4 ${headingColor}`}>
           <span data-i18n="footer.explore">Explore</span>
         </h4>
         <ul class="space-y-2.5">
@@ -98,7 +79,7 @@ const s = variantStyles[variant];
 
       <!-- Charities -->
       <div>
-        <h4 class={`font-display text-sm font-bold uppercase tracking-wider mb-4 ${variant === '4' ? 'text-[#39FF14]/80' : variant === '5' ? 'text-[#C9A84C]/80' : variant === '6' ? 'text-[#00FFD1]/80' : variant === '1' ? 'text-stone-200' : variant === '3' ? 'text-stone-200' : 'text-[#f0ebe3]'}`}>
+        <h4 class={`font-display text-sm font-bold uppercase tracking-wider mb-4 ${headingColor}`}>
           <span data-i18n="footer.ourCharities">Our Charities</span>
         </h4>
         <ul class="space-y-2.5">
@@ -111,7 +92,7 @@ const s = variantStyles[variant];
           ))}
         </ul>
         <div class="mt-8">
-          <h4 class={`font-display text-sm font-bold uppercase tracking-wider mb-4 ${variant === '4' ? 'text-[#39FF14]/80' : variant === '5' ? 'text-[#C9A84C]/80' : variant === '6' ? 'text-[#00FFD1]/80' : variant === '1' ? 'text-stone-200' : variant === '3' ? 'text-stone-200' : 'text-[#f0ebe3]'}`}>
+          <h4 class={`font-display text-sm font-bold uppercase tracking-wider mb-4 ${headingColor}`}>
             <span data-i18n="footer.follow">Follow</span>
           </h4>
           <div class="flex gap-4">
@@ -127,7 +108,7 @@ const s = variantStyles[variant];
 
       <!-- CTA -->
       <div>
-        <h4 class={`font-display text-sm font-bold uppercase tracking-wider mb-4 ${variant === '4' ? 'text-[#39FF14]/80' : variant === '5' ? 'text-[#C9A84C]/80' : variant === '6' ? 'text-[#00FFD1]/80' : variant === '1' ? 'text-stone-200' : variant === '3' ? 'text-stone-200' : 'text-[#f0ebe3]'}`}>
+        <h4 class={`font-display text-sm font-bold uppercase tracking-wider mb-4 ${headingColor}`}>
           <span data-i18n="footer.makeADifference">Make a Difference</span>
         </h4>
         <p class="text-sm mb-6 leading-relaxed" data-i18n="footer.donateDesc">
@@ -135,14 +116,7 @@ const s = variantStyles[variant];
         </p>
         <a
           href="/donate"
-          class={`inline-block px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
-            variant === '1' ? 'bg-amber-500 text-stone-950 hover:bg-amber-400' :
-            variant === '2' ? 'bg-[#f0ebe3] text-stone-950 hover:bg-ember-400 hover:text-white' :
-            variant === '4' ? 'bg-[#39FF14] text-[#030304] hover:bg-[#50ff3e]' :
-            variant === '5' ? 'bg-[#C9A84C] text-[#0f0c0a] hover:bg-[#d4b65c]' :
-            variant === '6' ? 'bg-gradient-to-r from-[#00FFD1] to-[#00FF88] text-[#0B0D17] hover:opacity-90' :
-            'bg-pine-500 text-white hover:bg-pine-400'
-          }`}
+          class={`inline-block px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 ${donateCta}`}
         >
           <span data-i18n="footer.donateNow">Donate Now →</span>
         </a>

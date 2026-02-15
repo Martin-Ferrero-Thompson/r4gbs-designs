@@ -1,21 +1,17 @@
 ---
 /**
  * Design Version Selector
- * A floating pill that lets users switch between the three homepage designs.
+ * Floating pill to toggle between the remaining homepage designs.
  */
 interface Props {
-  current: '1' | '2' | '3' | '4' | '5' | '6';
+  current: '1' | '4';
 }
 
 const { current } = Astro.props;
 
 const designs = [
   { id: '1', label: 'Cinematic', color: 'bg-amber-500', i18nKey: 'designSelector.cinematic' },
-  { id: '2', label: 'Brutalist', color: 'bg-ember-500', i18nKey: 'designSelector.brutalist' },
-  { id: '3', label: 'Organic', color: 'bg-pine-500', i18nKey: 'designSelector.organic' },
   { id: '4', label: 'Signal', color: 'bg-[#39FF14]', i18nKey: 'designSelector.signal' },
-  { id: '5', label: 'Tectonic', color: 'bg-[#C9A84C]', i18nKey: 'designSelector.tectonic' },
-  { id: '6', label: 'Aurora', color: 'bg-[#00FFD1]', i18nKey: 'designSelector.aurora' },
 ];
 ---
 

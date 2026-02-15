@@ -3,7 +3,7 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
-  variant?: '1' | '2' | '3' | '4' | '5' | '6';
+  variant?: '1' | '4';
 }
 
 const { variant = '1' } = Astro.props;
@@ -28,20 +28,6 @@ const variantStyles: Record<string, { nav: string; link: string; logo: string; c
     cta: 'bg-amber-500 text-stone-950 hover:bg-amber-400 font-bold',
     mobileMenu: 'bg-stone-950/60 backdrop-blur-2xl border-t border-amber-500/10',
   },
-  '2': {
-    nav: 'bg-[#f0ebe3]/40 backdrop-blur-2xl border-b border-stone-950/20 shadow-lg shadow-stone-950/10',
-    link: 'text-stone-950 hover:text-ember-500 font-bold uppercase tracking-widest text-xs transition-colors',
-    logo: 'text-stone-950',
-    cta: 'bg-stone-950 text-[#f0ebe3] hover:bg-ember-500 font-bold uppercase tracking-widest text-xs',
-    mobileMenu: 'bg-[#f0ebe3]/60 backdrop-blur-2xl border-t border-stone-950/10',
-  },
-  '3': {
-    nav: 'bg-[#faf7f2]/40 backdrop-blur-2xl border-b border-pine-600/10 shadow-lg shadow-stone-950/5',
-    link: 'text-stone-600 hover:text-pine-600 transition-colors duration-300',
-    logo: 'text-pine-600',
-    cta: 'bg-pine-600 text-white hover:bg-pine-500',
-    mobileMenu: 'bg-[#faf7f2]/60 backdrop-blur-2xl border-t border-pine-600/5',
-  },
   '4': {
     nav: 'bg-[#030304]/40 backdrop-blur-2xl border-b border-[#39FF14]/10 shadow-lg shadow-[#39FF14]/5',
     link: 'text-[#8a8a8a] hover:text-[#39FF14] transition-colors duration-200 font-mono text-xs uppercase tracking-widest',
@@ -49,23 +35,9 @@ const variantStyles: Record<string, { nav: string; link: string; logo: string; c
     cta: 'bg-[#39FF14] text-[#030304] hover:bg-[#50ff3e] font-mono font-bold uppercase tracking-widest text-xs',
     mobileMenu: 'bg-[#030304]/60 backdrop-blur-2xl border-t border-[#39FF14]/5',
   },
-  '5': {
-    nav: 'bg-[#1a1210]/40 backdrop-blur-2xl border-b border-[#C9A84C]/15 shadow-lg shadow-stone-950/20',
-    link: 'text-[#a09080] hover:text-[#C9A84C] transition-colors duration-300',
-    logo: 'text-[#C9A84C]',
-    cta: 'bg-[#C9A84C] text-[#1a1210] hover:bg-[#d4b65c] font-bold',
-    mobileMenu: 'bg-[#1a1210]/60 backdrop-blur-2xl border-t border-[#C9A84C]/10',
-  },
-  '6': {
-    nav: 'bg-[#0B0D17]/35 backdrop-blur-2xl border-b border-white/10 shadow-lg shadow-[#0B0D17]/30',
-    link: 'text-white/50 hover:text-[#00FFD1] transition-colors duration-300',
-    logo: 'text-[#00FFD1]',
-    cta: 'bg-gradient-to-r from-[#00FFD1] to-[#00FF88] text-[#0B0D17] hover:opacity-90 font-bold',
-    mobileMenu: 'bg-[#0B0D17]/55 backdrop-blur-2xl border-t border-white/5',
-  },
 };
 
-const styles = variantStyles[variant];
+const styles = variantStyles[variant] ?? variantStyles['1'];
 ---
 <nav class={`fixed top-0 left-0 right-0 z-50 ${styles.nav}`} id="main-nav">
   <div class="max-w-[1400px] mx-auto px-6 lg:px-10">

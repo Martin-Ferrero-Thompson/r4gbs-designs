@@ -9,7 +9,7 @@ declare global {
 
 interface CountdownProps {
   targetDate: string;
-  variant?: '1' | '2' | '3' | '4' | '5' | '6';
+  variant?: '1' | '4';
 }
 
 function getTranslatedLabel(key: string, fallback: string): string {
@@ -90,34 +90,14 @@ export default function Countdown({ targetDate, variant = '1' }: CountdownProps)
       number: 'text-amber-400',
       label: 'text-stone-500',
     },
-    '2': {
-      container: 'bg-stone-950 border-stone-800',
-      number: 'text-[#f0ebe3]',
-      label: 'text-stone-500',
-    },
-    '3': {
-      container: 'bg-white/80 border-stone-200',
-      number: 'text-[#0f3d24]',
-      label: 'text-stone-500',
-    },
     '4': {
       container: 'bg-[#0a0b0a] border-[#39FF14]/20',
       number: 'text-[#39FF14]',
       label: 'text-[#555]',
     },
-    '5': {
-      container: 'bg-[#1a1210]/80 border-[#C9A84C]/20',
-      number: 'text-[#C9A84C]',
-      label: 'text-[#8a7a6a]',
-    },
-    '6': {
-      container: 'bg-white/5 backdrop-blur-xl border-white/10',
-      number: 'text-[#00FFD1]',
-      label: 'text-white/40',
-    },
   };
 
-  const s = styles[variant];
+  const s = styles[variant] ?? styles['1'];
 
   const units = [
     { value: timeLeft.days, label: labels.days },

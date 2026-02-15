@@ -1,6 +1,6 @@
 ---
 interface Props {
-  variant?: '1' | '2' | '3' | '4' | '5' | '6';
+  variant?: '1' | '4';
 }
 
 const { variant = '1' } = Astro.props;
@@ -17,34 +17,14 @@ const variantStyles: Record<string, { pill: string; active: string; inactive: st
     active: 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-500/20',
     inactive: 'text-stone-400 hover:text-stone-100',
   },
-  '2': {
-    pill: 'bg-[#f0ebe3]/90 border-stone-900/20 text-stone-900',
-    active: 'bg-stone-950 text-[#f0ebe3]',
-    inactive: 'text-stone-700 hover:text-stone-950',
-  },
-  '3': {
-    pill: 'bg-white/90 border-stone-200 text-stone-700',
-    active: 'bg-pine-600 text-white shadow-lg shadow-pine-600/20',
-    inactive: 'text-stone-500 hover:text-stone-700',
-  },
   '4': {
     pill: 'bg-[#0a0b0a] border-[#39FF14]/20 text-[#9b9b9b]',
     active: 'bg-[#39FF14] text-[#030304] shadow-lg shadow-[#39FF14]/25',
     inactive: 'text-[#7d7d7d] hover:text-[#39FF14]',
   },
-  '5': {
-    pill: 'bg-[#1a1210] border-[#C9A84C]/20 text-[#a09080]',
-    active: 'bg-[#C9A84C] text-[#1a1210] shadow-lg shadow-[#C9A84C]/20',
-    inactive: 'text-[#8a7a6a] hover:text-[#C9A84C]',
-  },
-  '6': {
-    pill: 'bg-white/5 border-white/10 text-white/70',
-    active: 'bg-[#00FFD1] text-[#0B0D17] shadow-lg shadow-[#00FFD1]/25',
-    inactive: 'text-white/50 hover:text-[#00FFD1]',
-  },
 };
 
-const styles = variantStyles[variant];
+const styles = variantStyles[variant] ?? variantStyles['1'];
 ---
 
 <div
