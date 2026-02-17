@@ -1,0 +1,124 @@
+---
+/**
+ * DESIGN GALLERY — Landing Page
+ * ─────────────────────────────
+ * A showcase hub for reviewing the remaining design directions.
+ * Each card previews the design's personality and links through.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const designs = [
+  {
+    id: '1',
+    name: 'Cinematic Noir',
+    description: 'Dark, dramatic, full-bleed. Amber accents cut through volcanic blacks. Think: documentary film poster meets luxury sports brand.',
+    tags: ['Dark theme', 'Dramatic type', 'Amber accents'],
+    gradient: 'from-stone-950 via-stone-900 to-amber-950',
+    accent: 'amber-400',
+    accentBg: 'bg-amber-500',
+    border: 'border-amber-500/30',
+    hoverBorder: 'hover:border-amber-400',
+  },
+  {
+    id: '4',
+    name: 'Signal / Noise',
+    description: 'Deconstructed mission-control aesthetic. Near-black canvas with phosphor green signal accents and amber data streams. Think: deep space HQ meets cycling data.',
+    tags: ['Tech aesthetic', 'Data panels', 'Neon green'],
+    gradient: 'from-[#030304] via-[#0a0a0f] to-[#030304]',
+    accent: '[#39FF14]',
+    accentBg: 'bg-[#39FF14]',
+    border: 'border-[#39FF14]/30',
+    hoverBorder: 'hover:border-[#39FF14]',
+  },
+];
+---
+
+<BaseLayout title="Riding4GBS — Design Review" variant="1">
+  <div class="min-h-screen bg-stone-950 text-stone-100">
+
+    <!-- Header -->
+    <header class="pt-16 pb-12 px-6 lg:px-10 max-w-[1400px] mx-auto">
+      <div class="animate-fade-up">
+        <span class="inline-block text-amber-500/80 font-body text-xs tracking-[0.35em] uppercase mb-4">
+          Design Review &middot; Riding4GBS
+        </span>
+      </div>
+      <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.9] tracking-tight animate-fade-up stagger-1">
+        The Slow<br/>
+        <span class="text-amber-400">Road</span> Back
+      </h1>
+      <div class="mt-6 max-w-2xl animate-fade-up stagger-2">
+        <p class="text-stone-400 text-lg leading-relaxed font-body">
+          Two design directions for the Riding4GBS website. Cinematic Noir and Signal / Noise explore different visual languages while telling the same story — a GBS survivor's journey across the Pyrenees.
+        </p>
+      </div>
+      <div class="mt-4 animate-fade-up stagger-3">
+        <p class="text-stone-500 text-sm font-body">
+          Click any design to explore its full homepage. Use the design switcher at the bottom of each page to jump between the two options without returning here.
+        </p>
+      </div>
+    </header>
+
+    <!-- Divider -->
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div class="h-px bg-gradient-to-r from-transparent via-stone-700 to-transparent"></div>
+    </div>
+
+    <!-- Design Grid -->
+    <main class="px-6 lg:px-10 py-12 max-w-[1400px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {designs.map((d, i) => (
+          <a
+            href={`/${d.id}`}
+            class={`group relative flex flex-col rounded-2xl border ${d.border} ${d.hoverBorder} bg-stone-900/60 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl animate-fade-up`}
+            style={`animation-delay: ${0.1 + i * 0.1}s;`}
+          >
+            {/* Design name header */}
+            <div class={`h-32 bg-gradient-to-br ${d.gradient} relative overflow-hidden flex items-center px-6`}>
+              <div class="flex items-center gap-4 relative z-10">
+                <span class={`w-4 h-4 rounded-full ${d.accentBg} shrink-0`}></span>
+                <h2 class="font-display text-2xl sm:text-3xl font-black text-white/90 group-hover:text-white transition-colors">
+                  {d.name}
+                </h2>
+              </div>
+              {/* Shimmer */}
+              <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+            </div>
+
+            {/* Card content */}
+            <div class="flex flex-col flex-1 p-6">
+              <p class="text-stone-400 text-sm leading-relaxed font-body mb-4 flex-1">
+                {d.description}
+              </p>
+
+              {/* Tags */}
+              <div class="flex flex-wrap gap-2 mb-4">
+                {d.tags.map(tag => (
+                  <span class="text-xs font-body text-stone-500 bg-stone-800/80 px-2.5 py-1 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div class="flex items-center gap-2 text-stone-500 group-hover:text-stone-300 transition-colors text-sm font-body">
+                <span>View design</span>
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="px-6 lg:px-10 py-8 max-w-[1400px] mx-auto">
+      <div class="h-px bg-gradient-to-r from-transparent via-stone-700 to-transparent mb-8"></div>
+      <p class="text-stone-600 text-xs font-body text-center">
+        Riding4GBS Design Review &middot; All designs are work in progress
+      </p>
+    </footer>
+  </div>
+</BaseLayout>
