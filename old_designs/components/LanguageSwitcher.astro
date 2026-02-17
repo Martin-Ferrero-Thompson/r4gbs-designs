@@ -11,10 +11,10 @@ const languages = [
   { code: 'eu', label: 'Euskara', flag: flags.eu },
 ];
 ---
-<div class="relative inline-block" data-lang-root data-selected-class="text-amber-400">
+<div class="relative inline-block" data-lang-root data-selected-class="text-[#39FF14]">
   <button
     type="button"
-    class="inline-flex items-center gap-1.5 text-sm font-medium transition-colors duration-150 text-stone-400 hover:text-stone-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-stone-600"
+    class="inline-flex items-center gap-1.5 text-sm font-medium transition-colors duration-150 text-[#7d7d7d] hover:text-[#c5c5c5] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#39FF14]/50"
     data-lang-trigger
     aria-haspopup="listbox"
     aria-expanded="false"
@@ -27,7 +27,7 @@ const languages = [
   </button>
 
   <div
-    class="absolute right-0 mt-2 min-w-[140px] rounded-lg p-2 opacity-0 scale-95 pointer-events-none transition duration-150 ease-out bg-stone-950/95 border border-stone-800 shadow-lg shadow-black/30 text-stone-200"
+    class="absolute right-0 mt-2 min-w-[140px] rounded-lg p-2 opacity-0 scale-95 pointer-events-none transition duration-150 ease-out bg-[#050505]/95 border border-[#39FF14]/15 shadow-lg shadow-black/40 text-[#e5e5e5]"
     data-lang-menu
     role="listbox"
     aria-label="Select language"
@@ -37,7 +37,7 @@ const languages = [
         type="button"
         role="option"
         data-lang-option={lang.code}
-        class="flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors duration-150 text-stone-300 hover:text-stone-100"
+        class="flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors duration-150 text-[#b3b3b3] hover:text-white"
       >
         <span aria-hidden="true" class="flex-shrink-0" set:html={lang.flag}></span>
         <span class="flex-1" translate="no">{lang.label}</span>

@@ -5,10 +5,10 @@ const options = [
   { mode: 'light', label: 'Light', i18nKey: 'theme.light', icon: '<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>' },
 ];
 ---
-<div class="relative inline-block" data-theme-root data-selected-class="text-amber-400">
+<div class="relative inline-block" data-theme-root data-selected-class="text-[#39FF14]">
   <button
     type="button"
-    class="inline-flex h-9 items-center gap-1 rounded-full px-2 text-sm transition-colors duration-150 text-stone-400 hover:text-stone-200 hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-stone-600"
+    class="inline-flex h-9 items-center gap-1 rounded-full px-2 text-sm transition-colors duration-150 text-[#7d7d7d] hover:text-[#c5c5c5] hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#39FF14]/50"
     data-theme-trigger
     aria-haspopup="listbox"
     aria-expanded="false"
@@ -27,7 +27,7 @@ const options = [
   </button>
 
   <div
-    class="absolute right-0 mt-2 min-w-[160px] rounded-lg p-2 opacity-0 scale-95 pointer-events-none transition duration-150 ease-out bg-stone-950/95 border border-stone-800 shadow-lg shadow-black/30 text-stone-200"
+    class="absolute right-0 mt-2 min-w-[160px] rounded-lg p-2 opacity-0 scale-95 pointer-events-none transition duration-150 ease-out bg-[#050505]/95 border border-[#39FF14]/15 shadow-lg shadow-black/40 text-[#e5e5e5]"
     data-theme-menu
     role="listbox"
     aria-label="Select theme"
@@ -37,7 +37,7 @@ const options = [
         type="button"
         role="option"
         data-theme-option={opt.mode}
-        class="flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors duration-150 text-stone-300 hover:text-stone-100"
+        class="flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors duration-150 text-[#b3b3b3] hover:text-white"
       >
         <span class="flex-shrink-0 opacity-70" aria-hidden="true" set:html={opt.icon} />
         <span class="flex-1" data-i18n={opt.i18nKey}>{opt.label}</span>

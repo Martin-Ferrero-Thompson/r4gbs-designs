@@ -1,6 +1,7 @@
 ---
 const designs = [
   { id: '1', label: 'Cinematic', color: 'bg-amber-500', i18nKey: 'designSelector.cinematic' },
+  { id: '4', label: 'Signal', color: 'bg-[#39FF14]', i18nKey: 'designSelector.signal' },
 ];
 ---
 
@@ -19,9 +20,13 @@ const designs = [
     {designs.map(d => (
       <a
         href={`/${d.id}`}
-        class={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-body font-medium transition-all duration-200 ${d.color} text-white shadow-lg`}
+        class={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-body font-medium transition-all duration-200 ${
+          d.id === '4'
+            ? `${d.color} text-white shadow-lg`
+            : 'text-stone-400 hover:text-stone-200 hover:bg-stone-800'
+        }`}
       >
-        <span class={`w-2 h-2 rounded-full ${d.color} opacity-0`}></span>
+        <span class={`w-2 h-2 rounded-full ${d.color} ${d.id === '4' ? 'opacity-0' : 'opacity-60'}`}></span>
         <span data-i18n={d.i18nKey}>{d.label}</span>
       </a>
     ))}

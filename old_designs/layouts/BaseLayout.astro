@@ -1,6 +1,6 @@
 ---
-import '../styles/global.css';
-import { getAllTranslations } from '../i18n/index';
+import './styles/signal.css';
+import { getAllTranslations } from '../../src/i18n/index';
 
 interface Props {
   title?: string;
@@ -15,7 +15,7 @@ const {
 const i18nTranslations = getAllTranslations();
 ---
 <!doctype html>
-<html lang="en" class="variant-cinematic">
+<html lang="en" class="variant-signal">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -109,7 +109,7 @@ const i18nTranslations = getAllTranslations();
   <body class="min-h-screen overflow-x-hidden">
     <slot />
     <script>
-      import '../i18n/client.ts';
+      import '../src/i18n/client.ts';
       import { inject } from '@vercel/analytics';
       inject();
     </script>

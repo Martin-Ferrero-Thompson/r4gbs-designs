@@ -94,12 +94,12 @@ export default function Countdown({ targetDate }: CountdownProps) {
       {units.map(({ value, label }) => (
         <div
           key={label}
-          className="flex flex-col items-center rounded-xl border px-3 py-3 sm:px-5 sm:py-4 bg-stone-900/50 border-stone-800"
+          className="flex flex-col items-center rounded-xl border bg-[#0a0b0a] border-[#39FF14]/20 px-3 py-3 sm:px-5 sm:py-4"
         >
-          <span className="font-display text-2xl sm:text-4xl font-bold tabular-nums text-amber-400">
+          <span className="font-display text-2xl sm:text-4xl font-bold tabular-nums text-[#39FF14]">
             {String(value).padStart(2, '0')}
           </span>
-          <span className="text-[10px] sm:text-xs font-body uppercase tracking-wider mt-1 text-stone-500">
+          <span className="text-[10px] sm:text-xs font-body uppercase tracking-wider mt-1 text-[#555]">
             {label}
           </span>
         </div>

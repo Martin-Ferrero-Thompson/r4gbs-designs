@@ -15,11 +15,11 @@ const navLinks = [
   { href: '/support-us', label: 'Support Us', i18nKey: 'nav.supportUs' },
 ];
 ---
-<nav class="fixed top-0 left-0 right-0 z-50 bg-stone-950/40 backdrop-blur-2xl border-b border-amber-500/15 shadow-lg shadow-stone-950/20" id="main-nav">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#030304]/40 backdrop-blur-2xl border-b border-[#39FF14]/10 shadow-lg shadow-[#39FF14]/5" id="main-nav">
   <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
     <div class="flex items-center justify-between h-16 lg:h-20">
       <!-- Logo -->
-      <a href="/" class="font-display text-lg lg:text-xl font-bold tracking-tight text-amber-400 flex items-center gap-3">
+      <a href="/4" class="font-display text-lg lg:text-xl font-bold tracking-tight text-[#39FF14] flex items-center gap-3">
         <span class="hidden sm:inline">Riding4GBS</span>
         <span class="sm:hidden">R4GBS</span>
       </a>
@@ -30,7 +30,7 @@ const navLinks = [
           <a
             href={link.href}
             data-i18n={link.i18nKey}
-            class={`px-3 py-2 text-sm rounded-md text-stone-300 hover:text-amber-400 transition-colors duration-300 ${currentPath === link.href ? 'opacity-100' : 'opacity-75 hover:opacity-100'}`}
+            class={`px-3 py-2 text-sm rounded-md text-[#8a8a8a] hover:text-[#39FF14] transition-colors duration-200 font-mono text-xs uppercase tracking-widest ${currentPath === link.href ? 'opacity-100' : 'opacity-75 hover:opacity-100'}`}
           >
             {link.label}
           </a>
@@ -39,15 +39,15 @@ const navLinks = [
           <a
             href="/donate"
             data-i18n="nav.donate"
-            class="px-5 py-2.5 rounded-full text-sm bg-amber-500 text-stone-950 hover:bg-amber-400 font-bold transition-all duration-300"
+            class="px-5 py-2.5 rounded-full text-sm bg-[#39FF14] text-[#030304] hover:bg-[#50ff3e] font-mono font-bold uppercase tracking-widest text-xs transition-all duration-300"
           >
             Donate
           </a>
-          <div class="nav-utilities flex items-center rounded-full border border-white/10 bg-white/[0.04]">
+          <div class="nav-utilities flex items-center rounded-full border border-[#39FF14]/15 bg-[#050505]/40">
             <div class="px-3 py-1">
               <LanguageSwitcher />
             </div>
-            <div class="h-5 w-px bg-white/10" aria-hidden="true"></div>
+            <div class="h-5 w-px bg-[#39FF14]/15" aria-hidden="true"></div>
             <div class="px-1.5 py-1">
               <ThemeToggle />
             </div>
@@ -58,7 +58,7 @@ const navLinks = [
       <!-- Mobile Menu Toggle -->
       <button
         id="menu-toggle"
-        class="lg:hidden p-2 text-stone-300 hover:text-amber-400 transition-colors duration-300"
+        class="lg:hidden p-2 text-[#8a8a8a] hover:text-[#39FF14] transition-colors duration-200"
         aria-label="Toggle menu"
       >
         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -72,12 +72,12 @@ const navLinks = [
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="lg:hidden hidden">
-    <div class="px-6 pb-6 pt-2 space-y-1 bg-stone-950/60 backdrop-blur-2xl border-t border-amber-500/10">
+    <div class="px-6 pb-6 pt-2 space-y-1 bg-[#030304]/60 backdrop-blur-2xl border-t border-[#39FF14]/5">
       {navLinks.map(link => (
         <a
           href={link.href}
           data-i18n={link.i18nKey}
-          class="block px-3 py-3 text-sm rounded-md text-stone-300 hover:text-amber-400 transition-colors duration-300"
+          class="block px-3 py-3 text-sm rounded-md text-[#8a8a8a] hover:text-[#39FF14] transition-colors duration-200 font-mono text-xs uppercase tracking-widest"
         >
           {link.label}
         </a>
@@ -86,7 +86,7 @@ const navLinks = [
         <a
           href="/donate"
           data-i18n="nav.donateNow"
-          class="flex-1 block text-center px-5 py-3 rounded-full text-sm bg-amber-500 text-stone-950 hover:bg-amber-400 font-bold transition-all duration-300"
+          class="flex-1 block text-center px-5 py-3 rounded-full text-sm bg-[#39FF14] text-[#030304] hover:bg-[#50ff3e] font-mono font-bold uppercase tracking-widest text-xs transition-all duration-300"
         >
           Donate Now
         </a>

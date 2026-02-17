@@ -10,16 +10,16 @@
  * Motion: Pulsing signals, scanning horizontal lines, data cascade reveals.
  * NOT a terminal — this is mission control for a human challenge.
  */
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import Countdown from '../components/Countdown.tsx';
-import DesignSelector from '../components/DesignSelector.astro';
+import BaseLayout from './layouts/BaseLayout.astro';
+import Navigation from './components/Navigation.astro';
+import Footer from './components/Footer.astro';
+import Countdown from './components/Countdown.tsx';
+import DesignSelector from './components/DesignSelector.astro';
 ---
 
-<BaseLayout title="The Slow Road Back | Riding4GBS" variant="4">
-  <Navigation variant="4" />
-  <DesignSelector current="4" />
+<BaseLayout title="The Slow Road Back | Riding4GBS">
+  <Navigation />
+  <DesignSelector />
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
@@ -357,7 +357,7 @@ import DesignSelector from '../components/DesignSelector.astro';
       <!-- Countdown -->
       <div class="mt-14 v4-reveal v4-d6">
         <p class="font-mono-data text-[10px] tracking-[0.4em] uppercase text-signal-dim mb-4">T-MINUS LAUNCH</p>
-        <Countdown client:load targetDate="2026-10-01T07:00:00" variant="4" />
+        <Countdown client:load targetDate="2026-10-01T07:00:00" />
       </div>
     </div>
 
@@ -647,5 +647,5 @@ import DesignSelector from '../components/DesignSelector.astro';
     </div>
   </section>
 
-  <Footer variant="4" />
+  <Footer />
 </BaseLayout>
