@@ -6,16 +6,16 @@ import PageLayout from '../layouts/PageLayout.astro';
   title="Our Progress"
   heroTitle="Follow The Journey"
   heroSubtitle="This page will be updated daily with data from the road. Check back during October 2026."
-  heroTitleKey="ourProgress.heroTitle"
-  heroSubtitleKey="ourProgress.heroSubtitle"
+  heroTitleKey="Progress.heroTitle"
+  heroSubtitleKey="Progress.heroSubtitle"
 >
   <section>
     <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
 
       <!-- Route Map -->
       <div class="bg-stone-900 rounded-2xl p-8 lg:p-12 border border-stone-800 mb-16">
-        <h2 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 mb-6" data-i18n="ourProgress.mapTitle">Live Location Map</h2>
-        <p class="text-stone-400 font-body mb-8" data-i18n="ourProgress.mapDesc">
+        <h2 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 mb-6" data-i18n="Progress.mapTitle">Live Location Map</h2>
+        <p class="text-stone-400 font-body mb-8" data-i18n="Progress.mapDesc">
           This map shows the completed route so far. Check back daily to see progress across the Pyrenees!
         </p>
         <div class="aspect-video bg-stone-800 rounded-xl flex items-center justify-center border border-stone-700">
@@ -23,16 +23,16 @@ import PageLayout from '../layouts/PageLayout.astro';
             <svg class="w-16 h-16 text-stone-600 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
               <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
             </svg>
-            <p class="text-stone-500 font-body text-sm" data-i18n="ourProgress.mapPlaceholder">Live tracking map will activate October 2026</p>
+            <p class="text-stone-500 font-body text-sm" data-i18n="Progress.mapPlaceholder">Live tracking map will activate October 2026</p>
           </div>
         </div>
       </div>
 
       <!-- By the Numbers -->
-      <h2 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 mb-8" data-i18n="ourProgress.byTheNumbers">By the Numbers</h2>
+      <h2 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 mb-8" data-i18n="Progress.byTheNumbers">By the Numbers</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
         <div class="bg-stone-900 rounded-xl p-6 border border-stone-800">
-          <p class="text-stone-500 text-xs font-body uppercase tracking-wider" data-i18n="ourProgress.daysCompleted">Days Completed</p>
+          <p class="text-stone-500 text-xs font-body uppercase tracking-wider" data-i18n="Progress.daysCompleted">Days Completed</p>
           <div class="flex items-baseline gap-2 mt-2">
             <span class="font-display text-3xl font-bold text-stone-100">0</span>
             <span class="text-stone-600 font-body">/ 12</span>
@@ -42,7 +42,7 @@ import PageLayout from '../layouts/PageLayout.astro';
           </div>
         </div>
         <div class="bg-stone-900 rounded-xl p-6 border border-stone-800">
-          <p class="text-stone-500 text-xs font-body uppercase tracking-wider" data-i18n="ourProgress.distanceRidden">Distance Ridden</p>
+          <p class="text-stone-500 text-xs font-body uppercase tracking-wider" data-i18n="Progress.distanceRidden">Distance Ridden</p>
           <div class="flex items-baseline gap-2 mt-2">
             <span class="font-display text-3xl font-bold text-stone-100">0</span>
             <span class="text-stone-600 font-body">/ 1,000 km</span>
@@ -52,7 +52,7 @@ import PageLayout from '../layouts/PageLayout.astro';
           </div>
         </div>
         <div class="bg-stone-900 rounded-xl p-6 border border-stone-800">
-          <p class="text-stone-500 text-xs font-body uppercase tracking-wider" data-i18n="ourProgress.metresClimbed">Metres Climbed</p>
+          <p class="text-stone-500 text-xs font-body uppercase tracking-wider" data-i18n="Progress.metresClimbed">Metres Climbed</p>
           <div class="flex items-baseline gap-2 mt-2">
             <span class="font-display text-3xl font-bold text-stone-100">0</span>
             <span class="text-stone-600 font-body">/ 22,900 m</span>
@@ -62,7 +62,7 @@ import PageLayout from '../layouts/PageLayout.astro';
           </div>
         </div>
         <div class="bg-stone-900 rounded-xl p-6 border border-stone-800">
-          <p class="text-stone-500 text-xs font-body uppercase tracking-wider" data-i18n="ourProgress.summitsConquered">Summits Conquered</p>
+          <p class="text-stone-500 text-xs font-body uppercase tracking-wider" data-i18n="Progress.summitsConquered">Summits Conquered</p>
           <div class="flex items-baseline gap-2 mt-2">
             <span class="font-display text-3xl font-bold text-stone-100">0</span>
             <span class="text-stone-600 font-body">/ 20</span>
@@ -74,27 +74,27 @@ import PageLayout from '../layouts/PageLayout.astro';
       </div>
 
       <!-- Fundraising Progress -->
-      <h2 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 mb-8" data-i18n="ourProgress.fundraisingTitle">Fundraising Progress</h2>
+      <h2 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 mb-8" data-i18n="Progress.fundraisingTitle">Fundraising Progress</h2>
       <div class="grid sm:grid-cols-2 gap-6">
         <div class="bg-stone-900 rounded-2xl p-8 border border-stone-800">
-          <p class="text-stone-400 font-body text-sm" data-i18n="ourProgress.ukCharity">Inflammatory Neuropathies UK</p>
+          <p class="text-stone-400 font-body text-sm" data-i18n="Progress.ukCharity">Inflammatory Neuropathies UK</p>
           <p class="font-display text-4xl font-bold text-stone-100 mt-2">£0.00</p>
           <p class="text-stone-500 text-sm font-body mt-1">Target: £10,000.00</p>
           <div class="mt-4 h-2 bg-stone-800 rounded-full overflow-hidden">
             <div class="h-full bg-amber-500 rounded-full" style="width: 0%;"></div>
           </div>
-          <a href="/donate" class="inline-flex items-center gap-2 text-amber-400 font-body text-sm mt-4 hover:text-amber-300 transition-colors" data-i18n="ourProgress.donateNow">
+          <a href="/donate" class="inline-flex items-center gap-2 text-amber-400 font-body text-sm mt-4 hover:text-amber-300 transition-colors" data-i18n="Progress.donateNow">
             Donate now →
           </a>
         </div>
         <div class="bg-stone-900 rounded-2xl p-8 border border-stone-800">
-          <p class="text-stone-400 font-body text-sm" data-i18n="ourProgress.esCharity">GBS|CIDP España</p>
+          <p class="text-stone-400 font-body text-sm" data-i18n="Progress.esCharity">GBS|CIDP España</p>
           <p class="font-display text-4xl font-bold text-stone-100 mt-2">€0.00</p>
           <p class="text-stone-500 text-sm font-body mt-1">Target: €10,000.00</p>
           <div class="mt-4 h-2 bg-stone-800 rounded-full overflow-hidden">
             <div class="h-full bg-amber-500 rounded-full" style="width: 0%;"></div>
           </div>
-          <a href="/donate" class="inline-flex items-center gap-2 text-amber-400 font-body text-sm mt-4 hover:text-amber-300 transition-colors" data-i18n="ourProgress.donateNow">
+          <a href="/donate" class="inline-flex items-center gap-2 text-amber-400 font-body text-sm mt-4 hover:text-amber-300 transition-colors" data-i18n="Progress.donateNow">
             Donate now →
           </a>
         </div>
