@@ -11,9 +11,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import Countdown from '../components/Countdown.tsx';
+import { t, defaultLang } from '../i18n/index';
 ---
 
-<BaseLayout title="The Slow Road Back | Riding4GBS">
+<BaseLayout title={t(defaultLang, 'home.heroTitleLine1') + ' ' + t(defaultLang, 'home.heroTitleLine2') + ' ' + t(defaultLang, 'home.heroTitleLine3') + ' | Riding4GBS'}>
   <Navigation />
 
   <!-- ═══ HERO: FULL VIEWPORT CINEMATIC ═══ -->
@@ -37,17 +38,15 @@ import Countdown from '../components/Countdown.tsx';
       </div>
 
       <!-- ═══ Main headline - massive, cinematic ═══ -->
-      <h1 class="font-display text-5xl sm:text-7xl lg:text-[8rem] xl:text-[10rem] font-black leading-[0.85] tracking-tight text-stone-100 animate-fade-up stagger-1">
-        The Slow<br/>
-        <span class="text-amber-400">Road</span> Back
+      <h1 class="font-display text-5xl sm:text-7xl lg:text-[8rem] xl:text-[10rem] font-black leading-[0.85] tracking-tight text-stone-100 animate-fade-up stagger-1" data-i18n="home.heroTitle">
+        {t(defaultLang, 'home.heroTitleLine1')}<br/>
+        <span class="text-amber-400" data-i18n="home.heroTitleLine2">{t(defaultLang, 'home.heroTitleLine2')}</span> {t(defaultLang, 'home.heroTitleLine3')}
       </h1>
 
       <!-- ═══ Subheadline ═══ -->
       <div class="mt-8 lg:mt-12 max-w-2xl animate-fade-up stagger-3">
         <p class="text-stone-400 text-lg lg:text-xl leading-relaxed font-body" data-i18n="home.heroSubtitle">
-          A survivor of Guillain-Barré Syndrome takes on the Pyrenees —
-          raising vital funds for Inflammatory Neuropathies UK and GBS|CIDP España.
-          Coast to coast. ~1,000km. ~22,000m of climbing. One purpose.
+          {t(defaultLang, 'home.heroSubtitle')}
         </p>
       </div>
 
@@ -238,13 +237,11 @@ import Countdown from '../components/Countdown.tsx';
         </div>
 
         <div class="lg:col-span-5 order-1 lg:order-2">
-          <span class="text-amber-500 font-body text-xs tracking-[0.3em] uppercase" data-i18n="home.gbsTag">Understanding GBS</span>
-          <h2 class="font-display text-4xl lg:text-5xl font-bold text-stone-100 mt-4 leading-tight">
-            The condition<br/>behind the<br/><span class="text-amber-400">challenge</span>
+          <span class="text-amber-500 font-body text-xs tracking-[0.3em] uppercase" data-i18n="home.gbsTag">{t(defaultLang, 'home.gbsTag')}</span>
+          <h2 class="font-display text-4xl lg:text-5xl font-bold text-stone-100 mt-4 leading-tight" data-i18n="home.gbsTitle1">
+            {t(defaultLang, 'home.gbsTitle1')}<br/>{t(defaultLang, 'home.gbsTitle2')}<br/><span class="text-amber-400" data-i18n="home.gbsTitle3">{t(defaultLang, 'home.gbsTitle3')}</span>
           </h2>
-          <p class="text-stone-500 mt-6 font-body leading-relaxed" data-i18n="home.gbsSideDesc">
-            Guillain-Barré Syndrome can strike anyone, at any age. Understanding it is the first step toward better treatment and support for those affected.
-          </p>
+          <p class="text-stone-500 mt-6 font-body leading-relaxed" data-i18n="home.gbsSideDesc">{t(defaultLang, 'home.gbsSideDesc')}</p>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { getAllTranslations } from '../i18n/index';
+import { getDefaultTranslations } from '../i18n/index';
 
 interface Props {
   title?: string;
@@ -12,7 +12,7 @@ const {
   description = "A Pyrenean cycling challenge to raise awareness and funds for Guillain-Barré Syndrome. Follow Martin's journey across the mountains.",
 } = Astro.props;
 
-const i18nTranslations = getAllTranslations();
+const i18nTranslations = getDefaultTranslations();
 ---
 <!doctype html>
 <html lang="en" class="variant-cinematic">

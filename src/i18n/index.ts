@@ -1,13 +1,14 @@
 /**
  * i18n Configuration
  * ------------------
- * Supported languages, default language, and helper functions.
- * All translations are bundled at build time — no runtime service needed.
+ * Supported languages, default language, and server-side helper functions.
+ *
+ * Only English is bundled at build time. Spanish (es) and Basque (eu)
+ * translation files are served as static assets from /public/i18n/ and
+ * fetched on-demand by the client when the user switches language.
  */
 
 import en from './translations/en.json';
-import es from './translations/es.json';
-import eu from './translations/eu.json';
 
 export const defaultLang = 'en' as const;
 export const languages = ['en', 'es', 'eu'] as const;
@@ -19,7 +20,8 @@ export const languageNames: Record<Lang, string> = {
   eu: 'EU',
 };
 
-export const translations: Record<Lang, typeof en> = { en, es, eu };
+/** English-only translations used server-side when rendering pages. */
+export const translations = { en };
 
 /**
  * Get a nested value from an object using dot-notation key.
@@ -30,18 +32,22 @@ function getNestedValue(obj: Record<string, any>, key: string): string | undefin
 }
 
 /**
- * Create a translation function for a specific language.
- * Falls back to English if a key is missing in the target language.
+ * Render a translation string for the given language.
+ * Since only 'en' is bundled server-side, this is always called with defaultLang.
+ * Falls back to the key itself if the value is missing.
  */
 export function t(lang: Lang, key: string): string {
-  return getNestedValue(translations[lang], key)
+  const langData = (translations as Record<string, any>)[lang] ?? translations[defaultLang];
+  return getNestedValue(langData, key)
     ?? getNestedValue(translations[defaultLang], key)
     ?? key;
 }
 
 /**
- * Get all translations as a serializable object for embedding in pages.
+ * Returns the English translations to embed into the page at build time.
+ * The client uses this data when the user switches back to English (no fetch needed).
+ * Non-English languages are loaded on-demand via fetch('/i18n/{lang}.json').
  */
-export function getAllTranslations() {
+export function getDefaultTranslations() {
   return translations;
 }

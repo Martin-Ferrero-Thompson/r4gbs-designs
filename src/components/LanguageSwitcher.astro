@@ -157,7 +157,7 @@ const languages = [
     setupLanguageDropdown(root);
   });
 
-  document.addEventListener('lang:changed', () => {
+  document.addEventListener('lang-changed', () => {
     document.querySelectorAll('[data-lang-root]').forEach((root) => updateLangUI(root));
   });
 </script>

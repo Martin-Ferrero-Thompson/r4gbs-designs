@@ -1,9 +1,15 @@
 /**
  * i18n Client Script
  * ------------------
- * Handles client-side language switching. Bundled into every page.
- * Reads language preference from localStorage and swaps text content
- * on elements with data-i18n attributes.
+ * Handles client-side language switching with lazy loading.
+ *
+ * Strategy:
+ *  - English translations are embedded in the page at build time via
+ *    window.__i18n_translations.en (no fetch needed for English).
+ *  - Spanish (es) and Basque (eu) are fetched on-demand from /i18n/{lang}.json
+ *    the first time the user selects that language, then cached in memory.
+ *  - On initial page load, if the stored language is non-English, the file is
+ *    fetched before content is revealed to avoid a flash of English text.
  *
  * Usage in HTML:
  *   <p data-i18n="nav.challenge">The Challenge</p>
@@ -14,9 +20,9 @@
   const STORAGE_KEY = 'riding4gbs-lang';
   const DEFAULT_LANG = 'en';
 
-  // Translations are injected at build time via Astro's define:vars
-  // They will be available as window.__i18n_translations
-  const translations: Record<string, Record<string, any>> =
+  // English translations are injected at build time via Astro's define:vars.
+  // Non-English data is fetched on demand and stored here.
+  const translationCache: Record<string, Record<string, any>> =
     (window as any).__i18n_translations || {};
 
   function getNestedValue(obj: Record<string, any>, key: string): string | undefined {
@@ -27,50 +33,36 @@
     return localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
   }
 
-  function setLang(lang: string) {
-    localStorage.setItem(STORAGE_KEY, lang);
-    applyTranslations(lang);
-    updateActiveButtons(lang);
-    document.documentElement.lang = lang;
-    // Dispatch custom event for React components (e.g., Countdown)
-    document.dispatchEvent(new CustomEvent('lang-changed', { detail: { lang } }));
-  }
-
+  /** Apply translations for the given language from the in-memory cache. */
   function applyTranslations(lang: string) {
-    const langData = translations[lang] || translations[DEFAULT_LANG];
+    const langData = translationCache[lang] || translationCache[DEFAULT_LANG];
     if (!langData) return;
 
-    // Handle data-i18n (textContent replacement)
+    // data-i18n → textContent replacement
     document.querySelectorAll<HTMLElement>('[data-i18n]').forEach((el) => {
       const key = el.getAttribute('data-i18n');
       if (!key) return;
       const value = getNestedValue(langData, key)
-        ?? getNestedValue(translations[DEFAULT_LANG], key);
-      if (value !== undefined) {
-        el.textContent = value;
-      }
+        ?? getNestedValue(translationCache[DEFAULT_LANG], key);
+      if (value !== undefined) el.textContent = value;
     });
 
-    // Handle data-i18n-html (innerHTML replacement — for content with links)
+    // data-i18n-html → innerHTML replacement (for content containing links)
     document.querySelectorAll<HTMLElement>('[data-i18n-html]').forEach((el) => {
       const key = el.getAttribute('data-i18n-html');
       if (!key) return;
       const value = getNestedValue(langData, key)
-        ?? getNestedValue(translations[DEFAULT_LANG], key);
-      if (value !== undefined) {
-        el.innerHTML = value;
-      }
+        ?? getNestedValue(translationCache[DEFAULT_LANG], key);
+      if (value !== undefined) el.innerHTML = value;
     });
 
-    // Handle data-i18n-placeholder (for inputs)
+    // data-i18n-placeholder → input placeholder replacement
     document.querySelectorAll<HTMLInputElement>('[data-i18n-placeholder]').forEach((el) => {
       const key = el.getAttribute('data-i18n-placeholder');
       if (!key) return;
       const value = getNestedValue(langData, key)
-        ?? getNestedValue(translations[DEFAULT_LANG], key);
-      if (value !== undefined) {
-        el.placeholder = value;
-      }
+        ?? getNestedValue(translationCache[DEFAULT_LANG], key);
+      if (value !== undefined) el.placeholder = value;
     });
   }
 
@@ -92,17 +84,59 @@
     });
   }
 
-  // Expose setLang globally so the language switcher buttons can call it
+  /**
+   * Fetch a language file from /i18n/{lang}.json, cache it, and return it.
+   * Returns the cached object immediately if already fetched.
+   */
+  async function loadLang(lang: string): Promise<Record<string, any> | null> {
+    if (translationCache[lang]) return translationCache[lang];
+    try {
+      const res = await fetch(`/i18n/${lang}.json`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      translationCache[lang] = data;
+      return data;
+    } catch (e) {
+      console.warn(`[i18n] Failed to load language "${lang}":`, e);
+      return null;
+    }
+  }
+
+  /**
+   * Switch the active language. For English, applies immediately from cache.
+   * For other languages, fetches the file first (or uses cache on repeat calls).
+   */
+  async function setLang(lang: string) {
+    if (lang !== DEFAULT_LANG) {
+      await loadLang(lang);
+    }
+    localStorage.setItem(STORAGE_KEY, lang);
+    applyTranslations(lang);
+    updateActiveButtons(lang);
+    document.documentElement.lang = lang;
+    document.dispatchEvent(new CustomEvent('lang-changed', { detail: { lang } }));
+  }
+
+  // Expose globals so LanguageSwitcher and other components can call them
   (window as any).__setLang = setLang;
   (window as any).__getCurrentLang = getCurrentLang;
 
-  // Apply on initial page load
+  // --- Initial page load ---
   const currentLang = getCurrentLang();
-  // Always apply translations to ensure correct language is shown
-  applyTranslations(currentLang);
-  updateActiveButtons(currentLang);
-  document.documentElement.lang = currentLang;
 
-  // Remove loading class to reveal translated content (prevents flash of wrong language)
-  document.documentElement.classList.remove('i18n-loading');
+  if (currentLang === DEFAULT_LANG) {
+    // English: translations are already in the page — apply synchronously
+    applyTranslations(currentLang);
+    updateActiveButtons(currentLang);
+    document.documentElement.lang = currentLang;
+    document.documentElement.classList.remove('i18n-loading');
+  } else {
+    // Non-English: fetch then apply, keeping content hidden until ready
+    loadLang(currentLang).then(() => {
+      applyTranslations(currentLang);
+      updateActiveButtons(currentLang);
+      document.documentElement.lang = currentLang;
+      document.documentElement.classList.remove('i18n-loading');
+    });
+  }
 })();
