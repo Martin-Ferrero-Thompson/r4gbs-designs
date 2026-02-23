@@ -56,6 +56,15 @@
       if (value !== undefined) el.innerHTML = value;
     });
 
+    // data-i18n-href → anchor href replacement
+    document.querySelectorAll<HTMLAnchorElement>('[data-i18n-href]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-href');
+      if (!key) return;
+      const value = getNestedValue(langData, key)
+        ?? getNestedValue(translationCache[DEFAULT_LANG], key);
+      if (value !== undefined) el.setAttribute('href', value);
+    });
+
     // data-i18n-placeholder → input placeholder replacement
     document.querySelectorAll<HTMLInputElement>('[data-i18n-placeholder]').forEach((el) => {
       const key = el.getAttribute('data-i18n-placeholder');

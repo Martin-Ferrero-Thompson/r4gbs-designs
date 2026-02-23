@@ -3,6 +3,8 @@
     "siteName": "Riding4GBS",
     "siteNameShort": "R4GBS",
     "langLabel": "Idioma"
+    ,
+    "findOutMoreUrl": "https://www.inflammatoryneuropathies.uk/how-we-can-help"
   },
   "theme": {
     "label": "Tema",
@@ -171,6 +173,11 @@
     "supportingResearch": "Apoyando la investigación",
     "supportingDesc": "Nuestro viaje recauda fondos para Inflammatory Neuropathies UK y GBS|CIDP España, organizaciones dedicadas al apoyo de pacientes e investigación.",
     "donateToResearch": "Donar para la investigación"
+    ,
+    "findOutMoreTitle": "Inflammatory Neuropathies UK",
+    "findOutMoreDesc": "If you, or someone close to you, has been diagnosed with Guillain-Barré Syndrome (GBS), CIDP or any other Inflammatory Neuropathy, you are not alone. We are here to support.",
+    "findOutMoreDesc2": "For more personalised support, resources, and to connect with others who understand what you're going through, we highly recommend visiting the Inflammatory Neuropathies UK website.",
+    "findOutMoreLink": "Find Out More →"
   },
   "progress": {
     "pageTitle": "Nuestro Progreso",
