@@ -171,6 +171,12 @@
     "supportingResearch": "Apoyando la investigación",
     "supportingDesc": "Nuestro viaje recauda fondos para Inflammatory Neuropathies UK y GBS|CIDP España, organizaciones dedicadas al apoyo de pacientes e investigación.",
     "donateToResearch": "Donar para la investigación"
+    ,
+    "findOutMoreTitle": "Neuropatías Autoinmunes - GBS|CIDP España",
+    "findOutMoreDesc": "Si tú, o alguien cercano a ti, ha sido diagnosticado con el Síndrome de Guillain-Barré (GBS), CIDP o cualquier otra Neuropatía Inflamatoria, no estás solo. Estamos aquí para apoyar.",
+    "findOutMoreDesc2": "Para obtener un apoyo más personalizado, recursos y conectarte con otros que entienden por lo que estás pasando, te recomendamos visitar el sitio web de Neuropatías Autoinmunes - GBS|CIDP España.",
+    "findOutMoreLink": "Más información de Neuropatías Autoinmunes - GBS|CIDP España →",
+    "findOutMoreUrl": "https://gbs-cidp.org.es/"    
   },
   "progress": {
     "pageTitle": "Nuestro Progreso",

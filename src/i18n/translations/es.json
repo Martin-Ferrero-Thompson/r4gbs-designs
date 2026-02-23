@@ -3,8 +3,6 @@
     "siteName": "Riding4GBS",
     "siteNameShort": "R4GBS",
     "langLabel": "Idioma"
-    ,
-    "findOutMoreUrl": "https://www.inflammatoryneuropathies.uk/how-we-can-help"
   },
   "theme": {
     "label": "Tema",
@@ -174,10 +172,11 @@
     "supportingDesc": "Nuestro viaje recauda fondos para Inflammatory Neuropathies UK y GBS|CIDP España, organizaciones dedicadas al apoyo de pacientes e investigación.",
     "donateToResearch": "Donar para la investigación"
     ,
-    "findOutMoreTitle": "Inflammatory Neuropathies UK",
-    "findOutMoreDesc": "If you, or someone close to you, has been diagnosed with Guillain-Barré Syndrome (GBS), CIDP or any other Inflammatory Neuropathy, you are not alone. We are here to support.",
-    "findOutMoreDesc2": "For more personalised support, resources, and to connect with others who understand what you're going through, we highly recommend visiting the Inflammatory Neuropathies UK website.",
-    "findOutMoreLink": "Find Out More →"
+    "findOutMoreTitle": "Neuropatías Autoinmunes - GBS|CIDP España",
+    "findOutMoreDesc": "Si tú, o alguien cercano a ti, ha sido diagnosticado con el Síndrome de Guillain-Barré (GBS), CIDP o cualquier otra Neuropatía Inflamatoria, no estás solo. Estamos aquí para apoyar.",
+    "findOutMoreDesc2": "Para obtener un apoyo más personalizado, recursos y conectarte con otros que entienden por lo que estás pasando, te recomendamos visitar el sitio web de Neuropatías Autoinmunes - GBS|CIDP España.",
+    "findOutMoreLink": "Más información de Neuropatías Autoinmunes - GBS|CIDP España →",
+    "findOutMoreUrl": "https://gbs-cidp.org.es/"    
   },
   "progress": {
     "pageTitle": "Nuestro Progreso",

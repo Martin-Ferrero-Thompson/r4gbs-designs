@@ -210,6 +210,12 @@
     "supportingResearch": "Ikerketa babesten",
     "supportingDesc": "Gure martxak Inflammatory Neuropathies UK eta GBS|CIDP España-rentzat funtsak biltzen ditu — pazienteei laguntzeko eta ikerketa finantzatzeko erakundeak.",
     "donateToResearch": "GBS ikerketarako dohaintza"
+    ,
+    "findOutMoreTitle": "Neuropatías Autoinmunes - GBS|CIDP España",
+    "findOutMoreDesc": "Guillain-Barré sindromea (GBS), CIDP edo beste edozein neuropatia inflamatorio diagnostikatu badizute zuri edo zure inguruko norbaiti, ez zaude bakarrik. Hemen gaude zuri laguntzeko.",
+    "findOutMoreDesc2": "Laguntza pertsonalizatuagoa, baliabideak eta zure egoera ulertzen duten besteekin konektatzeko, GBS|CIDP España webgunea bisitatzea gomendatzen dugu.",
+    "findOutMoreLink": "Informazio gehiago neuropatia autoimmuneei buruz - GBS|CIDP Espainia →",
+    "findOutMoreUrl": "https://gbs-cidp.org.es/"        
   },
   "progress": {
     "pageTitle": "Gure Aurrerapena",

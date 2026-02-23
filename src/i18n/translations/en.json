@@ -2,8 +2,7 @@
   "common": {
     "siteName": "Riding4GBS",
     "siteNameShort": "R4GBS",
-    "langLabel": "Language",
-    "findOutMoreUrl": "https://www.inflammatoryneuropathies.uk/how-we-can-help"
+    "langLabel": "Language"
   },
   "theme": {
     "label": "Theme",

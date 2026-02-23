@@ -170,7 +170,12 @@
     "fact4Label": "of patients left with significant disability",
     "supportingResearch": "Supporting Research",
     "supportingDesc": "Our ride raises funds for Inflammatory Neuropathies UK and GBS|CIDP España — organisations dedicated to supporting patients and funding research.",
-    "donateToResearch": "Donate to GBS Research"
+    "donateToResearch": "Donate to GBS Research",
+    "findOutMoreTitle": "Inflammatory Neuropathies UK",
+    "findOutMoreDesc": "If you, or someone close to you, has been diagnosed with Guillain-Barré Syndrome (GBS), CIDP or any other Inflammatory Neuropathy, you are not alone. We are here to support.",
+    "findOutMoreDesc2": "For more personalised support, resources, and to connect with others who understand what you're going through, we highly recommend visiting the Inflammatory Neuropathies UK website.",
+    "findOutMoreLink": "Find Out More from Inflammatory Neuropathies UK →",
+    "findOutMoreUrl": "https://www.inflammatoryneuropathies.uk/how-we-can-help"
   },
     "progress": {
     "pageTitle": "Our Progress",
