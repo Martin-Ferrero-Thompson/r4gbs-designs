@@ -4,10 +4,19 @@
 const LANG_STORAGE_KEY = 'riding4gbs-lang';
 
 function getCurrentLang(): string {
-  return localStorage.getItem(LANG_STORAGE_KEY) || 'en';
+  try {
+    return localStorage.getItem(LANG_STORAGE_KEY) || 'en';
+  } catch {
+    return 'en';
+  }
 }
 
 function setCurrentLang(value: string): void {
+  try {
+    localStorage.setItem(LANG_STORAGE_KEY, value);
+  } catch {
+    // Storage unavailable; continue without persistence
+  }
   if ((window as any).__setLang) (window as any).__setLang(value);
 }
 
@@ -105,7 +114,12 @@ function setupLanguageDropdown(root: HTMLElement): void {
   });
 }
 
+let initialized = false;
+
 export function initLanguageSwitcher(): void {
+  if (initialized) return;
+  initialized = true;
+
   document.querySelectorAll('[data-lang-root]').forEach((root) => {
     setupLanguageDropdown(root as HTMLElement);
   });

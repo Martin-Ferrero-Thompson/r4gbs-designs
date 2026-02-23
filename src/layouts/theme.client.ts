@@ -58,17 +58,18 @@ media.addEventListener('change', syncSystem);
 
 (window as any).__setTheme = function(mode: string) {
   const next = normalize(mode);
-  localStorage.setItem(STORAGE_KEY, next);
+  setStoredMode(next);
   apply(next);
   document.dispatchEvent(new CustomEvent('theme:changed', {
     detail: { mode: next, theme: resolve(next) }
   }));
 };
 
+
 (window as any).__getThemeMode = function() {
-  return normalize(localStorage.getItem(STORAGE_KEY) || 'system');
+  return normalize(getStoredMode());
 };
 
 (window as any).__getResolvedTheme = function() {
-  return resolve(normalize(localStorage.getItem(STORAGE_KEY) || 'system'));
+  return resolve(getStoredMode());
 };
