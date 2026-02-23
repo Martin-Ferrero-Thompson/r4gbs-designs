@@ -3,8 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "sync-i18n": "bun run scripts/sync-i18n.ts",
+    "dev": "bun run sync-i18n && astro dev",
+    "build": "bun run sync-i18n && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

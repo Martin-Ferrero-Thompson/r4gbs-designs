@@ -1,0 +1,199 @@
+{
+  "home": {
+    "missionTag": {
+      "en": "The Mission",
+      "es": "La Misión",
+      "eu": "Misioa"
+    },
+    "missionTitle1": {
+      "en": "More than",
+      "es": "Más que",
+      "eu": "Bizikleta bidaia bat"
+    },
+    "missionTitle2": {
+      "en": "a bike ride",
+      "es": "un viaje en bici",
+      "eu": "baino gehiago"
+    },
+    "missionDesc": {
+      "en": "My name is Martin, and I am a survivor of Guillain-Barré Syndrome. In 2021, GBS changed my life — but it didn't define it. In October 2026, starting from my home in Pamplona, my incredible wife Edurne and I will take on the Pyrenees: a complete coast-to-coast traverse of one of the world's most challenging mountain ranges.",
+      "es": "Mi nombre es Martin y soy un superviviente del Síndrome de Guillain-Barré. En 2021, el GBS cambió mi vida, pero no la definió. En octubre de 2026, partiendo de nuestro hogar en Pamplona, mi increíble mujer Edurne y yo nos enfrentaremos a los Pirineos: una travesía completa de costa a costa de una de las cordilleras más exigentes del mundo.",
+      "eu": "Nire izena Martin da, eta Guillain-Barré Sindrometik bizirik atera nintzen. 2021ean, GBSak nire bizitza aldatu zuen, baina ez zuen definitu. 2026ko urrian, Iruñeko nire etxetik hasita, nire emazte paregabe Edurnek eta biok Pirinioei aurre egingo diegu: munduko mendilerro erronkarienetako baten kostaz kostako zeharkaldi osoa."
+    },
+    "missionDesc2": {
+      "en": "Our ride is a shared mission to raise vital awareness and funds for the GBS community. We don't know exactly how many days it will take, or how many mountains will have to be climbed. But we invite you to follow along, day by day, on our journey of hope and resilience.",
+      "es": "Nuestro viaje es una misión compartida para concienciar y recaudar fondos vitales para la comunidad GBS. No sabemos exactamente cuántos días nos llevará, ni cuántas montañas habrá que escalar. Pero os invitamos a seguirnos, día a día, en nuestro viaje de esperanza y resiliencia.",
+      "eu": "Gure martxa partekatutako misio bat da, GBS komunitatearentzat kontzientzia eta funtsak biltzeko. Ez dakigu zehazki zenbat egun beharko ditugun, ezta zenbat mendi igo beharko ditugun ere. Baina egunero gure itxaropen eta erresilientzia bidaia jarraitzera gonbidatzen zaituztegu."
+    },
+    "readFullStory": {
+      "en": "Read Martin's full story",
+      "es": "Leer la historia completa de Martin",
+      "eu": "Irakurri Martinen istorio osoa"
+    },
+    "challengeTag": {
+      "en": "The Challenge",
+      "es": "El Reto",
+      "eu": "Erronka"
+    },
+    "challengeTitle": {
+      "en": "Chapter One: To Conquer the Pyrenees",
+      "es": "Capítulo Uno: Conquistar los Pirineos",
+      "eu": "Lehen Kapitulua: Pirinioak Konkistatzea"
+    },
+    "challengeDesc": {
+      "en": "A complete coast-to-coast traverse — from the Atlantic to the Mediterranean and back again — in self-supported bikepacking style.",
+      "es": "Una travesía completa de costa a costa — del Atlántico al Mediterráneo y de vuelta — en estilo bikepacking autosuficiente.",
+      "eu": "Kostaz kostako zeharkaldi osoa — Atlantikotik Mediterraneora eta itzulera — 'bikepacking' estiloan, laguntza barik."
+    },
+    "frenchTitle": {
+      "en": "The French Ascent",
+      "es": "El Ascenso Francés",
+      "eu": "Frantziako Igoera"
+    },
+    "frenchDesc": {
+      "en": "East from the Basque coast, battling the legendary cols of the French Pyrenees. Aubisque, Tourmalet, Aspin — names that echo through cycling history. Each summit a victory over both mountain and the limitations GBS tried to impose.",
+      "es": "Hacia el este desde la costa vasca, luchando contra los legendarios puertos de los Pirineos franceses. Aubisque, Tourmalet, Aspin — nombres que resuenan en la historia del ciclismo. Cada cima es una victoria sobre la montaña y sobre las limitaciones que el GBS intentó imponer.",
+      "eu": "Euskal kostaldetik ekialdera, Frantziako Pirinioetako mendate legendarioen aurka borrokatuz. Aubisque, Tourmalet, Aspin — txirrindularitzaren historian oihartzuna duten izenak. Gailur bakoitza garaipen bat da, bai mendiaren aurka, bai GBSak ezarri nahi izan zituen mugen aurka."
+    },
+    "frenchDir": {
+      "en": "Atlantic → Mediterranean",
+      "es": "Atlántico → Mediterráneo",
+      "eu": "Atlantikoa → Mediterraneoa"
+    },
+    "spanishTitle": {
+      "en": "The Spanish Homecoming",
+      "es": "El Regreso Español",
+      "eu": "Espainiako Itzulera"
+    },
+    "spanishDesc": {
+      "en": "After reaching the Mediterranean, the journey turns west for the long road home. Through Catalunya, Aragón, and finally Navarra — the climbs are less steep but just as relentless, demanding a different kind of strength for the journey back to the Atlantic.",
+      "es": "Tras alcanzar el Mediterráneo, el viaje gira hacia el oeste para el largo camino a casa. A través de Cataluña, Aragón y finalmente Navarra; las subidas son menos pronunciadas pero igual de implacables, exigiendo un tipo diferente de fuerza para el regreso al Atlántico.",
+      "eu": "Mediterraneora iritsi ondoren, bidaia mendebalderantz doa etxera itzultzeko bide luzean. Katalunia, Aragoi eta, azkenik, Nafarroan zehar — igoerak ez dira hain pikoak, baina bai nekaezinak, Atlantikora itzultzeko beste indar mota bat eskatuz."
+    },
+    "spanishDir": {
+      "en": "Mediterranean → Atlantic",
+      "es": "Mediterráneo → Atlántico",
+      "eu": "Mediterraneoa → Atlantikoa"
+    },
+    "fullDetails": {
+      "en": "Full challenge details & route map",
+      "es": "Detalles completos del reto y mapa de la ruta",
+      "eu": "Erronkaren xehetasun guztiak eta ibilbidearen mapa"
+    },
+    "gbsTag": {
+      "en": "Understanding GBS",
+      "es": "Entender el GBS",
+      "eu": "GBSa ulertzen"
+    },
+    "gbsTitle1": {
+      "en": "The condition",
+      "es": "La condición",
+      "eu": "Erronkaren"
+    },
+    "gbsTitle2": {
+      "en": "behind the",
+      "es": "detrás del",
+      "eu": "atzean dagoen"
+    },
+    "gbsTitle3": {
+      "en": "challenge",
+      "es": "reto",
+      "eu": "gaixotasuna"
+    },
+    "gbsSideDesc": {
+      "en": "Guillain-Barré Syndrome can strike anyone, at any age. Understanding it is the first step toward better treatment and support for those affected.",
+      "es": "El Síndrome de Guillain-Barré puede afectar a cualquiera, a cualquier edad. Comprenderlo es el primer paso hacia un mejor tratamiento y apoyo para los afectados.",
+      "eu": "Guillain-Barré Sindromeak edonori eraso diezaioke, edozein adinetan. Gaixotasuna ulertzea da kaltetuentzat tratamendu eta laguntza hobea lortzeko lehen urratsa."
+    },
+    "gbsCardTitle": {
+      "en": "What is Guillain-Barré Syndrome?",
+      "es": "¿Qué es el Síndrome de Guillain-Barré?",
+      "eu": "Zer da Guillain-Barré Sindromea?"
+    },
+    "gbsCardDesc": {
+      "en": "GBS is a rare condition where your body's immune system gets confused and starts attacking your nerves. After a normal infection like the flu, the immune system doesn't stand down — it mistakenly identifies your own nerves as the enemy.",
+      "es": "El GBS es una enfermedad rara en la que el sistema inmunitario se confunde y empieza a atacar a tus propios nervios. Tras una infección común como la gripe, el sistema inmunitario no se detiene e identifica erróneamente tus nervios como el enemigo.",
+      "eu": "GBSa egoera arraro bat da, non gorputzeko sistema immunitarioa nahastu eta zure nerbioei erasotzen hasten den. Gripea bezalako infekzio arrunt baten ondoren, sistema immunitarioak ez du eteten eta zure nerbioak etsai gisa identifikatzen ditu akatsez."
+    },
+    "gbsStat1": {
+      "en": "1-2",
+      "es": "1-2",
+      "eu": "1-2"
+    },
+    "gbsStat1Label": {
+      "en": "per 100,000 affected",
+      "es": "afectados por cada 100.000",
+      "eu": "kaltetutakoak 100.000 bakoitzeko"
+    },
+    "gbsStat2": {
+      "en": "Weeks",
+      "es": "Semanas",
+      "eu": "Asteak"
+    },
+    "gbsStat2Label": {
+      "en": "to full paralysis",
+      "es": "hasta la parálisis total",
+      "eu": "paralisi osora arte"
+    },
+    "gbsStat3": {
+      "en": "Months",
+      "es": "Meses",
+      "eu": "Hilabeteak"
+    },
+    "gbsStat3Label": {
+      "en": "to years recovery",
+      "es": "a años de recuperación",
+      "eu": "errekuperaziorako urteak"
+    },
+    "learnMoreGbs": {
+      "en": "Learn more about GBS",
+      "es": "Saber más sobre el GBS",
+      "eu": "Ikasi gehiago GBSari buruz"
+    },
+    "quoteTag": {
+      "en": "A Message of Support",
+      "es": "Un mensaje de apoyo",
+      "eu": "Laguntza Mezua"
+    },
+    "quoteText": {
+      "en": "\"We are absolutely thrilled to see Martin and Edurne embark on 'The Slow Road Back.' Their courage and determination embody the very spirit we champion at Inflammatory Neuropathies UK.\"",
+      "es": "\"Estamos absolutamente encantados de ver a Martin y Edurne embarcarse en 'The Slow Road Back'. Su coraje y determinación encarnan el espíritu mismo que defendemos en Inflammatory Neuropathies UK.\"",
+      "eu": "\"Oso pozik gaude Martin eta Edurne 'The Slow Road Back' bideari ekiten ikustean. Haien ausardiak eta borondateak Inflammatory Neuropathies UK-n defendatzen dugun izpiritua irudikatzen dute.\""
+    },
+    "quoteSource": {
+      "en": "Inflammatory Neuropathies UK",
+      "es": "Inflammatory Neuropathies UK",
+      "eu": "Inflammatory Neuropathies UK"
+    },
+    "quoteRole": {
+      "en": "Head of Patient Advocacy",
+      "es": "Responsable de Atención al Paciente",
+      "eu": "Pazienteen Arretarako Arduraduna"
+    },
+    "discoverWork": {
+      "en": "Discover More About Their Work ↗",
+      "es": "Descubre más sobre su labor ↗",
+      "eu": "Ezagutu gehiago haien lanari buruz ↗"
+    },
+    "donateCtaDesc": {
+      "en": "100% of every donation goes directly to our partner charities supporting GBS research and patient care in the UK and Spain.",
+      "es": "El 100% de cada donación va directamente a nuestras ONG colaboradoras que apoyan la investigación del GBS y el cuidado de pacientes en el Reino Unido y España.",
+      "eu": "Dohaintza guztien %100 GBS ikerketarako eta Erresuma Batuko eta Espainiako pazienteen zaintzarako bideratzen da zuzenean."
+    },
+    "otherWaysToHelp": {
+      "en": "Other Ways to Help",
+      "es": "Otras formas de ayudar",
+      "eu": "Laguntzeko beste modu batzuk"
+    },
+    "ukTarget": {
+      "en": "UK Charity Target",
+      "es": "Objetivo Reino Unido",
+      "eu": "Erresuma Batuko Helburua"
+    },
+    "spainTarget": {
+      "en": "Spain Charity Target",
+      "es": "Objetivo España",
+      "eu": "Espainiako Helburua"
+    }
+  }
+}

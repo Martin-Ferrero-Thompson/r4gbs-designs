@@ -58,7 +58,7 @@
     "climbing": "Igoera"
   },
   "home": {
-    "heroTag": "#TheSlowRoadBack · 2026ko Iraila/Urria",
+    "heroTag": "#RIDING4GBS · #TheSlowRoadBack · 2026ko Iraila/Urria",
     "heroTitleLine1": "Itzulerako",
     "heroTitleLine2": "bide",
     "heroTitleLine3": "motela",
@@ -211,7 +211,7 @@
     "supportingDesc": "Gure martxak Inflammatory Neuropathies UK eta GBS|CIDP España-rentzat funtsak biltzen ditu — pazienteei laguntzeko eta ikerketa finantzatzeko erakundeak.",
     "donateToResearch": "GBS ikerketarako dohaintza"
   },
-  "Progress": {
+  "progress": {
     "pageTitle": "Gure Aurrerapena",
     "heroTitle": "Jarraitu Bidaia",
     "heroSubtitle": "Orrialde hau egunero eguneratuko da errepideko datuekin. Itzuli 2026ko urrian.",
@@ -236,45 +236,7 @@
     "activatesDesc": "Erronkan zehar, orrialde hau eguneroko berriekin, argazkiekin eta Pirinioetako zeharkaldiko etapa bakoitzeko istorioekin beteko da. Mendate bakoitza, otordu bakoitza, garaipen eta borroka une bakoitza.",
     "learnRoute": "Ezagutu Ibilbidea",
     "trackProgress": "Jarraitu Gure Aurrerapena",
-    "whatToExpect": "Zer espero dezakezun",
-    "dailyTag": "Egunero",
-    "dailyTitle": "Etapetako Txostenak",
-    "dailyDesc": "Egun bakoitzeko ibilaldiaren kontakizun xehatuak — igoerak, jaitsierak eta une garrantzitsuak.",
-    "visualTag": "Bisuala",
-    "visualTitle": "Argazki Egunkaria",
-    "visualDesc": "Pirinioetako edertasuna eta erronkaren errealitatea jasotzen duten irudiak.",
-    "personalTag": "Pertsonala",
-    "personalTitle": "Hausnarketak",
-    "personalDesc": "GBSari, errekuperazioari eta gorputza hautsi ondoren hura bultzatzeak esan nahi duenari buruzko pentsamendu zintzoak."
-  },
-  "news": {
-    "pageTitle": "Azken Albisteak",
-    "heroTitle": "Azken Albisteak",
-    "heroSubtitle": "Riding4GBS bidaiaren iragarki nagusiak eta mugarriak.",
-    "announcementTag": "Iragarkia",
-    "article1Title": "Erronkaren Abiaraztea: The Slow Road Back",
-    "article1Desc": "Pozik gaude gure Pirinioetako txirrindularitza-erronka ofizialki iragartzeaz. 2026ko urrian hasita, Martin eta Edurnek Pirinioen kostaz kostako zeharkaldi osoa egingo dute.",
-    "article1Date": "2026ko Otsaila",
-    "readMore": "Irakurri gehiago →",
-    "partnershipTag": "Lankidetza",
-    "article2Title": "Inflammatory Neuropathies UK-k erronka babesten du",
-    "article2Desc": "Harro gaude Inflammatory Neuropathies UK-ren babes ofiziala iragartzeaz, GBS eta CIDP gaixotasunek kaltetutako pertsonak laguntzen dituen erakunde nazionala.",
-    "article2Date": "2026ko Urtarrila",
-    "moreNews": "Albiste gehiago laster. Jarraitu adi bidaiaren mugarriak, diru-bilketaren lorpenak eta prentsa-oharrak ikusteko."
-  },
-  "partners": {
-    "pageTitle": "Laguntzaileak",
-    "heroTitle": "Erronkaren atzean dauden laguntzaileak",
-    "heroSubtitle": "Erronka asmo handiko hau gure laguntzaileen babes eskuzabalari esker bakarrik da posible.",
-    "tier1Title": "Pirinio Partners",
-    "tier1Desc": "Erronkaren muina posible egiten duten gure laguntzaile nagusiak.",
-    "tier2Title": "Cima Supporters",
-    "tier2Desc": "Gure bidaian ekarpen garrantzitsua egiten duten babesle estimatuak.",
-    "tier3Title": "Erronkaren Lagunak",
-    "tier3Desc": "Hainbat modutan babesa eman duten erronkaren lagunak.",
-    "becomeTitle": "Bihurtu Laguntzaile",
-    "becomeDesc": "Lotu zure marka erresilientzia, itxaropen eta erresistentzia istorio boteretsu batekin. Aukera paregabea eskaintzen dugu zure produktuak Espainian, Erresuma Batuan eta munduan zehar erakusteko. Gurekin elkarlanean arituz, ez duzu bizikleta bidaia bat soilik babesten; sendabide bat finantzatzen ari zara eta komunitate bat inspiratzen.",
-    "downloadPacket": "Deskargatu Lankidetza-Dosierra"
+    "whatToExpect": "Zer espero dezakezun"
   },
   "supportUs": {
     "pageTitle": "Lagundu",
