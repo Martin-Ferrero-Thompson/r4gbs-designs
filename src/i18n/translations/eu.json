@@ -58,7 +58,7 @@
     "climbing": "Igoera"
   },
   "home": {
-    "heroTag": "#TheSlowRoadBack · 2026ko Iraila/Urria",
+    "heroTag": "#RIDING4GBS · #TheSlowRoadBack · 2026ko Iraila/Urria",
     "heroTitleLine1": "Itzulerako",
     "heroTitleLine2": "bide",
     "heroTitleLine3": "motela",
@@ -236,7 +236,8 @@
     "activatesDesc": "Erronkan zehar, orrialde hau eguneroko berriekin, argazkiekin eta Pirinioetako zeharkaldiko etapa bakoitzeko istorioekin beteko da. Mendate bakoitza, otordu bakoitza, garaipen eta borroka une bakoitza.",
     "learnRoute": "Ezagutu Ibilbidea",
     "trackProgress": "Jarraitu Gure Aurrerapena",
-    "whatToExpect": "Zer espero dezakezun",
+    "whatToExpect": "Zer espero dezakezun"
+  },
   "supportUs": {
     "pageTitle": "Lagundu",
     "heroTitle": "Izan ahaleginaren parte",
