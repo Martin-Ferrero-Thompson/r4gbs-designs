@@ -26,7 +26,23 @@ function apply(mode: string): void {
   root.classList.toggle('theme-system', mode === 'system');
 }
 
-const initialMode = normalize(localStorage.getItem(STORAGE_KEY) || 'system');
+function getStoredMode(): string {
+  try {
+    return localStorage.getItem(STORAGE_KEY) || 'system';
+  } catch {
+    return 'system';
+  }
+}
+
+function setStoredMode(mode: string): void {
+  try {
+    localStorage.setItem(STORAGE_KEY, mode);
+  } catch {
+    // Storage unavailable; continue without persistence
+  }
+}
+
+const initialMode = normalize(getStoredMode());
 apply(initialMode);
 
 function syncSystem(): void {
