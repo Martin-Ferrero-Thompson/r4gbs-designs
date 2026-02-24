@@ -338,11 +338,5 @@
     "esHelp4": "Connecting patients with specialist medical care",
     "esTarget": "Target: €10,000",
     "supportNote": "Looking to support the ride itself? Visit <a href=\"/support-us\" class=\"underline hover:text-amber-300\">Support Us</a>"
-  },
-  "partners": {
-    "partner1Name": "Cycla Bikes",
-    "partner1Location": "Pamplona",
-    "tier2Placeholder": "Partner {number}",
-    "tier3Placeholder": "Amigo {number}"
   }
 }
