@@ -2,7 +2,9 @@
   "common": {
     "siteName": "Riding4GBS",
     "siteNameShort": "R4GBS",
-    "langLabel": "Language"
+    "langLabel": "Language",
+    "ukTargetValue": "£10,000",
+    "spainTargetValue": "€10,000"
   },
   "theme": {
     "label": "Theme",
@@ -46,10 +48,14 @@
     "brandTag": "Riding4GBS"
   },
   "stats": {
+    "targetDays": "~12",
     "days": "Days",
+    "targetKilometres": "~1,000km",
     "kilometres": "Kilometres",
+    "targetMetresClimbed": "~22,000m",
     "metresClimbed": "Metres Climbed",
     "metresOfClimbing": "Metres of Climbing",
+    "targetEverestSummits": "~2.5",
     "heightOfEverest": "The Height of Everest",
     "everest": "Everest",
     "metresUp": "Metres Up",
@@ -135,8 +141,7 @@
     "ctaTitle": "Join our journey",
     "ctaDesc": "Follow along day by day as we take on the Pyrenees, or contribute to the GBS charities we're riding for.",
     "ctaChallenge": "The Challenge",
-    "ctaDonate": "Donate"
-    ,
+    "ctaDonate": "Donate",
     "styleTag": "The Style",
     "styleTitle": "A Shared Journey",
     "styleDesc1": "This challenge is a journey we will undertake as a team, side-by-side. We'll be riding in a self-supported bikepacking style, carrying all our own equipment and relying on the kindness of the community we meet along the way.",
