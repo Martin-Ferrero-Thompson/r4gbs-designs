@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import { t, defaultLang } from '../i18n/index';
 ---
 
 <PageLayout
@@ -19,7 +20,7 @@ import PageLayout from '../layouts/PageLayout.astro';
             <div class="w-3 h-3 bg-amber-500 rounded-full"></div>
             <span class="text-stone-400 font-body text-sm" data-i18n="donate.ukRegion"></span>
           </div>
-          <h2 class="font-display text-2xl lg:text-3xl font-bold text-stone-100" data-i18n="donate.ukCharityName"></h2>
+          <h2 class="font-display text-2xl lg:text-3xl font-bold text-stone-100" data-i18n="donate.ukCharityName">{t(defaultLang, 'gbsGlobals.heroTrustUk')}</h2>
           <p class="text-stone-400 text-lg leading-relaxed font-body mt-4" data-i18n="donate.ukDesc"></p>
 
           <div class="mt-8 bg-stone-800/50 rounded-xl p-6">
@@ -52,7 +53,7 @@ import PageLayout from '../layouts/PageLayout.astro';
           <div class="mt-8">
             <div class="flex justify-between items-baseline">
               <p class="font-display text-3xl font-bold text-stone-100">£0</p>
-              <p class="text-stone-500 font-body text-sm" data-i18n="donate.ukTarget"></p>
+              <p class="text-stone-500 font-body text-sm" data-i18n="donate.ukTarget">{t(defaultLang, 'gbsGlobals.ukTarget')}</p>
             </div>
             <div class="mt-3 h-2 bg-stone-800 rounded-full overflow-hidden">
               <div class="h-full bg-amber-500 rounded-full" style="width: 0%;"></div>
@@ -72,7 +73,7 @@ import PageLayout from '../layouts/PageLayout.astro';
             <div class="w-3 h-3 bg-amber-500 rounded-full"></div>
             <span class="text-stone-400 font-body text-sm" data-i18n="donate.esRegion"></span>
           </div>
-          <h2 class="font-display text-2xl lg:text-3xl font-bold text-stone-100" data-i18n="donate.esCharityName"></h2>
+          <h2 class="font-display text-2xl lg:text-3xl font-bold text-stone-100" data-i18n="donate.esCharityName">{t(defaultLang, 'gbsGlobals.heroTrustEs')}</h2>
           <p class="text-stone-400 text-lg leading-relaxed font-body mt-4" data-i18n="donate.esDesc"></p>
 
           <div class="mt-8 bg-stone-800/50 rounded-xl p-6">
@@ -101,7 +102,7 @@ import PageLayout from '../layouts/PageLayout.astro';
           <div class="mt-8">
             <div class="flex justify-between items-baseline">
               <p class="font-display text-3xl font-bold text-stone-100">€0</p>
-              <p class="text-stone-500 font-body text-sm" data-i18n="donate.esTarget"></p>
+              <p class="text-stone-500 font-body text-sm" data-i18n="donate.esTarget">{t(defaultLang, 'gbsGlobals.esTarget')}</p>
             </div>
             <div class="mt-3 h-2 bg-stone-800 rounded-full overflow-hidden">
               <div class="h-full bg-amber-500 rounded-full" style="width: 0%;"></div>
