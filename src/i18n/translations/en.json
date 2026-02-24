@@ -1,4 +1,22 @@
 {
+  "gbsGlobals": {
+    "donateNow": "Donate Now",
+    "challenge": "The Challenge",
+    "story": "Our Story",
+    "journal": "Journal",
+    "news": "News",
+    "supportUs": "Support Us",
+    "donate": "Donate",
+    "langLabel": "Language",
+    "siteName": "Riding4GBS",
+    "days": "Days",
+    "metresClimbed": "Metres Climbed",
+    "donateToResearch": "Donate to GBS Research",
+    "heroTrustUk": "Inflammatory Neuropathies UK",
+    "heroTrustEs": "GBS|CIDP España",
+    "ukTarget": "Target: £10,000",
+    "esTarget": "Target: €10,000"
+  },
   "common": {
     "siteName": "Riding4GBS",
     "siteNameShort": "R4GBS",
