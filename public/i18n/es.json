@@ -17,7 +17,6 @@
     "progress": "Progreso",
     "journal": "Diario",
     "news": "Noticias",
-    "partners": "Colaboradores",
     "supportUs": "Apóyanos",
     "donate": "Donar",
     "donateNow": "Donar Ahora"
@@ -228,20 +227,6 @@
     "article2Desc": "Nos enorgullece anunciar el apoyo oficial de Inflammatory Neuropathies UK, la organización nacional de apoyo a personas con GBS y CIDP.",
     "article2Date": "Enero 2026",
     "moreNews": "Próximamente más noticias sobre hitos de la ruta, logros de recaudación y cobertura en prensa."
-  },
-  "partners": {
-    "pageTitle": "Colaboradores",
-    "heroTitle": "Los colaboradores detrás del reto",
-    "heroSubtitle": "Este ambicioso desafío solo es posible gracias al generoso apoyo de nuestros colaboradores.",
-    "tier1Title": "Pirineo Partners",
-    "tier1Desc": "Nuestros colaboradores principales que hacen posible el núcleo del reto.",
-    "tier2Title": "Cima Supporters",
-    "tier2Desc": "Colaboradores valiosos que contribuyen significativamente a nuestro viaje.",
-    "tier3Title": "Amigos del Reto",
-    "tier3Desc": "Amigos que han aportado su apoyo de diversas maneras.",
-    "becomeTitle": "Conviértete en colaborador",
-    "becomeDesc": "Asocia tu marca a una historia internacional de resiliencia, esperanza y superación. Ofrecemos una oportunidad única para mostrar tus productos a una audiencia comprometida en España y Reino Unido. Al colaborar con nosotros, no solo patrocinas un viaje en bici; financias una cura e inspiras a una comunidad.",
-    "downloadPacket": "Descargar Partnership Packet"
   },
   "supportUs": {
     "pageTitle": "Apóyanos",

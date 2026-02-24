@@ -33,7 +33,7 @@ import { t, defaultLang } from '../i18n/index';
       <!-- ═══ Hashtag marker ═══ -->
       <div class="animate-fade-up">
         <span class="inline-block text-amber-500/80 font-body text-xs tracking-[0.35em] uppercase mb-6" data-i18n="home.heroTag">
-          #RIDING4GBS · #TheSlowRoadBack &middot; September/October 2026
+          {t(defaultLang, 'home.heroTag')}
         </span>
       </div>
 
@@ -53,30 +53,30 @@ import { t, defaultLang } from '../i18n/index';
       <!-- ═══ CTA cluster ═══ -->
       <div class="mt-10 lg:mt-14 flex flex-wrap gap-4 animate-fade-up stagger-4">
         <a href="/the-challenge" class="group inline-flex items-center gap-3 bg-amber-500 text-stone-950 px-8 py-4 rounded-full font-body font-bold text-sm tracking-wide hover:bg-amber-400 transition-all duration-300 hover:gap-4">
-          <span data-i18n="home.discoverChallenge">Discover the Challenge</span>
+          <span data-i18n="home.discoverChallenge">{t(defaultLang, 'home.discoverChallenge')}</span>
           <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="/donate" class="inline-flex items-center gap-2 border border-stone-600 text-stone-300 px-8 py-4 rounded-full font-body text-sm tracking-wide hover:border-amber-500 hover:text-amber-400 transition-all duration-300" data-i18n="home.donateToResearch">
-          Donate to GBS Research
+          {t(defaultLang, 'home.donateToResearch')}
         </a>
       </div>
 
       <!-- ═══ Charity trust strip ═══ -->
       <div class="mt-8 animate-fade-up stagger-4">
-        <p class="text-stone-600 font-body text-xs tracking-[0.2em] uppercase mb-3" data-i18n="home.heroTrustLabel">Raising funds for</p>
+        <p class="text-stone-600 font-body text-xs tracking-[0.2em] uppercase mb-3" data-i18n="home.heroTrustLabel">{t(defaultLang, 'home.heroTrustLabel')}</p>
         <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
           <a href="https://www.inflammatoryneuropathies.uk/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group">
             <span class="text-lg leading-none">🇬🇧</span>
             <div>
-              <p class="text-stone-300 font-body text-sm group-hover:text-amber-400 transition-colors" data-i18n="home.heroTrustUk">Inflammatory Neuropathies UK</p>
-              <p class="text-stone-600 font-body text-xs" data-i18n="home.heroTrustUkReg">Registered Charity 1154843</p>
+              <p class="text-stone-300 font-body text-sm group-hover:text-amber-400 transition-colors" data-i18n="home.heroTrustUk">{t(defaultLang, 'home.heroTrustUk')}</p>
+              <p class="text-stone-600 font-body text-xs" data-i18n="home.heroTrustUkReg">{t(defaultLang, 'home.heroTrustUkReg')}</p>
             </div>
           </a>
           <a href="https://gbs-cidp.org.es/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group">
             <span class="text-lg leading-none">🇪🇸</span>
             <div>
-              <p class="text-stone-300 font-body text-sm group-hover:text-amber-400 transition-colors" data-i18n="home.heroTrustEs">GBS|CIDP España</p>
-              <p class="text-stone-600 font-body text-xs" data-i18n="home.heroTrustEsReg">Reg. Nacional Nº 619.666</p>
+              <p class="text-stone-300 font-body text-sm group-hover:text-amber-400 transition-colors" data-i18n="home.heroTrustEs">{t(defaultLang, 'home.heroTrustEs')}</p>
+              <p class="text-stone-600 font-body text-xs" data-i18n="home.heroTrustEsReg">{t(defaultLang, 'home.heroTrustEsReg')}</p>
             </div>
           </a>
         </div>
@@ -84,7 +84,7 @@ import { t, defaultLang } from '../i18n/index';
 
       <!-- ═══ Countdown ═══ -->
       <div class="mt-12 animate-fade-up stagger-5">
-        <p class="text-stone-500 font-body text-xs tracking-[0.3em] uppercase mb-4" data-i18n="countdown.challengeBeginsIn">Challenge begins in</p>
+        <p class="text-stone-500 font-body text-xs tracking-[0.3em] uppercase mb-4" data-i18n="countdown.challengeBeginsIn">{t(defaultLang, 'countdown.challengeBeginsIn')}</p>
         <Countdown client:load targetDate="2026-09-27T09:00:00" />
       </div>
 
@@ -92,19 +92,19 @@ import { t, defaultLang } from '../i18n/index';
       <div class="mt-16 lg:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-8 animate-fade-up stagger-6">
         <div class="border-l-2 border-amber-500/40 pl-4">
           <p class="font-display text-3xl lg:text-4xl font-bold text-stone-100">~12</p>
-          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.days">Days</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.days">{t(defaultLang, 'stats.days')}</p>
         </div>
         <div class="border-l-2 border-amber-500/40 pl-4">
           <p class="font-display text-3xl lg:text-4xl font-bold text-stone-100">~1,000</p>
-          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.kilometres">Kilometres</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.kilometres">{t(defaultLang, 'stats.kilometres')}</p>
         </div>
         <div class="border-l-2 border-amber-500/40 pl-4">
           <p class="font-display text-3xl lg:text-4xl font-bold text-stone-100">~22,000</p>
-          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.metresClimbed">Metres Climbed</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.metresClimbed">{t(defaultLang, 'stats.metresClimbed')}</p>
         </div>
         <div class="border-l-2 border-amber-500/40 pl-4">
           <p class="font-display text-3xl lg:text-4xl font-bold text-stone-100">2.5×</p>
-          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.heightOfEverest">Height of Everest</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.heightOfEverest">{t(defaultLang, 'stats.heightOfEverest')}</p>
         </div>
       </div>
     </div>
@@ -128,14 +128,10 @@ import { t, defaultLang } from '../i18n/index';
           </h2>
         </div>
         <div class="lg:col-span-7 lg:pt-12">
-          <p class="text-stone-400 text-lg lg:text-xl leading-relaxed max-w-2xl font-body" data-i18n="home.missionDesc">
-            My name is Martin, and I am a survivor of Guillain-Barré Syndrome. In 2021, GBS changed my life — but it didn't define it. In September/October 2026, starting from my home in Pamplona, my incredible wife Edurne and I will take on the Pyrenees: a complete coast-to-coast traverse of one of the world's most challenging mountain ranges.
-          </p>
-          <p class="text-stone-500 text-lg leading-relaxed max-w-2xl mt-6 font-body" data-i18n="home.missionDesc2">
-            Our ride is a shared mission to raise vital awareness and funds for the GBS community. We don't know exactly how many days it will take, or how many mountains will have to be climbed. But we invite you to follow along, day by day, on our journey of hope and resilience.
-          </p>
+          <p class="text-stone-400 text-lg lg:text-xl leading-relaxed max-w-2xl font-body" data-i18n="home.missionDesc">{t(defaultLang, 'home.missionDesc')}</p>
+          <p class="text-stone-500 text-lg leading-relaxed max-w-2xl mt-6 font-body" data-i18n="home.missionDesc2">{t(defaultLang, 'home.missionDesc2')}</p>
           <a href="/our-story" class="inline-flex items-center gap-2 text-amber-400 font-body text-sm mt-8 hover:text-amber-300 transition-colors group">
-            <span data-i18n="home.readFullStory">Read Martin's full story</span>
+            <span data-i18n="home.readFullStory">{t(defaultLang, 'home.readFullStory')}</span>
             <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -155,18 +151,18 @@ import { t, defaultLang } from '../i18n/index';
           To Conquer the Pyrenees
         </h2>
         <p class="text-stone-400 text-lg mt-6 max-w-2xl mx-auto font-body" data-i18n="home.challengeDesc">
-          A complete coast-to-coast traverse — from the Atlantic to the Mediterranean and back again — 
+          A complete coast-to-coast traverse — from the Mediterranean to the Atlantic and back Home again — 
           in self-supported bikepacking style.
         </p>
       </div>
 
       <!-- ═══ Route cards ═══ -->
       <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
-        <!-- French Leg -->
+        <!-- The Start -->
         <div class="group relative bg-stone-800/50 rounded-2xl p-8 lg:p-12 border border-stone-700/50 hover:border-amber-500/30 transition-all duration-500">
           <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <span class="text-amber-500/60 font-display text-6xl lg:text-8xl font-bold absolute top-4 right-6 opacity-20">01</span>
-          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 relative" data-i18n="home.frenchTitle">The French Ascent</h3>
+          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 relative" data-i18n="home.frenchTitle">The STart</h3>
           <p class="text-stone-400 mt-4 leading-relaxed font-body relative" data-i18n="home.frenchDesc">
             East from the Basque coast, battling the legendary cols of the French Pyrenees. 
             Aubisque, Tourmalet, Aspin — names that echo through cycling history. Each summit a victory 
@@ -178,11 +174,11 @@ import { t, defaultLang } from '../i18n/index';
           </div>
         </div>
 
-        <!-- ═══ Spanish Leg ═══ -->
+        <!-- The Climbing -->
         <div class="group relative bg-stone-800/50 rounded-2xl p-8 lg:p-12 border border-stone-700/50 hover:border-amber-500/30 transition-all duration-500">
           <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <span class="text-amber-500/60 font-display text-6xl lg:text-8xl font-bold absolute top-4 right-6 opacity-20">02</span>
-          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 relative" data-i18n="home.spanishTitle">The Spanish Homecoming</h3>
+          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 relative" data-i18n="home.spanishTitle">The Climbing</h3>
           <p class="text-stone-400 mt-4 leading-relaxed font-body relative" data-i18n="home.spanishDesc">
             After reaching the Mediterranean, the journey turns west for the long road home. 
             Through Catalunya, Aragón, and finally Navarra — the climbs are less steep but 
@@ -193,11 +189,46 @@ import { t, defaultLang } from '../i18n/index';
             <span class="text-xs font-body bg-stone-700/50 text-stone-300 px-3 py-1 rounded-full">~500km</span>
           </div>
         </div>
+
+        <!-- The Finish -->
+        <div class="group relative bg-stone-800/50 rounded-2xl p-8 lg:p-12 border border-stone-700/50 hover:border-amber-500/30 transition-all duration-500">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <span class="text-amber-500/60 font-display text-6xl lg:text-8xl font-bold absolute top-4 right-6 opacity-20">03</span>
+          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 relative" data-i18n="home.frenchTitle">The Finish</h3>
+          <p class="text-stone-400 mt-4 leading-relaxed font-body relative" data-i18n="home.frenchDesc">
+            East from the Basque coast, battling the legendary cols of the French Pyrenees. 
+            Aubisque, Tourmalet, Aspin — names that echo through cycling history. Each summit a victory 
+            over both mountain and the limitations GBS tried to impose.
+          </p>
+          <div class="mt-6 flex gap-4 relative">
+            <span class="text-xs font-body bg-stone-700/50 text-stone-300 px-3 py-1 rounded-full" data-i18n="home.frenchDir">Atlantic → Mediterranean</span>
+            <span class="text-xs font-body bg-stone-700/50 text-stone-300 px-3 py-1 rounded-full">~500km</span>
+          </div>
+        </div>
+
+        <!-- The Homecoming -->
+        <div class="group relative bg-stone-800/50 rounded-2xl p-8 lg:p-12 border border-stone-700/50 hover:border-amber-500/30 transition-all duration-500">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <span class="text-amber-500/60 font-display text-6xl lg:text-8xl font-bold absolute top-4 right-6 opacity-20">04</span>
+          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 relative" data-i18n="home.spanishTitle">The Homecoming</h3>
+          <p class="text-stone-400 mt-4 leading-relaxed font-body relative" data-i18n="home.spanishDesc">
+            After reaching the Mediterranean, the journey turns west for the long road home. 
+            Through Catalunya, Aragón, and finally Navarra — the climbs are less steep but 
+            just as relentless, demanding a different kind of strength for the journey back to the Atlantic.
+          </p>
+          <div class="mt-6 flex gap-4 relative">
+            <span class="text-xs font-body bg-stone-700/50 text-stone-300 px-3 py-1 rounded-full" data-i18n="home.spanishDir">Mediterranean → Atlantic</span>
+            <span class="text-xs font-body bg-stone-700/50 text-stone-300 px-3 py-1 rounded-full">~500km</span>
+          </div>
+        </div>
+
       </div>
 
+
+      
       <div class="text-center mt-12">
         <a href="/the-challenge" class="inline-flex items-center gap-2 text-amber-400 font-body hover:text-amber-300 transition-colors group">
-          <span data-i18n="home.fullDetails">Full challenge details & route map</span>
+          <span data-i18n="home.fullDetails">{t(defaultLang, 'home.fullDetails')}</span>
           <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
