@@ -27,8 +27,8 @@ import PageLayout from '../layouts/PageLayout.astro';
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <a href="https://cyclabikes.es/" target="_blank" rel="noopener noreferrer" class="bg-stone-900 rounded-xl p-8 border border-stone-800 hover:border-amber-500/30 transition-all duration-300 flex items-center justify-center min-h-[120px] group">
               <div class="text-center">
-                <p class="font-display text-xl font-bold text-stone-200 group-hover:text-amber-400 transition-colors">Cycla Bikes</p>
-                <p class="text-stone-500 text-sm font-body mt-1">Pamplona</p>
+                <p class="font-display text-xl font-bold text-stone-200 group-hover:text-amber-400 transition-colors" data-i18n="partners.partner1Name">{import { t } from '../i18n/index'; t('en', 'partners.partner1Name')}</p>
+                <p class="text-stone-500 text-sm font-body mt-1" data-i18n="partners.partner1Location">{import { t } from '../i18n/index'; t('en', 'partners.partner1Location')}</p>
               </div>
             </a>
           </div>
@@ -48,7 +48,7 @@ import PageLayout from '../layouts/PageLayout.astro';
           <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {Array.from({length: 6}).map((_, i) => (
               <div class="bg-stone-900 rounded-xl p-6 border border-stone-800 flex items-center justify-center min-h-[100px]">
-                <span class="text-stone-600 font-body text-sm">Partner {i + 1}</span>
+                <span class="text-stone-600 font-body text-sm" data-i18n="partners.tier2Placeholder">Partner {i + 1}</span>
               </div>
             ))}
           </div>
@@ -68,7 +68,7 @@ import PageLayout from '../layouts/PageLayout.astro';
           <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3">
             {Array.from({length: 9}).map((_, i) => (
               <div class="bg-stone-900 rounded-lg p-4 border border-stone-800 flex items-center justify-center min-h-[80px]">
-                <span class="text-stone-700 font-body text-xs">Amigo {i + 1}</span>
+                <span class="text-stone-700 font-body text-xs" data-i18n="partners.tier3Placeholder">Amigo {i + 1}</span>
               </div>
             ))}
           </div>
