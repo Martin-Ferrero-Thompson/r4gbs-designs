@@ -91,6 +91,12 @@
     "gbsTitle2": "atzean dagoen",
     "gbsTitle3": "gaixotasuna",
     "gbsSideDesc": "Guillain-Barré Sindromeak edonori eraso diezaioke, edozein adinetan. Gaixotasuna ulertzea da kaltetuentzat tratamendu eta laguntza hobea lortzeko lehen urratsa.",
+    "gbsSideDesc2": "Arazo autoimmune bat da. Pentsa ezazu honela:",
+    "gbsSideDesc2List": [
+      "Infekzio arrunt bat jasotzen duzu, gripea edo elikagaien intoxikazio bat bezala.",
+      "Zure sistema immunitarioa haren aurka borrokatzeko prestatzen da.",
+      "Infekzioa joan ondoren, sistema immunitarioak, arrazoiren batengatik, ez du gelditzen. Zure nerbio propioak etsai gisa identifikatzen ditu okerrez eta erasotzen ditu."
+    ],
     "gbsCardTitle": "Zer da Guillain-Barré Sindromea?",
     "gbsCardDesc": "GBSa egoera arraro bat da, non gorputzeko sistema immunitarioa nahastu eta zure nerbioei erasotzen hasten den. Gripea bezalako infekzio arrunt baten ondoren, sistema immunitarioak ez du eteten eta zure nerbioak etsai gisa identifikatzen ditu akatsez.",
     "gbsStat1": "1-2",

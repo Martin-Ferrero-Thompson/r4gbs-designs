@@ -73,6 +73,17 @@
         ?? getNestedValue(translationCache[DEFAULT_LANG], key);
       if (value !== undefined) el.placeholder = value;
     });
+
+    // data-i18n-list → array to <li> elements replacement
+    document.querySelectorAll<HTMLElement>('[data-i18n-list]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-list');
+      if (!key) return;
+      const value = getNestedValue(langData, key)
+        ?? getNestedValue(translationCache[DEFAULT_LANG], key);
+      if (Array.isArray(value)) {
+        el.innerHTML = value.map((item: string) => `<li>${item}</li>`).join('');
+      }
+    });
   }
 
   function updateActiveButtons(lang: string) {
