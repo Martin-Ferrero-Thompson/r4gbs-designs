@@ -9,7 +9,6 @@
     "donate": "Donate",
     "langLabel": "Language",
     "siteName": "Riding4GBS",
-    "days": "Days",
     "metresClimbed": "Metres Climbed",
     "donateToResearch": "Donate to GBS Research",
     "heroTrustUk": "Inflammatory Neuropathies UK",
@@ -52,20 +51,17 @@
     "countdownToLaunch": "Countdown to launch"
   },
   "pageLayout": {
-    "brandTag": "Riding4GBS"
+    "brandTag": "#Riding4GBS"
   },
   "stats": {
-    "targetDays": "~12",
+    "targetDays": "~12days",
+    "days": "Days to Complete",
     "targetKilometres": "~1,000km",
-    "kilometres": "Kilometres",
+    "kilometres": "Kilometres to Ride",
     "targetMetresClimbed": "~22,000m",
     "metresOfClimbing": "Metres of Climbing",
     "targetEverestSummits": "~2.5",
-    "heightOfEverest": "The Height of Everest",
-    "everest": "Everest",
-    "metresUp": "Metres Up",
-    "totalDays": "Total Days",
-    "climbing": "Climbing"
+    "heightOfEverest": "The Height of Everest"
   },
   "home": {
     "heroTag": "#RIDING4GBS · #TheSlowRoadBack · September/October 2026",
@@ -81,12 +77,12 @@
     "missionTag": "The Mission",
     "missionTitle1": "More than",
     "missionTitle2": "a bike ride",
-    "missionDesc": "My name is Martin, and I am a survivor of Guillain-Barré Syndrome. In 2021, GBS changed my life — but it didn't define it. In October 2026, starting from my home in Pamplona, my incredible wife Edurne and I will take on the Pyrenees: a complete coast-to-coast traverse of one of the world's most challenging mountain ranges.",
+    "missionDesc": "My name is Martin, and I am a survivor of Guillain-Barré Syndrome. In 2021, GBS changed my life — but it didn't define it. In October 2026, starting from my home in Pamplona, my incredible wife Edurne and I will take on the Pyrenees: a complete coast-to-coast traverse of one of Europe's most challenging mountain ranges.",
     "missionDesc2": "Our ride is a shared mission to raise vital awareness and funds for the GBS community. We don't know exactly how many days it will take, or how many mountains will have to be climbed. But we invite you to follow along, day by day, on our journey of hope and resilience.",
     "readFullStory": "Read Martin's full story",
     "challengeTag": "The Challenge",
     "challengeTitle": "Chapter One: To Conquer the Pyrenees",
-    "challengeDesc": "A complete coast-to-coast traverse — from the Atlantic to the Mediterranean and back again — in self-supported bikepacking style.",
+    "challengeDesc": "A complete coast-to-coast traverse — from the Mediterranean to the Atlantic and back home again — in self-supported bikepacking style.",
     "frenchTitle": "The French Ascent",
     "frenchDesc": "East from the Basque coast, battling the legendary cols of the French Pyrenees. Aubisque, Tourmalet, Aspin — names that echo through cycling history. Each summit a victory over both mountain and the limitations GBS tried to impose.",
     "frenchDir": "Atlantic → Mediterranean",
@@ -99,8 +95,14 @@
     "gbsTitle2": "behind the",
     "gbsTitle3": "challenge",
     "gbsSideDesc": "Guillain-Barré Syndrome can strike anyone, at any age. Understanding it is the first step toward better treatment and support for those affected.",
+    "gbsSideDesc2": "It's an autoimmune issue. Think of it this way:",
+    "gbsSideDesc2List": [
+      "You get a normal infection, like the flu or food poisoning.",
+      "Your immune system gears up to fight it.",
+      "After the infection is gone, the immune system, for some reason, doesn't stand down. It mistakenly identifies your own nerves as the enemy and attacks them."
+    ],
     "gbsCardTitle": "What is Guillain-Barré Syndrome?",
-    "gbsCardDesc": "GBS is a rare condition where your body's immune system gets confused and starts attacking your nerves. After a normal infection like the flu, the immune system doesn't stand down — it mistakenly identifies your own nerves as the enemy.",
+    "gbsCardDesc": "GBS is a rare condition where your body's immune system gets confused and starts attacking your nerves.",
     "gbsStat1": "1-2",
     "gbsStat1Label": "per 100,000 affected",
     "gbsStat2": "Weeks",
@@ -119,7 +121,7 @@
     
     "otherWaysToHelp": "Other Ways to Help",
     "ukTarget": "UK Charity Target",
-    "spainTarget": "Spain Charity Target"
+    "spainTarget": "Spanish Charity Target"
   },
     "theChallenge": {
     "pageTitle": "The Challenge",

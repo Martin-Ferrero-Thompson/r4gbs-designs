@@ -11,7 +11,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import Countdown from '../components/Countdown.tsx';
-import { t, defaultLang } from '../i18n/index';
+import { t, defaultLang, translations } from '../i18n/index';
 ---
 
 <BaseLayout title={t(defaultLang, 'home.heroTitleLine1') + ' ' + t(defaultLang, 'home.heroTitleLine2') + ' ' + t(defaultLang, 'home.heroTitleLine3') + ' | Riding4GBS'}>
@@ -91,19 +91,19 @@ import { t, defaultLang } from '../i18n/index';
       <!-- ═══ Stats ribbon ═══ -->
       <div class="mt-16 lg:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-8 animate-fade-up stagger-6">
         <div class="border-l-2 border-amber-500/40 pl-4">
-          <p class="font-display text-3xl lg:text-4xl font-bold text-stone-100" data-i18n="stats.targetDays">{t(defaultLang, 'stats.targetDays')}</p>
-          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.days">{t(defaultLang, 'gbsGlobals.days')}</p>
+          <p class="font-display text-3xl lg:text-5xl font-bold text-stone-100" data-i18n="stats.targetDays">{t(defaultLang, 'stats.targetDays')}</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.days">{t(defaultLang, 'stats.days')}</p>
         </div>
         <div class="border-l-2 border-amber-500/40 pl-4">
-          <p class="font-display text-3xl lg:text-4xl font-bold text-stone-100" data-i18n="stats.targetKilometres">{t(defaultLang, 'stats.targetKilometres')}</p>
-          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.kilometres">{t(defaultLang, 'gbsGlobals.kilometres')}</p>
+          <p class="font-display text-3xl lg:text-5xl font-bold text-stone-100" data-i18n="stats.targetKilometres">{t(defaultLang, 'stats.targetKilometres')}</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.kilometres">{t(defaultLang, 'stats.kilometres')}</p>
         </div>
         <div class="border-l-2 border-amber-500/40 pl-4">
-          <p class="font-display text-3xl lg:text-4xl font-bold text-stone-100" data-i18n="stats.targetMetresClimbed">{t(defaultLang, 'stats.targetMetresClimbed')}</p>
-          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.metresClimbed">{t(defaultLang, 'gbsGlobals.metresClimbed')}</p>
+          <p class="font-display text-3xl lg:text-5xl font-bold text-stone-100" data-i18n="stats.targetMetresClimbed">{t(defaultLang, 'stats.targetMetresClimbed')}</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.metresOfClimbing">{t(defaultLang, 'stats.metresOfClimbing')}</p>
         </div>
         <div class="border-l-2 border-amber-500/40 pl-4">
-          <p class="font-display text-3xl lg:text-4xl font-bold text-stone-100" data-i18n="stats.targetEverestSummits">{t(defaultLang, 'stats.targetEverestSummits')}</p>
+          <p class="font-display text-3xl lg:text-5xl font-bold text-stone-100" data-i18n="stats.targetEverestSummits">{t(defaultLang, 'stats.targetEverestSummits')}</p>
           <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.heightOfEverest">{t(defaultLang, 'stats.heightOfEverest')}</p>
         </div>
       </div>
@@ -151,66 +151,103 @@ import { t, defaultLang } from '../i18n/index';
 
       <!-- ═══ Route cards ═══ -->
       <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
-        <!-- The Start -->
-        <div class="group relative bg-stone-800/50 rounded-2xl p-8 lg:p-12 border border-stone-700/50 hover:border-amber-500/30 transition-all duration-500">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <!-- 01 The Start -->
+        <div class="group relative bg-stone-900 rounded-2xl p-8 lg:p-12 border border-stone-800 hover:border-amber-500/30 transition-all duration-500 flex flex-col">
           <span class="text-amber-500/60 font-display text-6xl lg:text-8xl font-bold absolute top-4 right-6 opacity-20" data-i18n="theChallenge.theStartNum">{t(defaultLang, 'theChallenge.theStartNum')}</span>
-          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 relative" data-i18n="theChallenge.theStartTitle">{t(defaultLang, 'theChallenge.theStartTitle')}</h3>
-                    {t(defaultLang, 'theChallenge.theStartTitle')}
-          <p class="text-stone-400 mt-4 leading-relaxed font-body relative" data-i18n="theChallenge.theStartDesc">
-            {t(defaultLang, 'theChallenge.theStartDesc')}
-          </p>
-          <div class="mt-6 flex gap-4 relative">
-            <span class="text-xs font-body bg-stone-700/50 text-stone-300 px-3 py-1 rounded-full" data-i18n="theChallenge.theStartDirection">{t(defaultLang, 'theChallenge.theStartDirection')}</span>
-            <span class="text-xs font-body bg-stone-700/50 text-stone-300 px-3 py-1 rounded-full"data-i18n="theChallenge.theStartDistance">{t(defaultLang, 'theChallenge.theStartDistance')}</span>
+          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 mt-2" data-i18n="theChallenge.theStartTitle">{t(defaultLang, 'theChallenge.theStartTitle')}</h3>
+          <p class="text-stone-400 mt-4 leading-relaxed font-body" data-i18n="theChallenge.theStartDesc">{t(defaultLang, 'theChallenge.theStartDesc')}</p>
+          <div class="mt-6 space-y-2">
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.direction">{t(defaultLang, 'theChallenge.direction')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theStartDirection">{t(defaultLang, 'theChallenge.theStartDirection')}</span>
+            </div>
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.distance">{t(defaultLang, 'theChallenge.distance')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theStartDistance">{t(defaultLang, 'theChallenge.theStartDistance')}</span>
+            </div>
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.elevationGain">{t(defaultLang, 'theChallenge.elevationGain')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theStartElevationGain">{t(defaultLang, 'theChallenge.theStartElevationGain')}</span>
+            </div>
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.terrain">{t(defaultLang, 'theChallenge.terrain')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theStartTerrain">{t(defaultLang, 'theChallenge.theStartTerrain')}</span>
+            </div>
           </div>
         </div>
 
-        <!-- The Climbing -->
-        <div class="group relative bg-stone-800/50 rounded-2xl p-8 lg:p-12 border border-stone-700/50 hover:border-amber-500/30 transition-all duration-500">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <span class="text-amber-500/60 font-display text-6xl lg:text-8xl font-bold absolute top-4 right-6 opacity-20">02</span>
-          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 relative" data-i18n="home.spanishTitle">The Climbing</h3>
-                    {t(defaultLang, 'home.spanishTitle')}
-          <p class="text-stone-400 mt-4 leading-relaxed font-body relative" data-i18n="home.spanishDesc">
-            {t(defaultLang, 'home.spanishDesc')}
-          </p>
-          <div class="mt-6 flex gap-4 relative">
-            <span class="text-xs font-body bg-stone-700/50 text-stone-300 px-3 py-1 rounded-full" data-i18n="home.spanishDir">Mediterranean → Atlantic</span>
-                        {t(defaultLang, 'home.spanishDir')}
-            <span class="text-xs font-body bg-stone-700/50 text-stone-300 px-3 py-1 rounded-full">~500km</span>
+        <!-- 02 The Climbing -->
+        <div class="group relative bg-stone-900 rounded-2xl p-8 lg:p-12 border border-stone-800 hover:border-amber-500/30 transition-all duration-500 flex flex-col">
+          <span class="text-amber-500/60 font-display text-6xl lg:text-8xl font-bold absolute top-4 right-6 opacity-20" data-i18n="theChallenge.theClimbingNum">{t(defaultLang, 'theChallenge.theClimbingNum')}</span>
+          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 mt-2" data-i18n="theChallenge.theClimbingTitle">{t(defaultLang, 'theChallenge.theClimbingTitle')}</h3>
+          <p class="text-stone-400 mt-4 leading-relaxed font-body" data-i18n="theChallenge.theClimbingDesc">{t(defaultLang, 'theChallenge.theClimbingDesc')}</p>
+          <div class="mt-6 space-y-2">
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.direction">{t(defaultLang, 'theChallenge.direction')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theClimbingDirection">{t(defaultLang, 'theChallenge.theClimbingDirection')}</span>
+            </div>
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.distance">{t(defaultLang, 'theChallenge.distance')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theClimbingDistance">{t(defaultLang, 'theChallenge.theClimbingDistance')}</span>
+            </div>
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.elevationGain">{t(defaultLang, 'theChallenge.elevationGain')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theClimbingElevationGain">{t(defaultLang, 'theChallenge.theClimbingElevationGain')}</span>
+            </div>
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.terrain">{t(defaultLang, 'theChallenge.terrain')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theClimbingTerrain">{t(defaultLang, 'theChallenge.theClimbingTerrain')}</span>
+            </div>
           </div>
         </div>
 
-        <!-- The Finish -->
-        <div class="group relative bg-stone-800/50 rounded-2xl p-8 lg:p-12 border border-stone-700/50 hover:border-amber-500/30 transition-all duration-500">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <span class="text-amber-500/60 font-display text-6xl lg:text-8xl font-bold absolute top-4 right-6 opacity-20">03</span>
-          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 relative" data-i18n="home.frenchTitle">The Finish</h3>
-                    {t(defaultLang, 'home.frenchTitle')}
-          <p class="text-stone-400 mt-4 leading-relaxed font-body relative" data-i18n="home.frenchDesc">
-            {t(defaultLang, 'home.frenchDesc')}
-                      {t(defaultLang, 'home.frenchDir')}
-          </p>
-          <div class="mt-6 flex gap-4 relative">
-            <span class="text-xs font-body bg-stone-700/50 text-stone-300 px-3 py-1 rounded-full" data-i18n="home.frenchDir">Atlantic → Mediterranean</span>
-            <span class="text-xs font-body bg-stone-700/50 text-stone-300 px-3 py-1 rounded-full">~500km</span>
+        <!-- 03 The Finish -->
+        <div class="group relative bg-stone-900 rounded-2xl p-8 lg:p-12 border border-stone-800 hover:border-amber-500/30 transition-all duration-500 flex flex-col">
+          <span class="text-amber-500/60 font-display text-6xl lg:text-8xl font-bold absolute top-4 right-6 opacity-20" data-i18n="theChallenge.theFinishNum">{t(defaultLang, 'theChallenge.theFinishNum')}</span>
+          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 mt-2" data-i18n="theChallenge.theFinishTitle">{t(defaultLang, 'theChallenge.theFinishTitle')}</h3>
+          <p class="text-stone-400 mt-4 leading-relaxed font-body" data-i18n="theChallenge.theFinishDesc">{t(defaultLang, 'theChallenge.theFinishDesc')}</p>
+          <div class="mt-6 space-y-2">
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.direction">{t(defaultLang, 'theChallenge.direction')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theFinishDirection">{t(defaultLang, 'theChallenge.theFinishDirection')}</span>
+            </div>
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.distance">{t(defaultLang, 'theChallenge.distance')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theFinishDistance">{t(defaultLang, 'theChallenge.theFinishDistance')}</span>
+            </div>
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.elevationGain">{t(defaultLang, 'theChallenge.elevationGain')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theFinishElevationGain">{t(defaultLang, 'theChallenge.theFinishElevationGain')}</span>
+            </div>
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.terrain">{t(defaultLang, 'theChallenge.terrain')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theFinishTerrain">{t(defaultLang, 'theChallenge.theFinishTerrain')}</span>
+            </div>
           </div>
         </div>
 
-        <!-- The Homecoming -->
-        <div class="group relative bg-stone-800/50 rounded-2xl p-8 lg:p-12 border border-stone-700/50 hover:border-amber-500/30 transition-all duration-500">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-transparent rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <span class="text-amber-500/60 font-display text-6xl lg:text-8xl font-bold absolute top-4 right-6 opacity-20">04</span>
-          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 relative" data-i18n="home.spanishTitle">The Homecoming</h3>
-                    {t(defaultLang, 'home.spanishTitle')}
-          <p class="text-stone-400 mt-4 leading-relaxed font-body relative" data-i18n="home.spanishDesc">
-            {t(defaultLang, 'home.spanishDesc')}
-                      {t(defaultLang, 'home.spanishDir')}
-          </p>
-          <div class="mt-6 flex gap-4 relative">
-            <span class="text-xs font-body bg-stone-700/50 text-stone-300 px-3 py-1 rounded-full" data-i18n="home.spanishDir">Mediterranean → Atlantic</span>
-            <span class="text-xs font-body bg-stone-700/50 text-stone-300 px-3 py-1 rounded-full">~500km</span>
+        <!-- 04 The Homecoming -->
+        <div class="group relative bg-stone-900 rounded-2xl p-8 lg:p-12 border border-stone-800 hover:border-amber-500/30 transition-all duration-500 flex flex-col">
+          <span class="text-amber-500/60 font-display text-6xl lg:text-8xl font-bold absolute top-4 right-6 opacity-20" data-i18n="theChallenge.theHomecomingNum">{t(defaultLang, 'theChallenge.theHomecomingNum')}</span>
+          <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 mt-2" data-i18n="theChallenge.theHomecomingTitle">{t(defaultLang, 'theChallenge.theHomecomingTitle')}</h3>
+          <p class="text-stone-400 mt-4 leading-relaxed font-body" data-i18n="theChallenge.theHomecomingDesc">{t(defaultLang, 'theChallenge.theHomecomingDesc')}</p>
+          <div class="mt-6 space-y-2">
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.direction">{t(defaultLang, 'theChallenge.direction')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theHomecomingDirection">{t(defaultLang, 'theChallenge.theHomecomingDirection')}</span>
+            </div>
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.distance">{t(defaultLang, 'theChallenge.distance')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theHomecomingDistance">{t(defaultLang, 'theChallenge.theHomecomingDistance')}</span>
+            </div>
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.elevationGain">{t(defaultLang, 'theChallenge.elevationGain')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theHomecomingElevationGain">{t(defaultLang, 'theChallenge.theHomecomingElevationGain')}</span>
+            </div>
+            <div class="flex justify-between text-xs font-body">
+              <span class="text-stone-500" data-i18n="theChallenge.terrain">{t(defaultLang, 'theChallenge.terrain')}</span>
+              <span class="text-stone-300" data-i18n="theChallenge.theHomecomingTerrain">{t(defaultLang, 'theChallenge.theHomecomingTerrain')}</span>
+            </div>
           </div>
         </div>
 
@@ -231,47 +268,45 @@ import { t, defaultLang } from '../i18n/index';
   <section class="bg-stone-950 relative">
     <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-40">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7 order-2 lg:order-1">
-          <!-- ═══ GBS Explainer Card ═══ -->
-          <div class="bg-stone-900 rounded-3xl p-8 lg:p-12 border border-stone-800">
-            <h3 class="font-display text-2xl lg:text-3xl font-bold text-stone-100" data-i18n="home.gbsCardTitle">What is Guillain-Barré Syndrome?</h3>
-                        {t(defaultLang, 'home.gbsCardTitle')}
-            <p class="text-stone-400 mt-6 leading-relaxed font-body" data-i18n="home.gbsCardDesc">
-              {t(defaultLang, 'home.gbsCardDesc')}
-            </p>
-            <div class="mt-8 grid sm:grid-cols-3 gap-4">
-              <div class="bg-stone-800/50 rounded-xl p-4 text-center">
-                <p class="font-display text-2xl font-bold text-amber-400" data-i18n="home.gbsStat1">1-2</p>
-                                {t(defaultLang, 'home.gbsStat1')}
-                <p class="text-stone-500 text-xs mt-1 font-body" data-i18n="home.gbsStat1Label">per 100,000 affected</p>
-                              {t(defaultLang, 'home.gbsStat1Label')}
-              </div>
-              <div class="bg-stone-800/50 rounded-xl p-4 text-center">
-                <p class="font-display text-2xl font-bold text-amber-400" data-i18n="home.gbsStat2">Weeks</p>
-                                {t(defaultLang, 'home.gbsStat2')}
-                <p class="text-stone-500 text-xs mt-1 font-body" data-i18n="home.gbsStat2Label">to full paralysis</p>
-                              {t(defaultLang, 'home.gbsStat2Label')}
-              </div>
-              <div class="bg-stone-800/50 rounded-xl p-4 text-center">
-                <p class="font-display text-2xl font-bold text-amber-400" data-i18n="home.gbsStat3">Months</p>
-                                {t(defaultLang, 'home.gbsStat3')}
-                <p class="text-stone-500 text-xs mt-1 font-body" data-i18n="home.gbsStat3Label">to years recovery</p>
-                              {t(defaultLang, 'home.gbsStat3Label')}
+        <!-- Left: Mission Tag & Headline -->
+        <div class="lg:col-span-5 flex flex-col">
+          <span class="text-amber-500 font-body text-xs tracking-[0.3em] uppercase mb-6 block" data-i18n="home.gbsTag">{t(defaultLang, 'home.gbsTag')}</span>
+          <h2 class="font-display text-5xl lg:text-7xl font-bold text-stone-100 leading-tight">
+            {t(defaultLang, 'home.gbsTitle1')}<br/>{t(defaultLang, 'home.gbsTitle2')}<br/><span class="text-amber-400" data-i18n="home.gbsTitle3">{t(defaultLang, 'home.gbsTitle3')}</span>
+          </h2>
+        </div>
+        <!-- Right: Description & Link -->
+        <div class="lg:col-span-7 flex flex-col">
+          <div>
+            <p class="text-stone-300 text-lg lg:text-xl leading-relaxed font-body mb-6" data-i18n="home.gbsSideDesc">{t(defaultLang, 'home.gbsSideDesc')}</p>
+            <p class="text-stone-500 text-lg leading-relaxed font-body mb-2" data-i18n="home.gbsSideDesc2">{t(defaultLang, 'home.gbsSideDesc2')}</p>
+            <ol class="text-stone-500 text-lg leading-relaxed font-body mb-8 list-decimal list-inside pl-2">
+              {translations[defaultLang].home.gbsSideDesc2List.map((item: string) => <li>{item}</li>)}
+            </ol>
+            <!-- GBS Explainer Card -->
+            <div class="bg-stone-900 rounded-3xl p-8 lg:p-12 border border-stone-800 mb-8">
+              <h3 class="font-display text-3xl lg:text-4xl font-bold text-stone-100 mb-6" data-i18n="home.gbsCardTitle">{t(defaultLang, 'home.gbsCardTitle')}</h3>
+              <p class="text-stone-400 text-lg leading-relaxed font-body mb-8" data-i18n="home.gbsCardDesc">{t(defaultLang, 'home.gbsCardDesc')}</p>
+              <div class="grid sm:grid-cols-3 gap-4 mb-8">
+                <div class="bg-stone-800/50 rounded-xl p-6 text-center">
+                  <p class="font-display text-2xl font-bold text-amber-400 mb-1" data-i18n="home.gbsStat1">{t(defaultLang, 'home.gbsStat1')}</p>
+                  <p class="text-stone-500 text-xs font-body mb-1" data-i18n="home.gbsStat1Label">{t(defaultLang, 'home.gbsStat1Label')}</p>
+                </div>
+                <div class="bg-stone-800/50 rounded-xl p-6 text-center">
+                  <p class="font-display text-2xl font-bold text-amber-400 mb-1" data-i18n="home.gbsStat2">{t(defaultLang, 'home.gbsStat2')}</p>
+                  <p class="text-stone-500 text-xs font-body mb-1" data-i18n="home.gbsStat2Label">{t(defaultLang, 'home.gbsStat2Label')}</p>
+                </div>
+                <div class="bg-stone-800/50 rounded-xl p-6 text-center">
+                  <p class="font-display text-2xl font-bold text-amber-400 mb-1" data-i18n="home.gbsStat3">{t(defaultLang, 'home.gbsStat3')}</p>
+                  <p class="text-stone-500 text-xs font-body mb-1" data-i18n="home.gbsStat3Label">{t(defaultLang, 'home.gbsStat3Label')}</p>
+                </div>
               </div>
             </div>
-            <a href="/about-gbs" class="inline-flex items-center gap-2 text-amber-400 font-body text-sm mt-8 hover:text-amber-300 transition-colors group">
+            <a href="/about-gbs" class="inline-flex items-center gap-2 text-amber-400 font-body text-base mt-2 hover:text-amber-300 transition-colors group font-semibold">
               <span data-i18n="home.learnMoreGbs">{t(defaultLang, 'home.learnMoreGbs')}</span>
               <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
-        </div>
-
-        <div class="lg:col-span-5 order-1 lg:order-2">
-          <span class="text-amber-500 font-body text-xs tracking-[0.3em] uppercase" data-i18n="home.gbsTag">{t(defaultLang, 'home.gbsTag')}</span>
-          <h2 class="font-display text-4xl lg:text-5xl font-bold text-stone-100 mt-4 leading-tight" data-i18n="home.gbsTitle1">
-            {t(defaultLang, 'home.gbsTitle1')}<br/>{t(defaultLang, 'home.gbsTitle2')}<br/><span class="text-amber-400" data-i18n="home.gbsTitle3">{t(defaultLang, 'home.gbsTitle3')}</span>
-          </h2>
-          <p class="text-stone-500 mt-6 font-body leading-relaxed" data-i18n="home.gbsSideDesc">{t(defaultLang, 'home.gbsSideDesc')}</p>
         </div>
       </div>
     </div>
@@ -321,14 +356,14 @@ import { t, defaultLang } from '../i18n/index';
       <div class="mt-16 grid sm:grid-cols-2 gap-8 max-w-lg mx-auto">
         <div>
           <p class="text-stone-500 text-xs font-body uppercase tracking-wider" data-i18n="home.ukTarget">{t(defaultLang, 'gbsGlobals.ukTarget')}</p>
-            <p class="font-display text-3xl font-bold text-stone-100 mt-2">{t(defaultLang, 'gbsGlobals.ukTarget')}</p>
+            <p class="font-display text-3xl font-bold text-stone-100 mt-2">{t(defaultLang, 'common.ukTargetValue')}</p>
           <div class="mt-3 h-1.5 bg-stone-800 rounded-full overflow-hidden">
             <div class="h-full bg-amber-500 rounded-full" style="width: 0%;"></div>
           </div>
         </div>
         <div>
-          <p class="text-stone-500 text-xs font-body uppercase tracking-wider" data-i18n="home.spainTarget">{t(defaultLang, 'gbsGlobals.esTarget')}</p>
-            <p class="font-display text-3xl font-bold text-stone-100 mt-2">{t(defaultLang, 'gbsGlobals.esTarget')}</p>
+          <p class="text-stone-500 text-xs font-body uppercase tracking-wider" data-i18n="home.spainTarget">{t(defaultLang, 'gbsGlobals.spainTarget')}</p>
+            <p class="font-display text-3xl font-bold text-stone-100 mt-2">{t(defaultLang, 'common.spainTargetValue')}</p>
           <div class="mt-3 h-1.5 bg-stone-800 rounded-full overflow-hidden">
             <div class="h-full bg-amber-500 rounded-full" style="width: 0%;"></div>
           </div>

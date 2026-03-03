@@ -10,49 +10,25 @@ import { t, defaultLang } from "../i18n";
   heroTitleKey="theChallenge.heroTitle"
   heroSubtitleKey="theChallenge.heroSubtitle"
 >
-  <!-- Stats -->
+  <!-- Stats ribbon -->
   <section class="border-b border-stone-800">
     <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-16">
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="mt-0 lg:mt-8 grid grid-cols-2 lg:grid-cols-4 gap-8 animate-fade-up stagger-6">
         <div class="border-l-2 border-amber-500/40 pl-4">
-          <p class="font-display text-4xl lg:text-5xl font-bold text-stone-100">
-            ~12
-          </p>
-          <p
-            class="text-stone-500 text-sm mt-1 font-body"
-            data-i18n="stats.totalDays"
-          >
-          </p>
+          <p class="font-display text-3xl lg:text-5xl font-bold text-stone-100" data-i18n="stats.targetDays">{t(defaultLang, 'stats.targetDays')}</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.days">{t(defaultLang, 'gbsGlobals.days')}</p>
         </div>
         <div class="border-l-2 border-amber-500/40 pl-4">
-          <p class="font-display text-4xl lg:text-5xl font-bold text-stone-100">
-            ~1,000
-          </p>
-          <p
-            class="text-stone-500 text-sm mt-1 font-body"
-            data-i18n="stats.kilometres"
-          >
-          </p>
+          <p class="font-display text-3xl lg:text-5xl font-bold text-stone-100" data-i18n="stats.targetKilometres">{t(defaultLang, 'stats.targetKilometres')}</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.kilometres">{t(defaultLang, 'gbsGlobals.kilometres')}</p>
         </div>
         <div class="border-l-2 border-amber-500/40 pl-4">
-          <p class="font-display text-4xl lg:text-5xl font-bold text-stone-100">
-            ~22,000
-          </p>
-          <p
-            class="text-stone-500 text-sm mt-1 font-body"
-            data-i18n="stats.metresOfClimbing"
-          >
-          </p>
+          <p class="font-display text-3xl lg:text-5xl font-bold text-stone-100" data-i18n="stats.targetMetresClimbed">{t(defaultLang, 'stats.targetMetresClimbed')}</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.metresClimbed">{t(defaultLang, 'gbsGlobals.metresClimbed')}</p>
         </div>
         <div class="border-l-2 border-amber-500/40 pl-4">
-          <p class="font-display text-4xl lg:text-5xl font-bold text-amber-400">
-            ~2.5×
-          </p>
-          <p
-            class="text-stone-500 text-sm mt-1 font-body"
-            data-i18n="stats.heightOfEverest"
-          >
-          </p>
+          <p class="font-display text-3xl lg:text-5xl font-bold text-stone-100" data-i18n="stats.targetEverestSummits">{t(defaultLang, 'stats.targetEverestSummits')}</p>
+          <p class="text-stone-500 text-sm mt-1 font-body" data-i18n="stats.heightOfEverest">{t(defaultLang, 'stats.heightOfEverest')}</p>
         </div>
       </div>
     </div>
