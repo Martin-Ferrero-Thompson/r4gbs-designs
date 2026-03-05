@@ -22,6 +22,10 @@
     "donate": "Dohaintza",
     "donateNow": "Eman orain"
   },
+  "badge": {
+    "supporting": "Babesten",
+    "title": "The Neural Cyclist"
+  },
   "footer": {
     "tagline": "Pirinioetako txirrindularitza-erronka bat, Guillain-Barré Sindromearen inguruko kontzientzia zabaltzeko eta funtsak biltzeko. Kostaz kosta. Mendiz mendi.",
     "hashtags": "#RIDING4GBS · #TheSlowRoadBack",

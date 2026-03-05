@@ -3,6 +3,7 @@ import '../styles/global.css';
 import themeScriptUrl from './theme.client.js?url';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
+import BlogBadge from '../components/BlogBadge.astro';
 import { getDefaultTranslations } from '../i18n/index';
 
 interface Props {
@@ -114,6 +115,7 @@ const i18nTranslations = getDefaultTranslations();
     </main>
 
     <Footer variant="1" />
+    <BlogBadge />
     <script>
       import '../i18n/client.ts';
     </script>

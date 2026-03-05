@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { getDefaultTranslations } from '../i18n/index';
+import BlogBadge from '../components/BlogBadge.astro';
 
 interface Props {
   title?: string;
@@ -109,6 +110,7 @@ const i18nTranslations = getDefaultTranslations();
   </head>
   <body class="min-h-screen overflow-x-hidden">
     <slot />
+    <BlogBadge />
     <script>
       import '../i18n/client.ts';
       import { inject } from '@vercel/analytics';

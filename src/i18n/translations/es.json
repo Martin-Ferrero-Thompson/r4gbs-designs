@@ -36,6 +36,10 @@
     "donate": "Donar",
     "donateNow": "Donar Ahora"
   },
+  "badge": {
+    "supporting": "Apoyando",
+    "title": "The Neural Cyclist"
+  },
   "footer": {
     "tagline": "Un reto ciclista por los Pirineos para concienciar y recaudar fondos vitales para el Síndrome de Guillain-Barré. De costa a costa. Montaña a montaña.",
     "hashtags": "#RIDING4GBS · #TheSlowRoadBack",

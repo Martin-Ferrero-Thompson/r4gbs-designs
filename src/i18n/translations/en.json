@@ -30,6 +30,10 @@
     "aboutGbs": "About GBS",
     "progress": "Progress"
   },
+  "badge": {
+    "supporting": "Supporting",
+    "title": "The Neural Cyclist"
+  },
   "footer": {
     "tagline": "A Pyrenean cycling challenge to raise awareness and vital funds for Guillain-Barré Syndrome. Coast to coast. Mountain by mountain.",
     "hashtags": "#RIDING4GBS · #TheSlowRoadBack",
