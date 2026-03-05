@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import FundraisingProgress from '../components/FundraisingProgress.astro';
 import { t, defaultLang } from '../i18n/index';
 ---
 <PageLayout
@@ -75,22 +76,10 @@ import { t, defaultLang } from '../i18n/index';
       <h2 class="font-display text-2xl lg:text-3xl font-bold text-stone-100 mb-8" data-i18n="progress.fundraisingTitle">{t(defaultLang, 'progress.fundraisingTitle')}</h2>
       <div class="grid sm:grid-cols-2 gap-6">
         <div class="bg-stone-900 rounded-2xl p-8 border border-stone-800">
-          <p class="text-stone-400 font-body text-sm" data-i18n="progress.ukCharity">{t(defaultLang, 'gbsGlobals.heroTrustUk')}</p>
-          <p class="font-display text-4xl font-bold text-stone-100 mt-2">£0.00</p>
-          <p class="text-stone-500 text-sm font-body mt-1">Target: £10,000.00</p>
-          <div class="mt-4 h-2 bg-stone-800 rounded-full overflow-hidden">
-            <div class="h-full bg-amber-500 rounded-full" style="width: 0%;"></div>
-          </div>
-          <a href="/donate" class="inline-flex items-center gap-2 text-amber-400 font-body text-sm mt-4 hover:text-amber-300 transition-colors" data-i18n="progress.donateNow">{t(defaultLang, 'progress.donateNow')}</a>
+          <FundraisingProgress charity="uk" variant="full" showLink />
         </div>
         <div class="bg-stone-900 rounded-2xl p-8 border border-stone-800">
-          <p class="text-stone-400 font-body text-sm" data-i18n="progress.esCharity">{t(defaultLang, 'gbsGlobals.heroTrustEs')}</p>
-          <p class="font-display text-4xl font-bold text-stone-100 mt-2">€0.00</p>
-          <p class="text-stone-500 text-sm font-body mt-1">Target: €10,000.00</p>
-          <div class="mt-4 h-2 bg-stone-800 rounded-full overflow-hidden">
-            <div class="h-full bg-amber-500 rounded-full" style="width: 0%;"></div>
-          </div>
-          <a href="/donate" class="inline-flex items-center gap-2 text-amber-400 font-body text-sm mt-4 hover:text-amber-300 transition-colors" data-i18n="progress.donateNow">{t(defaultLang, 'progress.donateNow')}</a>
+          <FundraisingProgress charity="es" variant="full" showLink />
         </div>
       </div>
     </div>

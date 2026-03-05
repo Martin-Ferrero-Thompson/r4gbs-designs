@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import FundraisingProgress from '../components/FundraisingProgress.astro';
 import { t, defaultLang } from '../i18n/index';
 ---
 
@@ -51,13 +52,7 @@ import { t, defaultLang } from '../i18n/index';
 
           <!-- Funds raised -->
           <div class="mt-8">
-            <div class="flex justify-between items-baseline">
-              <p class="font-display text-3xl font-bold text-stone-100">£0</p>
-              <p class="text-stone-500 font-body text-sm" data-i18n="donate.ukTarget">{t(defaultLang, 'gbsGlobals.ukTarget')}</p>
-            </div>
-            <div class="mt-3 h-2 bg-stone-800 rounded-full overflow-hidden">
-              <div class="h-full bg-amber-500 rounded-full" style="width: 0%;"></div>
-            </div>
+            <FundraisingProgress charity="uk" variant="full" />
             <p class="text-stone-600 text-xs font-body mt-2" data-i18n="donate.ukGiftAid"></p>
           </div>
 
@@ -100,13 +95,7 @@ import { t, defaultLang } from '../i18n/index';
 
           <!-- Funds raised -->
           <div class="mt-8">
-            <div class="flex justify-between items-baseline">
-              <p class="font-display text-3xl font-bold text-stone-100">€0</p>
-              <p class="text-stone-500 font-body text-sm" data-i18n="donate.esTarget">{t(defaultLang, 'gbsGlobals.esTarget')}</p>
-            </div>
-            <div class="mt-3 h-2 bg-stone-800 rounded-full overflow-hidden">
-              <div class="h-full bg-amber-500 rounded-full" style="width: 0%;"></div>
-            </div>
+            <FundraisingProgress charity="es" variant="full" />
           </div>
 
           <div class="mt-8 p-6 bg-stone-800/30 rounded-xl border border-stone-700/50 text-center">
