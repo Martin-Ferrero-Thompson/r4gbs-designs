@@ -16,13 +16,13 @@ export interface CharityData {
 export const charities = {
   uk: {
     target: 10_000,
-    raised: 0,
+    raised: 1_200,
     currency: 'GBP',
     locale: 'en-GB',
   },
   es: {
     target: 10_000,
-    raised: 0,
+    raised: 1_200,
     currency: 'EUR',
     locale: 'es-ES',
   },
