@@ -27,8 +27,15 @@
     "dark": "Sombre"
   },
   "nav": {
+    "challenge": "Le Défi",
+    "story": "Notre Histoire",
     "aboutGbs": "À propos du SGB",
-    "progress": "Progrès"
+    "progress": "Progrès",
+    "journal": "Journal",
+    "news": "Actualités",
+    "supportUs": "Soutenez-nous",
+    "donate": "Don",
+    "donateNow": "Faire un don"
   },
   "badge": {
     "supporting": "En soutien à",

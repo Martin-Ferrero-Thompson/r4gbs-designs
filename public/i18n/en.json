@@ -27,8 +27,15 @@
     "dark": "Dark"
   },
   "nav": {
+    "challenge": "The Challenge",
+    "story": "Our Story",
     "aboutGbs": "About GBS",
-    "progress": "Progress"
+    "progress": "Progress",
+    "journal": "Journal",
+    "news": "News",
+    "supportUs": "Support Us",
+    "donate": "Donate",
+    "donateNow": "Donate Now"
   },
   "badge": {
     "supporting": "Supporting",

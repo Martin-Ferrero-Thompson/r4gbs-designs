@@ -27,8 +27,15 @@
     "dark": "Dunkel"
   },
   "nav": {
+    "challenge": "Die Herausforderung",
+    "story": "Unsere Geschichte",
     "aboutGbs": "Über GBS",
-    "progress": "Fortschritt"
+    "progress": "Fortschritt",
+    "journal": "Tagebuch",
+    "news": "Neuigkeiten",
+    "supportUs": "Unterstützen",
+    "donate": "Spenden",
+    "donateNow": "Jetzt Spenden"
   },
   "badge": {
     "supporting": "Unterstützung für",

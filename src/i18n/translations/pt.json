@@ -27,8 +27,15 @@
     "dark": "Escuro"
   },
   "nav": {
+    "challenge": "O Desafio",
+    "story": "A Nossa História",
     "aboutGbs": "Sobre a SGB",
-    "progress": "Progresso"
+    "progress": "Progresso",
+    "journal": "Diário",
+    "news": "Notícias",
+    "supportUs": "Apoie-nos",
+    "donate": "Doar",
+    "donateNow": "Doar Agora"
   },
   "badge": {
     "supporting": "Em apoio a",
