@@ -11,13 +11,16 @@
 import en from './translations/en.json';
 
 export const defaultLang = 'en' as const;
-export const languages = ['en', 'es', 'eu'] as const;
+export const languages = ['en', 'es', 'eu', 'de', 'fr', 'pt'] as const;
 export type Lang = (typeof languages)[number];
 
 export const languageNames: Record<Lang, string> = {
   en: 'EN',
   es: 'ES',
   eu: 'EU',
+  de: 'DE',
+  fr: 'FR',
+  pt: 'PT',
 };
 
 /** English-only translations used server-side when rendering pages. */

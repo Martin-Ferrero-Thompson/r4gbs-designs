@@ -3,12 +3,18 @@ const flags: Record<string, string> = {
   en: '<svg class="h-3.5 w-5 shrink-0 rounded-sm overflow-hidden" viewBox="0 0 60 40"><rect width="60" height="40" fill="#012169" rx="2"/><path d="M0 0L60 40M60 0L0 40" stroke="#fff" stroke-width="8"/><path d="M0 0L60 40M60 0L0 40" stroke="#C8102E" stroke-width="4"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="12"/><path d="M30 0v40M0 20h60" stroke="#C8102E" stroke-width="6"/></svg>',
   es: '<svg class="h-3.5 w-5 shrink-0 rounded-sm overflow-hidden" viewBox="0 0 60 40"><rect width="60" height="40" fill="#AA151B" rx="2"/><rect y="10" width="60" height="20" fill="#F1BF00"/></svg>',
   eu: '<svg class="h-3.5 w-5 shrink-0 rounded-sm overflow-hidden" viewBox="0 0 60 40"><rect width="60" height="40" fill="#D52B1E" rx="2"/><path d="M0 0L60 40M60 0L0 40" stroke="#39884C" stroke-width="8"/><path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="6"/></svg>',
+  de: '<svg class="h-3.5 w-5 shrink-0 rounded-sm overflow-hidden" viewBox="0 0 60 40"><rect width="60" height="40" fill="#FFCC00" rx="2"/><rect width="60" height="13.3" fill="#000"/><rect y="26.7" width="60" height="13.3" fill="#DD0000"/></svg>',
+  fr: '<svg class="h-3.5 w-5 shrink-0 rounded-sm overflow-hidden" viewBox="0 0 60 40"><rect width="60" height="40" fill="#fff" rx="2"/><rect width="20" height="40" fill="#002395"/><rect x="40" width="20" height="40" fill="#ED2939"/></svg>',
+  pt: '<svg class="h-3.5 w-5 shrink-0 rounded-sm overflow-hidden" viewBox="0 0 60 40"><rect width="60" height="40" fill="#FF0000" rx="2"/><rect width="22" height="40" fill="#006600"/><circle cx="22" cy="20" r="7" fill="#FFCC00"/></svg>',
 };
 
 const languages = [
   { code: 'en', label: 'English', flag: flags.en },
   { code: 'es', label: 'Español', flag: flags.es },
   { code: 'eu', label: 'Euskara', flag: flags.eu },
+  { code: 'de', label: 'Deutsch', flag: flags.de },
+  { code: 'fr', label: 'Français', flag: flags.fr },
+  { code: 'pt', label: 'Português', flag: flags.pt },
 ];
 ---
 <div class="relative inline-block" data-lang-root data-selected-class="text-amber-400">
