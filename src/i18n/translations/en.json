@@ -84,7 +84,6 @@
     "heroTrustUkReg": "Registered Charity 1154843",
     "heroTrustEsReg": "Reg. Nacional Nº 619.666",
     "discoverChallenge": "Discover the Challenge",
-    
     "missionTag": "The Mission",
     "missionTitle1": "More than",
     "missionTitle2": "a bike ride",
@@ -129,35 +128,15 @@
     "donateCta1": "Fund the research.",
     "donateCta2": "Fuel the ride.",
     "donateCtaDesc": "100% of every donation goes directly to our partner charities supporting GBS research and patient care in the UK and Spain.",
-    
     "otherWaysToHelp": "Other Ways to Help",
     "ukTarget": "UK Charity Target",
     "spainTarget": "Spanish Charity Target"
   },
-    "theChallenge": {
+  "theChallenge": {
     "pageTitle": "The Challenge",
     "heroTitle": "Chapter One: To Conquer the Pyrenees",
     "heroSubtitle": "A complete coast-to-coast traverse of one of Europe's most challenging mountain ranges. Self-supported. Side by side.",
     "introDesc": "This is more than a bike ride; it's the next chapter in our shared story. A testament to Edurne's unwavering support through every step of my GBS journey, this is our challenge — a complete coast-to-coast traverse of one of the Europe's most challenging mountain ranges.",
-    "ch1Title": "The Rider Before",
-    "ch1p1": "For as long as I can remember, my life has been intertwined with the simple freedom of a bicycle. I was a long-distance cyclist, happiest when pushing my limits on the beautiful roads and mountains of the UK and Europe. Cycling was more than a hobby; it was a core part of my identity. Whether it was mountain biking over the moors, running in the forests with the dogs, or embarking on long road adventures, being outdoors fueled my energy and my mental well-being.",
-    "ch1p2": "It was on one of these adventures I shared the road with a close friend and ride partner, herself living with a chronic autoimmune condition. Together, we tackled epic journeys, like riding the entire length of the Rhine from Rotterdam to its source near Andermatt in Switzerland. Cycling took me to incredible places and introduced me to amazing people.",
-    "ch1p3": "It was also during this time that I reconnected with a wonderful friend in Spain, Edurne. Our friendship blossomed into a relationship, and we began dreaming of our own cycling adventures together, maybe even the Camino de Santiago. Life felt full of possibility.",
-    "ch2Tag": "Chapter Two",
-    "ch2Title": "The Fall",
-    "ch2p1": "Inspired by a friend, I planned a major fundraising ride in the UK — a hilly 2,000 mile, self-supported route from Land's End to John O'Groats. Tragically, an accident forced me to stop early. I was gutted. But Edurne's support shone through, and our focus shifted to planning our ride together in Spain.",
-    "ch2p2": "Shortly after returning home to Yorkshire, however, the first warning signs appeared. A persistent lower back pain made sleeping difficult. Then came the strange tingling, the fleeting moments of weakness in my legs. Masked by painkillers and dismissed as nothing serious, life carried on... until the day my world stopped.",
-    "quoteText": "\"The day my world stopped.\"",
-    "quoteDesc": "Guillain-Barré Syndrome attacked without warning, transforming a life of freedom on two wheels into a battle for the most basic movements.",
-    "ch3Tag": "Chapter Three",
-    "ch3Title": "The Slow Road Back",
-    "ch3p1": "Recovery from GBS is not a straight line. It is a winding, uncertain path marked by small victories and frustrating setbacks. Every step regained, every pedal stroke recovered, is a triumph over a condition that tried to take everything.",
-    "ch3p2": "Through it all, Edurne was there — my unwavering support, my motivation, my reason to keep pushing. Together, we dreamed of something that once seemed impossible: not just riding again, but taking on one of Europe's greatest mountain challenges.",
-    "ch3p3": "In October 2026, that dream becomes reality. Starting from our home in Pamplona, we will traverse the Pyrenees coast to coast — a living testament to what recovery, love, and sheer determination can achieve.",
-    "ctaTitle": "Join our journey",
-    "ctaDesc": "Follow along day by day as we take on the Pyrenees, or contribute to the GBS charities we're riding for.",
-    "ctaChallenge": "The Challenge",
-    "ctaDonate": "Donate",
     "styleTag": "The Style",
     "styleTitle": "A Shared Journey",
     "styleDesc1": "This challenge is a journey we will undertake as a team, side-by-side. We'll be riding in a self-supported bikepacking style, carrying all our own equipment and relying on the kindness of the community we meet along the way.",
@@ -196,6 +175,29 @@
     "theHomecomingDesc": "This will be some description about the final stage, the homecoming, the celebration, the emotions of returning to Pamplona after conquering the Pyrenees. It will be a mix of relief, joy, and reflection on the journey that has been both a physical and emotional challenge.",
     "supportChallenge": "Support This Challenge"
   },
+  "ourStory": {
+    "pageTitle": "Our Story",
+    "heroTitle": "The Slow Road Back",
+    "heroSubtitle": "Hi, I'm Martin. In 2021, Guillain-Barré Syndrome changed my life, but it didn't define it. This is my story so far...",
+    "ch1Tag": "Chapter One",
+    "ch1Title": "The Rider Before",
+    "ch1p1": "For most of my life, the bicycle was my freedom. Long climbs, quiet country lanes, and mountain roads across the UK and Europe were where I felt most alive. Cycling wasn’t just something I did—it was part of who I was. Along the way I shared unforgettable journeys with friends, including a remarkable ride tracing the entire Rhine from Rotterdam to its source high in the Swiss Alps. It was also during this time that life took a beautiful turn when I reconnected with Edurne in Spain. What began as friendship soon grew into love, and together we dreamed about our own cycling adventures—perhaps even riding the Camino de Santiago side by side. The road ahead felt full of possibility. But just as those dreams were beginning to take shape, subtle warning signs appeared—pain, weakness, strange sensations—quiet signals that something in my life was about to change forever.",
+    "ch2Tag": "Chapter Two",
+    "ch2Title": "The Day the World Stopped",
+    "ch2p1": "On August 5th, 2021, my world changed in an instant. One moment I was walking through my home; the next I had collapsed on the floor, unable to move my legs. Within seconds I went from an active endurance cyclist to being almost completely paralyzed. Doctors eventually gave the diagnosis: Guillain-Barré Syndrome, a rare neurological condition where the body attacks its own nerves. I was rushed into intensive care and began emergency treatment, facing the terrifying uncertainty of whether I would ever walk—let alone ride—again. In that darkest moment, when everything familiar had been stripped away, one constant remained: the voice of Edurne, hundreds of miles away, reminding me every day that hope was still alive.",
+    "quoteText": "\"The day my world stopped.\"",
+    "quoteDesc": "Guillain-Barré Syndrome attacked without warning, transforming a life of freedom on two wheels into a battle for the most basic movements.",
+    "ch3Tag": "Chapter Three",
+    "ch3Title": "The Fight for Every Step",
+    "ch3p1": "Recovery didn’t arrive all at once. It came slowly, painfully, one determined step at a time. Months in a rehabilitation ward forced me to relearn the basic movements most of us take for granted. With limited physiotherapy available, I pushed myself wherever I could—racing wheelchairs down hospital corridors with fellow patients, celebrating the moment I could finally stand with crutches, and sneaking out beyond the hospital grounds to walk just a little farther each day. Every metre felt like a victory. Every step was hard-earned. Rebuilding strength after Guillain-Barré meant confronting pain, frustration, and uncertainty daily—but it also revealed something powerful: resilience I never knew I had.",
+    "ch4Tag": "Chapter Four",
+    "ch4Title": "A New Beginning – The Slow Road Back",
+    "ch4p1": "Leaving the hospital wasn’t the end of the journey—it was the start of a new one. Guillain-Barré had left lasting challenges: weakened legs, nerve pain, and a body that no longer moved the way it once had. But the mountains were still calling, and my spirit hadn’t broken. Slowly, patiently, I returned to the bike and to the cycling community that had always felt like home. I discovered that although the speed and strength of the past were gone, something more meaningful had taken their place: gratitude for every moment I could still ride. In 2023 that journey brought me to Spain, where Edurne and I built a life together and were married. With her unwavering support, I finally came off the last of the medication and embraced a new perspective on life. Guillain-Barré had taken much—but it had also taught me to value every single pedal stroke. This became my Slow Road Back.",
+    "ctaTitle": "Join our journey",
+    "ctaDesc": "Follow along day by day as we take on the Pyrenees, or contribute to the GBS charities we're riding for.",
+    "ctaChallenge": "The Challenge",
+    "ctaDonate": "Donate"
+  },
   "aboutGbs": {
     "pageTitle": "About GBS",
     "heroTitle": "About Guillain-Barré Syndrome",
@@ -228,13 +230,12 @@
     "fact4Label": "of patients left with significant disability",
     "supportingResearch": "Supporting Research",
     "supportingDesc": "Our ride raises funds for Inflammatory Neuropathies UK and GBS|CIDP España — organisations dedicated to supporting patients and funding research.",
-    
     "findOutMoreDesc": "If you, or someone close to you, has been diagnosed with Guillain-Barré Syndrome (GBS), CIDP or any other Inflammatory Neuropathy, you are not alone. We are here to support.",
     "findOutMoreDesc2": "For more personalised support, resources, and to connect with others who understand what you're going through, we highly recommend visiting the Inflammatory Neuropathies UK website.",
     "findOutMoreLink": "Find Out More from Inflammatory Neuropathies UK →",
     "findOutMoreUrl": "https://www.inflammatoryneuropathies.uk/how-we-can-help"
   },
-    "progress": {
+  "progress": {
     "pageTitle": "Our Progress",
     "heroTitle": "Follow The Journey",
     "heroSubtitle": "This page will be updated daily with data from the road. Check back during October 2026.",
@@ -247,7 +248,7 @@
     "summitsConquered": "Summits Conquered",
     "fundraisingTitle": "Fundraising Progress"
   },
-    "journal": {
+  "journal": {
     "pageTitle": "Journal Hub",
     "heroTitle": "Journal Hub",
     "heroSubtitle": "Follow the daily progress from the road, with updates, photos, and stories from the journey.",
@@ -304,12 +305,11 @@
     "donateReminderDesc": "Charitable donations go through a separate channel, directly to our partner charities.",
     "goToDonate": "Go to Donate page →"
   },
-    "donate": {
+  "donate": {
     "pageTitle": "Donate",
     "heroTitle": "Support Patient-Led Research",
     "heroSubtitle": "100% of every donation goes directly to our partner charities supporting GBS research and patient care.",
     "ukRegion": "United Kingdom",
-    
     "ukDesc": "We are proud to partner with Inflammatory Neuropathies UK, the national organisation supporting people affected by GBS, CIDP, and related conditions.",
     "ukHelp": "Your contribution can help:",
     "ukHelp1": "Map long-term symptoms and residuals to improve daily patient care",
@@ -322,14 +322,12 @@
     "comingSoon": "Donation options coming soon",
     "comingSoonDesc": "We are finalising our donation platform. Please check back shortly.",
     "esRegion": "España",
-    
     "esDesc": "Supporting patients and families affected by GBS and CIDP across Spain. Together, we can raise awareness and improve care for the Spanish GBS community.",
     "esHelp": "Your contribution supports:",
     "esHelp1": "Patient support networks across Spain",
     "esHelp2": "Awareness campaigns in Spanish communities",
     "esHelp3": "Resources and guidance for newly diagnosed patients",
     "esHelp4": "Connecting patients with specialist medical care",
-    
     "supportNote": "Looking to support the ride itself? Visit <a href=\"/support-us\" class=\"underline hover:text-amber-300\">Support Us</a>"
   }
 }

@@ -1,0 +1,280 @@
+{
+  "route": {
+    "name": "riding4GBS-The-Start",
+    "totalDistance": "384.5 km",
+    "totalElevationGain": "7299 m",
+    "totalElevationLoss": "6581 m",
+    "maxAltitude": "2102 m",
+    "minAltitude": "2 m",
+    "start": {
+      "lat": 42.374298,
+      "lon": 3.156969,
+      "ele": 2.053818
+    },
+    "end": {
+      "lat": 42.780884,
+      "lon": 0.690348,
+      "ele": 719.184235
+    }
+  },
+  "segments": [
+    {
+      "name": "To Pal Pass",
+      "title": "Ascent to the Sky",
+      "direction": "W",
+      "distance": "154.8 km",
+      "elevationGain": "3119 m",
+      "elevationLoss": "1019 m",
+      "maxAltitude": "2102 m",
+      "minAltitude": "2 m",
+      "maxGradient": "20.7%",
+      "avgGradient": "2.0%",
+      "terrain": "Rugged mountain trails winding through dense forests and open alpine slopes.",
+      "narrative": "This segment is a relentless climb toward Pal Pass, where steep gradients and narrow roads demand focus. Riders will push through pine-scented valleys, rewarded with panoramic views of the Pyrenees as they approach the summit's 2,102-meter mark."
+    },
+    {
+      "name": "To Port del Cantó (1,721 m)",
+      "title": "Descent into the Unknown",
+      "direction": "W",
+      "distance": "123.1 km",
+      "elevationGain": "2659 m",
+      "elevationLoss": "3048 m",
+      "maxAltitude": "2101 m",
+      "minAltitude": "589 m",
+      "maxGradient": "17.6%",
+      "avgGradient": "2.2%",
+      "terrain": "Technical switchbacks and steep descents through rocky terrain.",
+      "narrative": "A thrilling descent follows a grueling ascent, with sharp turns and breathtaking drops revealing hidden mountain villages. The route weaves through ancient stone bridges and wildflower meadows, blending challenge with serenity."
+    },
+    {
+      "name": "To Bonaigua Pass",
+      "title": "Echoes of the Peaks",
+      "direction": "NW",
+      "distance": "68.9 km",
+      "elevationGain": "1513 m",
+      "elevationLoss": "1154 m",
+      "maxAltitude": "2071 m",
+      "minAltitude": "682 m",
+      "maxGradient": "15.5%",
+      "avgGradient": "2.2%",
+      "terrain": "Majestic high-altitude roads flanked by towering pines and sheer cliffs.",
+      "narrative": "This leg climbs toward Bonaigua Pass, where the air thins and the landscape becomes otherworldly. Cyclists will navigate winding paths that seem to touch the sky, with every pedal stroke echoing the resilience of those fighting GBS."
+    },
+    {
+      "name": "After Bonaigua Pass",
+      "title": "Final Descent",
+      "direction": "NW",
+      "distance": "37.8 km",
+      "elevationGain": "8 m",
+      "elevationLoss": "1354 m",
+      "maxAltitude": "2065 m",
+      "minAltitude": "719 m",
+      "maxGradient": "13.4%",
+      "avgGradient": "0.0%",
+      "terrain": "Smooth, fast descents through rolling hills and quiet valleys.",
+      "narrative": "The final stretch is a thrilling descent, with momentum building as riders carve through sun-dappled forests. The route ends at 719 meters, marking the triumph of perseverance and the start of a new journey for GBS."
+    }
+  ],
+  "notableClimbs": [
+    {
+      "name": null,
+      "startKm": 78.9,
+      "lengthKm": 0.7,
+      "avgGradient": 7.2,
+      "elevationGain": 54
+    },
+    {
+      "name": null,
+      "startKm": 80.1,
+      "lengthKm": 1.3,
+      "avgGradient": 5.1,
+      "elevationGain": 68
+    },
+    {
+      "name": null,
+      "startKm": 83.5,
+      "lengthKm": 1.4,
+      "avgGradient": 7.9,
+      "elevationGain": 110
+    },
+    {
+      "name": null,
+      "startKm": 86.3,
+      "lengthKm": 0.9,
+      "avgGradient": 7,
+      "elevationGain": 65
+    },
+    {
+      "name": null,
+      "startKm": 126.3,
+      "lengthKm": 1.4,
+      "avgGradient": 5.6,
+      "elevationGain": 77
+    },
+    {
+      "name": null,
+      "startKm": 133.3,
+      "lengthKm": 1.1,
+      "avgGradient": 5.1,
+      "elevationGain": 57
+    },
+    {
+      "name": null,
+      "startKm": 136.5,
+      "lengthKm": 2.6,
+      "avgGradient": 7.5,
+      "elevationGain": 191
+    },
+    {
+      "name": null,
+      "startKm": 139.4,
+      "lengthKm": 2.7,
+      "avgGradient": 9.3,
+      "elevationGain": 252
+    },
+    {
+      "name": "Pal Pass",
+      "startKm": 148.4,
+      "lengthKm": 0.7,
+      "avgGradient": 7,
+      "elevationGain": 50
+    },
+    {
+      "name": "Pal Pass",
+      "startKm": 149.8,
+      "lengthKm": 1.8,
+      "avgGradient": 12,
+      "elevationGain": 211
+    },
+    {
+      "name": "Pal Pass",
+      "startKm": 152.2,
+      "lengthKm": 1.7,
+      "avgGradient": 6.4,
+      "elevationGain": 108
+    },
+    {
+      "name": null,
+      "startKm": 182.2,
+      "lengthKm": 1.2,
+      "avgGradient": 7.5,
+      "elevationGain": 89
+    },
+    {
+      "name": null,
+      "startKm": 185.7,
+      "lengthKm": 2.2,
+      "avgGradient": 6.3,
+      "elevationGain": 142
+    },
+    {
+      "name": null,
+      "startKm": 204.1,
+      "lengthKm": 1,
+      "avgGradient": 6.6,
+      "elevationGain": 69
+    },
+    {
+      "name": null,
+      "startKm": 206.2,
+      "lengthKm": 0.9,
+      "avgGradient": 8,
+      "elevationGain": 68
+    },
+    {
+      "name": null,
+      "startKm": 231.5,
+      "lengthKm": 0.8,
+      "avgGradient": 7.8,
+      "elevationGain": 61
+    },
+    {
+      "name": null,
+      "startKm": 236.6,
+      "lengthKm": 1.1,
+      "avgGradient": 7.7,
+      "elevationGain": 84
+    },
+    {
+      "name": null,
+      "startKm": 253.7,
+      "lengthKm": 0.7,
+      "avgGradient": 8.6,
+      "elevationGain": 57
+    },
+    {
+      "name": null,
+      "startKm": 254.5,
+      "lengthKm": 2,
+      "avgGradient": 8.4,
+      "elevationGain": 166
+    },
+    {
+      "name": null,
+      "startKm": 256.6,
+      "lengthKm": 2.2,
+      "avgGradient": 7.9,
+      "elevationGain": 175
+    },
+    {
+      "name": "Port del Cantó (1,721 m)",
+      "startKm": 267.6,
+      "lengthKm": 2.4,
+      "avgGradient": 7,
+      "elevationGain": 166
+    },
+    {
+      "name": null,
+      "startKm": 328.9,
+      "lengthKm": 0.6,
+      "avgGradient": 9.3,
+      "elevationGain": 51
+    },
+    {
+      "name": null,
+      "startKm": 329.7,
+      "lengthKm": 2.8,
+      "avgGradient": 7.5,
+      "elevationGain": 210
+    },
+    {
+      "name": null,
+      "startKm": 333.5,
+      "lengthKm": 0.9,
+      "avgGradient": 7.4,
+      "elevationGain": 67
+    },
+    {
+      "name": null,
+      "startKm": 335.2,
+      "lengthKm": 1.1,
+      "avgGradient": 5.6,
+      "elevationGain": 62
+    },
+    {
+      "name": "Bonaigua Pass",
+      "startKm": 337.3,
+      "lengthKm": 3.1,
+      "avgGradient": 7.3,
+      "elevationGain": 224
+    },
+    {
+      "name": "Bonaigua Pass",
+      "startKm": 340.6,
+      "lengthKm": 1.7,
+      "avgGradient": 6.9,
+      "elevationGain": 114
+    },
+    {
+      "name": "Bonaigua Pass",
+      "startKm": 342.6,
+      "lengthKm": 2.6,
+      "avgGradient": 6.6,
+      "elevationGain": 170
+    }
+  ],
+  "llm": {
+    "overview": "Riding for GBS challenges cyclists with a 384.5 km journey through dramatic mountain passes and valleys, climbing nearly 7,300 meters at gradients up to 20.7%. This route tests endurance while offering breathtaking vistas, from lowland forests to alpine peaks, uniting riders in the fight against Guillain-Barré Syndrome.",
+    "notableClimbsSummary": "Pal Pass and Port del Cantó stand as the route's defining challenges, with gradients exceeding 12% and elevation gains surpassing 250 meters. These ascents test physical and mental strength, offering moments of pure determination amid stunning alpine scenery."
+  }
+}

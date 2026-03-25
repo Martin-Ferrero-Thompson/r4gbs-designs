@@ -1,11 +1,12 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import { t, defaultLang } from "../i18n";
 ---
 
 <PageLayout
-  title="About GBS"
-  heroTitle="About Guillain-Barré Syndrome"
-  heroSubtitle="Understanding the condition behind the challenge."
+  title={t(defaultLang, 'aboutGbs.pageTitle')}
+  heroTitle={t(defaultLang, 'aboutGbs.heroTitle')}
+  heroSubtitle={t(defaultLang, 'aboutGbs.heroSubtitle')}
   heroTitleKey="aboutGbs.heroTitle"
   heroSubtitleKey="aboutGbs.heroSubtitle"
 >
@@ -20,16 +21,16 @@ import PageLayout from "../layouts/PageLayout.astro";
               <h2
                 class="font-display text-3xl lg:text-4xl font-bold text-stone-100"
                 data-i18n="aboutGbs.whatTitle"
-              ></h2>
+              >{t(defaultLang, 'aboutGbs.whatTitle')}</h2>
               <div class="mt-6 space-y-4">
                 <p
                   class="text-stone-400 text-lg leading-relaxed font-body"
                   data-i18n="aboutGbs.whatDesc1"
-                ></p>
+                >{t(defaultLang, 'aboutGbs.whatDesc1')}</p>
                 <p
                   class="text-stone-400 text-lg leading-relaxed font-body"
                   data-i18n="aboutGbs.whatDesc2"
-                ></p>
+                >{t(defaultLang, 'aboutGbs.whatDesc2')}</p>
                 <div
                   class="bg-stone-900 rounded-xl p-6 border border-stone-800 space-y-4"
                 >
@@ -41,7 +42,7 @@ import PageLayout from "../layouts/PageLayout.astro";
                     <p
                       class="text-stone-300 font-body"
                       data-i18n="aboutGbs.step1"
-                    ></p>
+                    >{t(defaultLang, 'aboutGbs.step1')}</p>
                   </div>
                   <div class="flex gap-4 items-start">
                     <span
@@ -51,7 +52,7 @@ import PageLayout from "../layouts/PageLayout.astro";
                     <p
                       class="text-stone-300 font-body"
                       data-i18n="aboutGbs.step2"
-                    ></p>
+                    >{t(defaultLang, 'aboutGbs.step2')}</p>
                   </div>
                   <div class="flex gap-4 items-start">
                     <span
@@ -61,7 +62,7 @@ import PageLayout from "../layouts/PageLayout.astro";
                     <p
                       class="text-stone-300 font-body"
                       data-i18n="aboutGbs.step3"
-                    ></p>
+                    >{t(defaultLang, 'aboutGbs.step3')}</p>
                   </div>
                 </div>
               </div>
@@ -72,20 +73,20 @@ import PageLayout from "../layouts/PageLayout.astro";
               <h2
                 class="font-display text-3xl lg:text-4xl font-bold text-stone-100"
                 data-i18n="aboutGbs.howTitle"
-              ></h2>
+              >{t(defaultLang, 'aboutGbs.howTitle')}</h2>
               <div class="mt-6 space-y-4">
                 <p
                   class="text-stone-400 text-lg leading-relaxed font-body"
                   data-i18n="aboutGbs.howDesc1"
-                ></p>
+                >{t(defaultLang, 'aboutGbs.howDesc1')}</p>
                 <p
                   class="text-stone-400 text-lg leading-relaxed font-body"
                   data-i18n="aboutGbs.howDesc2"
-                ></p>
+                >{t(defaultLang, 'aboutGbs.howDesc2')}</p>
                 <p
                   class="text-stone-400 text-lg leading-relaxed font-body"
                   data-i18n="aboutGbs.howDesc3"
-                ></p>
+                >{t(defaultLang, 'aboutGbs.howDesc3')}</p>
               </div>
             </div>
 
@@ -94,12 +95,12 @@ import PageLayout from "../layouts/PageLayout.astro";
               <h2
                 class="font-display text-3xl lg:text-4xl font-bold text-stone-100"
                 data-i18n="aboutGbs.treatmentTitle"
-              ></h2>
+              >{t(defaultLang, 'aboutGbs.treatmentTitle')}</h2>
               <div class="mt-6 space-y-4">
                 <p
                   class="text-stone-400 text-lg leading-relaxed font-body"
                   data-i18n="aboutGbs.treatmentDesc1"
-                ></p>
+                >{t(defaultLang, 'aboutGbs.treatmentDesc1')}</p>
                 <div class="grid sm:grid-cols-2 gap-4">
                   <div
                     class="bg-stone-900 rounded-xl p-6 border border-stone-800"
@@ -107,11 +108,11 @@ import PageLayout from "../layouts/PageLayout.astro";
                     <h4
                       class="font-display text-lg font-bold text-amber-400"
                       data-i18n="aboutGbs.ivigTitle"
-                    ></h4>
+                    >{t(defaultLang, 'aboutGbs.ivigTitle')}</h4>
                     <p
                       class="text-stone-400 text-sm mt-2 font-body"
                       data-i18n="aboutGbs.ivigDesc"
-                    ></p>
+                    >{t(defaultLang, 'aboutGbs.ivigDesc')}</p>
                   </div>
                   <div
                     class="bg-stone-900 rounded-xl p-6 border border-stone-800"
@@ -119,17 +120,17 @@ import PageLayout from "../layouts/PageLayout.astro";
                     <h4
                       class="font-display text-lg font-bold text-amber-400"
                       data-i18n="aboutGbs.plasmaTitle"
-                    ></h4>
+                    >{t(defaultLang, 'aboutGbs.plasmaTitle')}</h4>
                     <p
                       class="text-stone-400 text-sm mt-2 font-body"
                       data-i18n="aboutGbs.plasmaDesc"
-                    ></p>
+                    >{t(defaultLang, 'aboutGbs.plasmaDesc')}</p>
                   </div>
                 </div>
                 <p
                   class="text-stone-400 text-lg leading-relaxed font-body"
                   data-i18n="aboutGbs.treatmentDesc2"
-                ></p>
+                >{t(defaultLang, 'aboutGbs.treatmentDesc2')}</p>
               </div>
             </div>
 
@@ -138,23 +139,23 @@ import PageLayout from "../layouts/PageLayout.astro";
               <h2
                 class="font-display text-3xl lg:text-4xl font-bold text-stone-100"
                 data-i18n="aboutGbs.findOutMoreTitle"
-              ></h2>
+              >{t(defaultLang, 'aboutGbs.findOutMoreTitle')}</h2>
               <div class="mt-6 space-y-4">
                 <p
                   class="text-stone-400 text-lg leading-relaxed font-body"
                   data-i18n="aboutGbs.findOutMoreDesc"
-                ></p>
+                >{t(defaultLang, 'aboutGbs.findOutMoreDesc')}</p>
                 <p
                   class="text-stone-400 text-lg leading-relaxed font-body"
                   data-i18n="aboutGbs.findOutMoreDesc2"
-                ></p>
+                >{t(defaultLang, 'aboutGbs.findOutMoreDesc2')}</p>
                 <a
                   class="text-amber-400 underline hover:text-amber-300 transition-colors"
                   data-i18n-href="aboutGbs.findOutMoreUrl"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span data-i18n="aboutGbs.findOutMoreLink"></span>
+                  <span data-i18n="aboutGbs.findOutMoreLink">{t(defaultLang, 'aboutGbs.findOutMoreLink')}</span>
                 </a>
               </div>
             </div>
@@ -169,50 +170,50 @@ import PageLayout from "../layouts/PageLayout.astro";
               <h3
                 class="font-display text-xl font-bold text-stone-100 mb-6"
                 data-i18n="aboutGbs.keyFacts"
-              ></h3>
+              >{t(defaultLang, 'aboutGbs.keyFacts')}</h3>
               <div class="space-y-6">
                 <div>
                   <p
                     class="font-display text-3xl font-bold text-amber-400"
                     data-i18n="aboutGbs.fact1Value"
-                  ></p>
+                  >{t(defaultLang, 'aboutGbs.fact1Value')}</p>
                   <p
                     class="text-stone-500 text-sm mt-1 font-body"
                     data-i18n="aboutGbs.fact1Label"
-                  ></p>
+                  >{t(defaultLang, 'aboutGbs.fact1Label')}</p>
                 </div>
                 <div class="h-px bg-stone-800"></div>
                 <div>
                   <p
                     class="font-display text-3xl font-bold text-amber-400"
                     data-i18n="aboutGbs.fact2Value"
-                  ></p>
+                  >{t(defaultLang, 'aboutGbs.fact2Value')}</p>
                   <p
                     class="text-stone-500 text-sm mt-1 font-body"
                     data-i18n="aboutGbs.fact2Label"
-                  ></p>
+                  >{t(defaultLang, 'aboutGbs.fact2Label')}</p>
                 </div>
                 <div class="h-px bg-stone-800"></div>
                 <div>
                   <p
                     class="font-display text-3xl font-bold text-amber-400"
                     data-i18n="aboutGbs.fact3Value"
-                  ></p>
+                  >{t(defaultLang, 'aboutGbs.fact3Value')}</p>
                   <p
                     class="text-stone-500 text-sm mt-1 font-body"
                     data-i18n="aboutGbs.fact3Label"
-                  ></p>
+                  >{t(defaultLang, 'aboutGbs.fact3Label')}</p>
                 </div>
                 <div class="h-px bg-stone-800"></div>
                 <div>
                   <p
                     class="font-display text-3xl font-bold text-amber-400"
                     data-i18n="aboutGbs.fact4Value"
-                  ></p>
+                  >{t(defaultLang, 'aboutGbs.fact4Value')}</p>
                   <p
                     class="text-stone-500 text-sm mt-1 font-body"
                     data-i18n="aboutGbs.fact4Label"
-                  ></p>
+                  >{t(defaultLang, 'aboutGbs.fact4Label')}</p>
                 </div>
               </div>
             </div>
@@ -224,16 +225,16 @@ import PageLayout from "../layouts/PageLayout.astro";
               <h3
                 class="font-display text-xl font-bold text-amber-400 mb-4"
                 data-i18n="aboutGbs.supportingResearch"
-              ></h3>
+              >{t(defaultLang, 'aboutGbs.supportingResearch')}</h3>
               <p
                 class="text-stone-400 text-sm font-body leading-relaxed"
                 data-i18n="aboutGbs.supportingDesc"
-              ></p>
+              >{t(defaultLang, 'aboutGbs.supportingDesc')}</p>
               <a
                 href="/donate"
                 class="inline-flex items-center gap-2 bg-amber-500 text-stone-950 px-6 py-3 rounded-full font-body font-bold text-sm mt-6 hover:bg-amber-400 transition-colors"
                 data-i18n="aboutGbs.donateToResearch"
-              ></a>
+              >{t(defaultLang, 'aboutGbs.donateToResearch')}</a>
             </div>
           </div>
         </div>

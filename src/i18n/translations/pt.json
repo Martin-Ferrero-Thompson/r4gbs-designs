@@ -84,7 +84,6 @@
     "heroTrustUkReg": "Instituição de caridade registada 1154843",
     "heroTrustEsReg": "Registo Nacional N.º 619.666",
     "discoverChallenge": "Descobrir o Desafio",
-    
     "missionTag": "A Missão",
     "missionTitle1": "Mais do que",
     "missionTitle2": "um passeio de bicicleta",
@@ -129,7 +128,6 @@
     "donateCta1": "Financie a investigação.",
     "donateCta2": "Alimente o percurso.",
     "donateCtaDesc": "100% de cada donativo vai diretamente para as nossas instituições parceiras que apoiam a investigação do SGB e os cuidados aos pacientes no Reino Unido e em Espanha.",
-    
     "otherWaysToHelp": "Outras formas de ajudar",
     "ukTarget": "Meta de caridade UK",
     "spainTarget": "Meta de caridade Espanha"
@@ -139,25 +137,6 @@
     "heroTitle": "Capítulo Um: Conquistar os Pirenéus",
     "heroSubtitle": "Uma travessia completa de uma das cadeias montanhosas mais exigentes da Europa. Autossuficiente. Lado a lado.",
     "introDesc": "Isto é mais do que um passeio de bicicleta; é o próximo capítulo da nossa história conjunta. Um testemunho do apoio inabalável da Edurne em cada etapa da minha jornada com o SGB, este é o nosso desafio — uma travessia completa de uma das cadeias montanhosas mais exigentes da Europa, de costa a costa.",
-    "ch1Title": "O Ciclista de Antes",
-    "ch1p1": "Desde que me lembro, a minha vida esteve entrelaçada com a simples liberdade de uma bicicleta. Eu era um ciclista de longa distância, mais feliz quando testava os meus limites nas belas estradas e montanhas do Reino Unido e da Europa. O ciclismo era mais que um passatempo; era uma parte essencial da minha identidade. Fosse mountain bike nas charnecas, corrida nas florestas com os cães, ou longas aventuras de bicicleta — estar ao ar livre alimentava a minha energia e bem-estar mental.",
-    "ch1p2": "Foi numa dessas aventuras que partilhei a estrada com uma amiga próxima e parceira de corrida, ela própria a viver com uma doença autoimune crónica. Juntos, enfrentámos desafios épicos, como percorrer toda a extensão do Reno, de Roterdão à sua nascente perto de Andermatt, na Suíça. O ciclismo levou-me a lugares incríveis e apresentou-me pessoas maravilhosas.",
-    "ch1p3": "Foi também nesta altura que reestabeleci contacto com uma amiga maravilhosa em Espanha, a Edurne. A nossa amizade transformou-se em relação, e começámos a sonhar com as nossas próprias aventuras ciclísticas juntos, talvez até o Caminho de Santiago. A vida parecia cheia de possibilidades.",
-    "ch2Tag": "Capítulo Dois",
-    "ch2Title": "A Queda",
-    "ch2p1": "Inspirado por um amigo, planeei uma grande corrida de caridade no Reino Unido — um percurso acidentado de 3.200 km, autossuficiente, de Land's End a John O'Groats. Tragicamente, um acidente forçou-me a parar prematuramente. Fiquei devastado. Mas o apoio da Edurne brilhou, e a nossa atenção voltou-se para planear a nossa corrida juntos em Espanha.",
-    "ch2p2": "Pouco depois do meu regresso ao Yorkshire, porém, os primeiros sinais de alerta apareceram. Dores lombares persistentes dificultavam o sono. Depois vieram os estranhos formigueiros, os momentos fugases de fraqueza nas pernas. Mascarados pelos analgésicos e considerados como nada de grave, a vida continuou... até ao dia em que o meu mundo parou.",
-    "quoteText": "\"O dia em que o meu mundo parou.\"",
-    "quoteDesc": "O Síndrome de Guillain-Barré atacou sem aviso, transformando uma vida de liberdade sobre duas rodas num combate pelos movimentos mais básicos.",
-    "ch3Tag": "Capítulo Três",
-    "ch3Title": "O lento caminho de volta",
-    "ch3p1": "A recuperação do SGB não é uma linha reta. É um caminho sinuoso e incerto, marcado por pequenas vitórias e retrocessos frustrantes. Cada passo recuperado, cada pedalada reconquistada, é um triunfo sobre uma doença que tentou levar tudo.",
-    "ch3p2": "Através de tudo isto, a Edurne esteve lá — o meu apoio inabalável, a minha motivação, a minha razão para continuar. Juntos, sonhámos com algo que outrora parecia impossível: não apenas voltar à bicicleta, mas enfrentar um dos maiores desafios montanhosos da Europa.",
-    "ch3p3": "Em outubro de 2026, esse sonho torna-se realidade. Partindo de casa em Pamplona, vamos atravessar os Pirenéus de costa a costa — um testemunho vivo do que a recuperação, o amor e a pura determinação podem alcançar.",
-    "ctaTitle": "Junte-se à nossa viagem",
-    "ctaDesc": "Siga-nos dia após dia através dos Pirenéus, ou contribua para as instituições de SGB para as quais pedalamos.",
-    "ctaChallenge": "O Desafio",
-    "ctaDonate": "Doar",
     "styleTag": "O Estilo",
     "styleTitle": "Uma Viagem Partilhada",
     "styleDesc1": "Este desafio é uma viagem que empreenderemos em equipa, lado a lado. Vamos pedalar em modo bikepacking autossuficiente, transportando todo o nosso equipamento e contando com a gentileza das comunidades encontradas pelo caminho.",
@@ -196,6 +175,31 @@
     "theHomecomingDesc": "A descrição da última etapa, o regresso a casa, a celebração, as emoções do retorno a Pamplona depois de conquistar os Pirenéus. Será uma mistura de alívio, alegria e reflexão sobre a viagem que foi simultaneamente um desafio físico e emocional.",
     "supportChallenge": "Apoiar este Desafio"
   },
+  "ourStory": {
+    "pageTitle": "A Nossa História",
+    "heroTitle": "The Slow Road Back",
+    "heroSubtitle": "Olá, sou o Martin. Em 2021, o Síndrome de Guillain-Barré mudou a minha vida, mas não me definiu. Esta é a minha história até agora...",
+    "ch1Tag": "Capítulo Um",
+    "ch1Title": "O Ciclista de Antes",
+    "ch1p1": "Desde que me lembro, a minha vida esteve entrelaçada com a simples liberdade de uma bicicleta. Eu era um ciclista de longa distância, mais feliz quando testava os meus limites nas belas estradas e montanhas do Reino Unido e da Europa. O ciclismo era mais que um passatempo; era uma parte essencial da minha identidade. Fosse mountain bike nas charnecas, corrida nas florestas com os cães, ou longas aventuras de bicicleta — estar ao ar livre alimentava a minha energia e bem-estar mental.",
+    "ch1p2": "Foi numa dessas aventuras que partilhei a estrada com uma amiga próxima e parceira de corrida, ela própria a viver com uma doença autoimune crónica. Juntos, enfrentámos desafios épicos, como percorrer toda a extensão do Reno, de Roterdão à sua nascente perto de Andermatt, na Suíça. O ciclismo levou-me a lugares incríveis e apresentou-me pessoas maravilhosas.",
+    "ch1p3": "Foi também nesta altura que reestabeleci contacto com uma amiga maravilhosa em Espanha, a Edurne. A nossa amizade transformou-se em relação, e começámos a sonhar com as nossas próprias aventuras ciclísticas juntos, talvez até o Caminho de Santiago. A vida parecia cheia de possibilidades.",
+    "ch2Tag": "Capítulo Dois",
+    "ch2Title": "A Queda",
+    "ch2p1": "Inspirado por um amigo, planeei uma grande corrida de caridade no Reino Unido — um percurso acidentado de 3.200 km, autossuficiente, de Land's End a John O'Groats. Tragicamente, um acidente forçou-me a parar prematuramente. Fiquei devastado. Mas o apoio da Edurne brilhou, e a nossa atenção voltou-se para planear a nossa corrida juntos em Espanha.",
+    "ch2p2": "Pouco depois do meu regresso ao Yorkshire, porém, os primeiros sinais de alerta apareceram. Dores lombares persistentes dificultavam o sono. Depois vieram os estranhos formigueiros, os momentos fugases de fraqueza nas pernas. Mascarados pelos analgésicos e considerados como nada de grave, a vida continuou... até ao dia em que o meu mundo parou.",
+    "quoteText": "\"O dia em que o meu mundo parou.\"",
+    "quoteDesc": "O Síndrome de Guillain-Barré atacou sem aviso, transformando uma vida de liberdade sobre duas rodas num combate pelos movimentos mais básicos.",
+    "ch3Tag": "Capítulo Três",
+    "ch3Title": "O lento caminho de volta",
+    "ch3p1": "A recuperação do SGB não é uma linha reta. É um caminho sinuoso e incerto, marcado por pequenas vitórias e retrocessos frustrantes. Cada passo recuperado, cada pedalada reconquistada, é um triunfo sobre uma doença que tentou levar tudo.",
+    "ch3p2": "Através de tudo isto, a Edurne esteve lá — o meu apoio inabalável, a minha motivação, a minha razão para continuar. Juntos, sonhámos com algo que outrora parecia impossível: não apenas voltar à bicicleta, mas enfrentar um dos maiores desafios montanhosos da Europa.",
+    "ch3p3": "Em outubro de 2026, esse sonho torna-se realidade. Partindo de casa em Pamplona, vamos atravessar os Pirenéus de costa a costa — um testemunho vivo do que a recuperação, o amor e a pura determinação podem alcançar.",
+    "ctaTitle": "Junte-se à nossa viagem",
+    "ctaDesc": "Siga-nos dia após dia através dos Pirenéus, ou contribua para as instituições de SGB para as quais pedalamos.",
+    "ctaChallenge": "O Desafio",
+    "ctaDonate": "Doar"
+  },
   "aboutGbs": {
     "pageTitle": "Sobre a SGB",
     "heroTitle": "Sobre o Síndrome de Guillain-Barré",
@@ -228,7 +232,6 @@
     "fact4Label": "dos pacientes com incapacidade significativa",
     "supportingResearch": "Apoiar a Investigação",
     "supportingDesc": "O nosso percurso angaria fundos para a Inflammatory Neuropathies UK e GBS|CIDP España — organizações dedicadas ao apoio aos pacientes e financiamento da investigação.",
-    
     "findOutMoreDesc": "Se você, ou alguém próximo, recebeu um diagnóstico de Síndrome de Guillain-Barré (SGB), PIDC ou qualquer outra neuropatia inflamatória, não está sozinho. Estamos aqui para o apoiar.",
     "findOutMoreDesc2": "Para um apoio mais personalizado, recursos e para se ligar a outras pessoas que compreendem o que está a atravessar, recomendamos vivamente visitar o site da Inflammatory Neuropathies UK.",
     "findOutMoreLink": "Saber mais sobre a Inflammatory Neuropathies UK →",
@@ -310,7 +313,6 @@
     "heroTitle": "Apoiar a Investigação Conduzida por Pacientes",
     "heroSubtitle": "100% de cada donativo vai diretamente para as nossas instituições parceiras que apoiam a investigação do SGB e os cuidados aos pacientes.",
     "ukRegion": "Reino Unido",
-    
     "ukDesc": "Temos orgulho em colaborar com a Inflammatory Neuropathies UK, a organização nacional que apoia as pessoas afetadas pelo SGB, PIDC e condições associadas.",
     "ukHelp": "A sua contribuição pode ajudar a:",
     "ukHelp1": "Mapear sintomas a longo prazo e sequelas para melhorar os cuidados diários aos pacientes",
@@ -323,14 +325,12 @@
     "comingSoon": "Opções de donativo disponíveis em breve",
     "comingSoonDesc": "Estamos a finalizar a nossa plataforma de donativos. Por favor, volte em breve.",
     "esRegion": "Espanha",
-    
     "esDesc": "Apoio a pacientes e famílias afetados pelo SGB e PIDC em toda a Espanha. Juntos, podemos sensibilizar e melhorar os cuidados para a comunidade SGB espanhola.",
     "esHelp": "A sua contribuição apoia:",
     "esHelp1": "Redes de apoio a pacientes em toda a Espanha",
     "esHelp2": "Campanhas de sensibilização nas comunidades espanholas",
     "esHelp3": "Recursos e orientação para pacientes recém-diagnosticados",
     "esHelp4": "Ligação de pacientes a cuidados médicos especializados",
-    
     "supportNote": "Quer apoiar o percurso em si? Visite <a href=\"/support-us\" class=\"underline hover:text-amber-300\">Apoie-nos</a>"
   }
 }

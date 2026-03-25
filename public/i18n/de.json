@@ -84,7 +84,6 @@
     "heroTrustUkReg": "Eingetragene Wohltätigkeitsorganisation 1154843",
     "heroTrustEsReg": "Nationales Register Nr. 619.666",
     "discoverChallenge": "Entdecke die Challenge",
-    
     "missionTag": "Die Mission",
     "missionTitle1": "Mehr als",
     "missionTitle2": "eine Radtour",
@@ -129,7 +128,6 @@
     "donateCta1": "Finanziere die Forschung.",
     "donateCta2": "Treibe die Fahrt an.",
     "donateCtaDesc": "100 % jeder Spende gehen direkt an unsere Partnerorganisationen, die GBS-Forschung und Patientenversorgung in Großbritannien und Spanien unterstützen.",
-    
     "otherWaysToHelp": "Andere Möglichkeiten zu helfen",
     "ukTarget": "UK-Spendenziel",
     "spainTarget": "Spanisches Spendenziel"
@@ -139,25 +137,6 @@
     "heroTitle": "Kapitel Eins: Die Pyrenäen bezwingen",
     "heroSubtitle": "Eine komplette Küste-zu-Küste-Durchquerung eines der anspruchsvollsten Gebirge Europas. Selbstversorgt. Seite an Seite.",
     "introDesc": "Dies ist mehr als eine Radtour; es ist das nächste Kapitel in unserer gemeinsamen Geschichte. Ein Zeugnis für Edurnes unerschütterliche Unterstützung bei jedem Schritt meiner GBS-Reise – dies ist unsere Herausforderung — eine komplette Küste-zu-Küste-Durchquerung eines der anspruchsvollsten Gebirge Europas.",
-    "ch1Title": "Der Radfahrer vorher",
-    "ch1p1": "Solange ich mich erinnern kann, war mein Leben mit der einfachen Freiheit eines Fahrrads verwoben. Ich war ein Langstreckenradfahrer, am glücklichsten, wenn ich meine Grenzen auf den schönen Straßen und Bergen Großbritanniens und Europas austestete. Radfahren war mehr als ein Hobby; es war ein Kernbestandteil meiner Identität. Ob Mountainbiken über die Moore, Laufen in den Wäldern mit den Hunden oder lange Radabenteuer — draußen zu sein gab mir Energie und geistiges Wohlbefinden.",
-    "ch1p2": "Auf einem dieser Abenteuer teilte ich die Straße mit einer engen Freundin und Fahrpartnerin, die selbst mit einer chronischen Autoimmunerkrankung lebte. Zusammen bewältigten wir epische Reisen, wie die gesamte Länge des Rheins von Rotterdam bis zu seiner Quelle bei Andermatt in der Schweiz. Radfahren brachte mich an unglaubliche Orte und stellte mir großartige Menschen vor.",
-    "ch1p3": "In dieser Zeit knüpfte ich auch wieder Kontakt zu einer wunderbaren Freundin in Spanien, Edurne. Unsere Freundschaft entwickelte sich zu einer Beziehung, und wir begannen, von eigenen Radabenteuern zu träumen, vielleicht sogar dem Camino de Santiago. Das Leben schien voller Möglichkeiten.",
-    "ch2Tag": "Kapitel Zwei",
-    "ch2Title": "Der Sturz",
-    "ch2p1": "Inspiriert von einem Freund plante ich eine große Spendenfahrt in Großbritannien — eine hügelige 3.200-km-Route, selbstversorgt von Land's End nach John O'Groats. Tragischerweise zwang mich ein Unfall zum vorzeitigen Stopp. Ich war am Boden zerstört. Aber Edurnes Unterstützung leuchtete durch, und unser Fokus verlagerte sich auf die Planung unserer gemeinsamen Fahrt in Spanien.",
-    "ch2p2": "Kurz nach der Rückkehr nach Yorkshire zeigten sich jedoch die ersten Warnsignale. Anhaltende Rückenschmerzen machten das Schlafen schwer. Dann kam das seltsame Kribbeln, die flüchtigen Momente der Schwäche in meinen Beinen. Von Schmerzmitteln überdeckt und als nichts Ernstes abgetan, ging das Leben weiter... bis zu dem Tag, an dem meine Welt stehen blieb.",
-    "quoteText": "\"Der Tag, an dem meine Welt stehen blieb.\"",
-    "quoteDesc": "Das Guillain-Barré-Syndrom griff ohne Vorwarnung an und verwandelte ein Leben der Freiheit auf zwei Rädern in einen Kampf um die grundlegendsten Bewegungen.",
-    "ch3Tag": "Kapitel Drei",
-    "ch3Title": "Der langsame Weg zurück",
-    "ch3p1": "Die Genesung von GBS verläuft nicht geradlinig. Es ist ein gewundener, unsicherer Weg, geprägt von kleinen Siegen und frustrierenden Rückschlägen. Jeder wiedergewonnene Schritt, jeder zurückgewonnene Pedaltritt ist ein Triumph über eine Krankheit, die alles zu nehmen versuchte.",
-    "ch3p2": "Durch alles hindurch war Edurne da — meine unerschütterliche Stütze, meine Motivation, mein Grund weiterzumachen. Zusammen träumten wir von etwas, das einst unmöglich schien: nicht nur wieder Rad zu fahren, sondern eine der größten Bergherausforderungen Europas anzunehmen.",
-    "ch3p3": "Im Oktober 2026 wird dieser Traum Wirklichkeit. Von unserem Zuhause in Pamplona aus werden wir die Pyrenäen von Küste zu Küste durchqueren — ein lebendiges Zeugnis dessen, was Genesung, Liebe und pure Entschlossenheit erreichen können.",
-    "ctaTitle": "Begleite unsere Reise",
-    "ctaDesc": "Begleite uns Tag für Tag durch die Pyrenäen oder spende an die GBS-Wohltätigkeitsorganisationen, für die wir fahren.",
-    "ctaChallenge": "Die Herausforderung",
-    "ctaDonate": "Spenden",
     "styleTag": "Der Stil",
     "styleTitle": "Eine gemeinsame Reise",
     "styleDesc1": "Diese Challenge ist eine Reise, die wir als Team unternehmen werden, Seite an Seite. Wir fahren im selbstversorgten Bikepacking-Stil, tragen unsere gesamte Ausrüstung selbst und verlassen uns auf die Freundlichkeit der Menschen, die wir unterwegs treffen.",
@@ -196,6 +175,31 @@
     "theHomecomingDesc": "Die Beschreibung der letzten Etappe, der Heimkehr, der Feier, der Emotionen bei der Rückkehr nach Pamplona nach der Bezwingung der Pyrenäen. Es wird eine Mischung aus Erleichterung, Freude und Reflexion über die Reise sein, die sowohl eine physische als auch emotionale Herausforderung war.",
     "supportChallenge": "Diese Challenge unterstützen"
   },
+  "ourStory": {
+    "pageTitle": "Unsere Geschichte",
+    "heroTitle": "The Slow Road Back",
+    "heroSubtitle": "Hallo, ich bin Martin. 2021 hat das Guillain-Barré-Syndrom mein Leben verändert, aber es hat mich nicht definiert. Dies ist meine Geschichte bis hierher...",
+    "ch1Tag": "Kapitel Eins",
+    "ch1Title": "Der Radfahrer vorher",
+    "ch1p1": "Solange ich mich erinnern kann, war mein Leben mit der einfachen Freiheit eines Fahrrads verwoben. Ich war ein Langstreckenradfahrer, am glücklichsten, wenn ich meine Grenzen auf den schönen Straßen und Bergen Großbritanniens und Europas austestete. Radfahren war mehr als ein Hobby; es war ein Kernbestandteil meiner Identität. Ob Mountainbiken über die Moore, Laufen in den Wäldern mit den Hunden oder lange Radabenteuer — draußen zu sein gab mir Energie und geistiges Wohlbefinden.",
+    "ch1p2": "Auf einem dieser Abenteuer teilte ich die Straße mit einer engen Freundin und Fahrpartnerin, die selbst mit einer chronischen Autoimmunerkrankung lebte. Zusammen bewältigten wir epische Reisen, wie die gesamte Länge des Rheins von Rotterdam bis zu seiner Quelle bei Andermatt in der Schweiz. Radfahren brachte mich an unglaubliche Orte und stellte mir großartige Menschen vor.",
+    "ch1p3": "In dieser Zeit knüpfte ich auch wieder Kontakt zu einer wunderbaren Freundin in Spanien, Edurne. Unsere Freundschaft entwickelte sich zu einer Beziehung, und wir begannen, von eigenen Radabenteuern zu träumen, vielleicht sogar dem Camino de Santiago. Das Leben schien voller Möglichkeiten.",
+    "ch2Tag": "Kapitel Zwei",
+    "ch2Title": "Der Sturz",
+    "ch2p1": "Inspiriert von einem Freund plante ich eine große Spendenfahrt in Großbritannien — eine hügelige 3.200-km-Route, selbstversorgt von Land's End nach John O'Groats. Tragischerweise zwang mich ein Unfall zum vorzeitigen Stopp. Ich war am Boden zerstört. Aber Edurnes Unterstützung leuchtete durch, und unser Fokus verlagerte sich auf die Planung unserer gemeinsamen Fahrt in Spanien.",
+    "ch2p2": "Kurz nach der Rückkehr nach Yorkshire zeigten sich jedoch die ersten Warnsignale. Anhaltende Rückenschmerzen machten das Schlafen schwer. Dann kam das seltsame Kribbeln, die flüchtigen Momente der Schwäche in meinen Beinen. Von Schmerzmitteln überdeckt und als nichts Ernstes abgetan, ging das Leben weiter... bis zu dem Tag, an dem meine Welt stehen blieb.",
+    "quoteText": "\"Der Tag, an dem meine Welt stehen blieb.\"",
+    "quoteDesc": "Das Guillain-Barré-Syndrom griff ohne Vorwarnung an und verwandelte ein Leben der Freiheit auf zwei Rädern in einen Kampf um die grundlegendsten Bewegungen.",
+    "ch3Tag": "Kapitel Drei",
+    "ch3Title": "Der langsame Weg zurück",
+    "ch3p1": "Die Genesung von GBS verläuft nicht geradlinig. Es ist ein gewundener, unsicherer Weg, geprägt von kleinen Siegen und frustrierenden Rückschlägen. Jeder wiedergewonnene Schritt, jeder zurückgewonnene Pedaltritt ist ein Triumph über eine Krankheit, die alles zu nehmen versuchte.",
+    "ch3p2": "Durch alles hindurch war Edurne da — meine unerschütterliche Stütze, meine Motivation, mein Grund weiterzumachen. Zusammen träumten wir von etwas, das einst unmöglich schien: nicht nur wieder Rad zu fahren, sondern eine der größten Bergherausforderungen Europas anzunehmen.",
+    "ch3p3": "Im Oktober 2026 wird dieser Traum Wirklichkeit. Von unserem Zuhause in Pamplona aus werden wir die Pyrenäen von Küste zu Küste durchqueren — ein lebendiges Zeugnis dessen, was Genesung, Liebe und pure Entschlossenheit erreichen können.",
+    "ctaTitle": "Begleite unsere Reise",
+    "ctaDesc": "Begleite uns Tag für Tag durch die Pyrenäen oder spende an die GBS-Wohltätigkeitsorganisationen, für die wir fahren.",
+    "ctaChallenge": "Die Herausforderung",
+    "ctaDonate": "Spenden"
+  },
   "aboutGbs": {
     "pageTitle": "Über GBS",
     "heroTitle": "Über das Guillain-Barré-Syndrom",
@@ -228,7 +232,6 @@
     "fact4Label": "der Patienten mit bleibender Behinderung",
     "supportingResearch": "Forschung unterstützen",
     "supportingDesc": "Unsere Fahrt sammelt Spenden für Inflammatory Neuropathies UK und GBS|CIDP España — Organisationen, die sich der Unterstützung von Patienten und der Finanzierung von Forschung widmen.",
-    
     "findOutMoreDesc": "Wenn bei Ihnen oder jemandem in Ihrer Nähe das Guillain-Barré-Syndrom (GBS), CIDP oder eine andere entzündliche Neuropathie diagnostiziert wurde, sind Sie nicht allein. Wir sind hier, um zu unterstützen.",
     "findOutMoreDesc2": "Für persönlichere Unterstützung, Ressourcen und um sich mit anderen zu vernetzen, die verstehen, was Sie durchmachen, empfehlen wir den Besuch der Inflammatory Neuropathies UK Website.",
     "findOutMoreLink": "Mehr erfahren bei Inflammatory Neuropathies UK →",
@@ -310,7 +313,6 @@
     "heroTitle": "Patientengeführte Forschung unterstützen",
     "heroSubtitle": "100 % jeder Spende gehen direkt an unsere Partnerorganisationen, die GBS-Forschung und Patientenversorgung unterstützen.",
     "ukRegion": "Vereinigtes Königreich",
-    
     "ukDesc": "Wir sind stolz, mit Inflammatory Neuropathies UK zusammenzuarbeiten, der nationalen Organisation, die Menschen unterstützt, die von GBS, CIDP und verwandten Erkrankungen betroffen sind.",
     "ukHelp": "Dein Beitrag kann helfen:",
     "ukHelp1": "Langzeitsymptome und Residuen kartieren, um die tägliche Patientenversorgung zu verbessern",
@@ -323,14 +325,12 @@
     "comingSoon": "Spendenoptionen in Kürze verfügbar",
     "comingSoonDesc": "Wir finalisieren unsere Spendenplattform. Bitte schau in Kürze wieder vorbei.",
     "esRegion": "Spanien",
-    
     "esDesc": "Unterstützung von Patienten und Familien, die in ganz Spanien von GBS und CIDP betroffen sind. Gemeinsam können wir das Bewusstsein schärfen und die Versorgung für die spanische GBS-Gemeinschaft verbessern.",
     "esHelp": "Dein Beitrag unterstützt:",
     "esHelp1": "Patientenunterstützungsnetzwerke in ganz Spanien",
     "esHelp2": "Aufklärungskampagnen in spanischen Gemeinden",
     "esHelp3": "Ressourcen und Beratung für neu diagnostizierte Patienten",
     "esHelp4": "Verbindung von Patienten mit spezialisierter medizinischer Versorgung",
-    
     "supportNote": "Möchtest du die Fahrt selbst unterstützen? Besuche <a href=\"/support-us\" class=\"underline hover:text-amber-300\">Unterstütze uns</a>"
   }
 }

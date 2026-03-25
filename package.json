@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "sync-i18n": "bun run scripts/sync-i18n.ts",
+    "analyze-gpx": "bun run scripts/analyze-gpx.ts",
     "dev": "bun run sync-i18n && astro dev",
     "build": "bun run sync-i18n && astro build",
     "preview": "astro preview",
@@ -20,6 +21,7 @@
     "astro": "^5.18.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "fast-xml-parser": "^5.5.9",
     "lucide-react": "^0.563.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
