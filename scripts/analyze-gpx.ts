@@ -487,13 +487,13 @@ async function generateContent(
   const ollamaHost =
     process.env.OLLAMA_HOST || "http://localhost:11434";
 
-  const systemPrompt = `You are a cycling content writer for a charity cycling challenge website called "Riding for GBS" (Guillain-Barré Syndrome). The riders are tackling an epic multi-day route through challenging terrain to raise awareness and funds.
+  const systemPrompt = `You are a cycling content writer for a charity cycling challenge website called "Riding for GBS" (Guillain-Barré Syndrome). The GBS survivor and his wife are tackling an epic multi-day route through challenging terrain to raise awareness and funds.
 
 Your task: Given structured route analysis data, generate evocative, inspiring cycling copy. Write in a tone that is adventurous, warm, and accessible — not overly technical. Convey the physical challenge while highlighting the beauty of the landscape.
 
 IMPORTANT: Respond with ONLY valid JSON, no markdown fences, no explanation. Use this exact structure:
 {
-  "overview": "2-3 sentence overview of the full route",
+  "overview": "2-3 sentence overview of the full multi-day route",
   "segments": [
     {
       "name": "Segment name from data",
@@ -554,7 +554,7 @@ IMPORTANT: Respond with ONLY valid JSON, no markdown fences, no explanation. Use
       stream: false,
       options: {
         temperature: 0.7,
-        num_predict: 2048,
+        num_predict: 8192,
       },
     }),
   });

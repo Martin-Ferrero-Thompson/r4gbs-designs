@@ -17,6 +17,9 @@ pnpm-debug.log*
 .env
 .env.production
 
+# route data
+public/routes/
+
 # macOS-specific files
 .DS_Store
 
