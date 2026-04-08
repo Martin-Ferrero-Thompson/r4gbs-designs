@@ -319,24 +319,57 @@ import { t, defaultLang, translations } from '../i18n/index';
     </div>
   </section>
 
-  <!-- ═══ CHARITY ENDORSEMENT ═══ -->
+  <!-- ═══ CHARITY ENDORSEMENTS ═══ -->
   <section class="bg-stone-900 border-y border-stone-800">
     <div class="max-w-[1400px] mx-auto px-6 lg:px-10 py-24 lg:py-32">
-      <div class="max-w-4xl mx-auto text-center">
+      <!-- Section header -->
+      <div class="text-center mb-16">
         <span class="text-amber-500/60 font-body text-xs tracking-[0.3em] uppercase" data-i18n="home.quoteTag">{t(defaultLang, 'home.quoteTag')}</span>
-          {t(defaultLang, 'home.quoteTag')}
-        <blockquote class="mt-8">
-          <p class="font-display text-2xl lg:text-4xl text-stone-200 leading-relaxed italic" data-i18n="home.quoteText">
-            {t(defaultLang, 'home.quoteText')}
-          </p>
-        </blockquote>
-        <div class="mt-8">
-          <p class="text-stone-400 font-body text-sm" data-i18n="home.quoteSource">{t(defaultLang, 'home.quoteSource')}</p>
-          <p class="text-stone-600 font-body text-xs mt-1" data-i18n="home.quoteRole">{t(defaultLang, 'home.quoteRole')}</p>
+      </div>
+
+      <!-- Two-column endorsement grid -->
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+
+        <!-- UK Charity Endorsement -->
+        <div class="bg-stone-800/50 rounded-3xl p-8 lg:p-12 border border-stone-700/50">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-3 h-3 bg-amber-500 rounded-full"></div>
+            <span class="text-stone-400 font-body text-sm" data-i18n="donate.ukRegion">{t(defaultLang, 'donate.ukRegion')}</span>
+          </div>
+          <blockquote>
+            <p class="font-display text-xl lg:text-2xl text-stone-200 leading-relaxed italic" data-i18n="home.quoteText">
+              {t(defaultLang, 'home.quoteText')}
+            </p>
+          </blockquote>
+          <div class="mt-8">
+            <p class="text-stone-400 font-body text-sm font-semibold" data-i18n="home.quoteSource">{t(defaultLang, 'home.quoteSource')}</p>
+            <p class="text-stone-600 font-body text-xs mt-1" data-i18n="home.quoteRole">{t(defaultLang, 'home.quoteRole')}</p>
+          </div>
+          <a href="https://www.inflammatoryneuropathies.uk/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-amber-400 font-body text-sm mt-6 hover:text-amber-300 transition-colors" data-i18n="home.discoverWork">
+            {t(defaultLang, 'home.discoverWork')}
+          </a>
         </div>
-        <a href="https://www.inflammatoryneuropathies.uk/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-amber-400 font-body text-sm mt-6 hover:text-amber-300 transition-colors" data-i18n="home.discoverWork">
-          {t(defaultLang, 'home.discoverWork')}
-        </a>
+
+        <!-- Spain Charity Endorsement -->
+        <div class="bg-stone-800/50 rounded-3xl p-8 lg:p-12 border border-stone-700/50">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-3 h-3 bg-amber-500 rounded-full"></div>
+            <span class="text-stone-400 font-body text-sm" data-i18n="donate.esRegion">{t(defaultLang, 'donate.esRegion')}</span>
+          </div>
+          <blockquote>
+            <p class="font-display text-xl lg:text-2xl text-stone-200 leading-relaxed italic" data-i18n="home.quoteTextEs">
+              {t(defaultLang, 'home.quoteTextEs')}
+            </p>
+          </blockquote>
+          <div class="mt-8">
+            <p class="text-stone-400 font-body text-sm font-semibold" data-i18n="home.quoteSourceEs">{t(defaultLang, 'home.quoteSourceEs')}</p>
+            <p class="text-stone-600 font-body text-xs mt-1" data-i18n="home.quoteRoleEs">{t(defaultLang, 'home.quoteRoleEs')}</p>
+          </div>
+          <a href="https://gbs-cidp.org.es/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-amber-400 font-body text-sm mt-6 hover:text-amber-300 transition-colors" data-i18n="home.discoverWorkEs">
+            {t(defaultLang, 'home.discoverWorkEs')}
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
