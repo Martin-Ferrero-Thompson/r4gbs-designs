@@ -1,6 +1,5 @@
 // LanguageSwitcher client logic for Astro
 // TypeScript file for full type safety
-import { track } from '@vercel/analytics';
 
 const LANG_STORAGE_KEY = 'riding4gbs-lang';
 
@@ -99,7 +98,7 @@ function setupLanguageDropdown(root: HTMLElement): void {
       if (code) {
         setCurrentLang(code);
         updateLangUI(root);
-        track('Language Switch', { language: code });
+        (window as any).umami?.track('Language Switch', { language: code });
       }
       closeMenu(root);
     });
