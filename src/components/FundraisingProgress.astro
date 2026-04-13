@@ -61,7 +61,7 @@ const barColor = progress >= 100 ? 'bg-emerald-500' : 'bg-amber-500';
       </span>
     </div>
     {showLink && (
-      <a href="/donate" class="inline-flex items-center gap-2 text-amber-400 font-body text-sm mt-4 hover:text-amber-300 transition-colors" data-i18n="progress.donateNow">
+      <a href="/donate" data-track-event="Progress Donate Click" data-track-props={JSON.stringify({ charity })} class="inline-flex items-center gap-2 text-amber-400 font-body text-sm mt-4 hover:text-amber-300 transition-colors" data-i18n="progress.donateNow">
         {t(defaultLang, 'progress.donateNow')}
       </a>
     )}

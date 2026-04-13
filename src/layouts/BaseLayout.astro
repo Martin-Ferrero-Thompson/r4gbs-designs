@@ -113,8 +113,16 @@ const i18nTranslations = getDefaultTranslations();
     <BlogBadge />
     <script>
       import '../i18n/client.ts';
-      import { inject } from '@vercel/analytics';
+      import { inject, track } from '@vercel/analytics';
       inject();
+      document.addEventListener('click', (e) => {
+        const target = (e.target as Element)?.closest('[data-track-event]');
+        if (!target) return;
+        const eventName = target.getAttribute('data-track-event')!;
+        const propsStr = target.getAttribute('data-track-props');
+        const props = propsStr ? JSON.parse(propsStr) : undefined;
+        track(eventName, props);
+      });
     </script>
   </body>
 </html>

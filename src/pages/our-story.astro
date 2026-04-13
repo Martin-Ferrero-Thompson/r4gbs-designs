@@ -84,7 +84,7 @@ import { t, defaultLang } from '../i18n';
           <p class="text-stone-400 font-body mt-4 max-w-lg mx-auto" data-i18n="ourStory.ctaDesc">{t(defaultLang, 'ourStory.ctaDesc')}</p>
           <div class="mt-8 flex flex-wrap gap-4 justify-center">
             <a href="/the-challenge" class="inline-flex items-center gap-2 bg-amber-500 text-stone-950 px-8 py-3 rounded-full font-body font-bold text-sm hover:bg-amber-400 transition-colors" data-i18n="ourStory.ctaChallenge">{t(defaultLang, 'ourStory.ctaChallenge')}</a>
-            <a href="/donate" class="inline-flex items-center gap-2 border border-stone-600 text-stone-300 px-8 py-3 rounded-full font-body text-sm hover:border-amber-500 hover:text-amber-400 transition-colors" data-i18n="ourStory.ctaDonate">{t(defaultLang, 'ourStory.ctaDonate')}</a>
+            <a href="/donate" data-track-event="Donate CTA Click" data-track-props='{"location":"our-story"}' class="inline-flex items-center gap-2 border border-stone-600 text-stone-300 px-8 py-3 rounded-full font-body text-sm hover:border-amber-500 hover:text-amber-400 transition-colors" data-i18n="ourStory.ctaDonate">{t(defaultLang, 'ourStory.ctaDonate')}</a>
           </div>
         </div>
       </div>

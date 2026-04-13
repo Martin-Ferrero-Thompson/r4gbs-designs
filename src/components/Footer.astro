@@ -11,9 +11,9 @@ const footerLinks = [
 ];
 
 const charityLinks = [
-  { href: 'https://www.inflammatoryneuropathies.uk/', label: 'Inflammatory Neuropathies UK' },
-  { href: 'https://gbs-cidp.org.es/', label: 'GBS|CIDP España' },
-  { href: 'https://ko-fi.com/riding4gbs', label: 'Support on Ko-fi' },
+  { href: 'https://www.inflammatoryneuropathies.uk/', label: 'Inflammatory Neuropathies UK', trackEvent: 'Charity Link Click', trackProps: '{"charity":"uk","location":"footer"}' },
+  { href: 'https://gbs-cidp.org.es/', label: 'GBS|CIDP España', trackEvent: 'Charity Link Click', trackProps: '{"charity":"es","location":"footer"}' },
+  { href: 'https://ko-fi.com/riding4gbs', label: 'Support on Ko-fi', trackEvent: 'Ko-fi Click', trackProps: '{"location":"footer"}' },
 ];
 ---
 <footer class="bg-stone-950 text-stone-400">
@@ -57,7 +57,7 @@ const charityLinks = [
         <ul class="space-y-2.5">
           {charityLinks.map(link => (
             <li>
-              <a href={link.href} target="_blank" rel="noopener noreferrer" class="text-sm transition-colors duration-200 text-amber-400 hover:text-amber-300">
+              <a href={link.href} target="_blank" rel="noopener noreferrer" data-track-event={link.trackEvent} data-track-props={link.trackProps} class="text-sm transition-colors duration-200 text-amber-400 hover:text-amber-300">
                 {link.label} ↗
               </a>
             </li>
@@ -88,6 +88,8 @@ const charityLinks = [
         </p>
         <a
           href="/donate"
+          data-track-event="Donate CTA Click"
+          data-track-props='{"location":"footer"}'
           class="inline-block px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 bg-amber-500 text-stone-950 hover:bg-amber-400"
         >
           <span data-i18n="footer.donateNow">Donate Now →</span>
