@@ -65,6 +65,7 @@ const i18nTranslations = getDefaultTranslations();
       })();
     </script>
     <script type="module" src={themeScriptUrl}></script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="a132a1ef-e562-4458-a845-619d1effa53e" is:inline></script>
     <title>{title} | Riding4GBS</title>
     <script define:vars={{ i18nTranslations }}>
       window.__i18n_translations = i18nTranslations;
@@ -118,6 +119,14 @@ const i18nTranslations = getDefaultTranslations();
     <BlogBadge />
     <script>
       import '../i18n/client.ts';
+      document.addEventListener('click', (e) => {
+        const target = (e.target as Element)?.closest('[data-track-event]');
+        if (!target) return;
+        const eventName = target.getAttribute('data-track-event')!;
+        const propsStr = target.getAttribute('data-track-props');
+        const props = propsStr ? JSON.parse(propsStr) : undefined;
+        (window as any).umami?.track(eventName, props);
+      });
     </script>
   </body>
 </html>
